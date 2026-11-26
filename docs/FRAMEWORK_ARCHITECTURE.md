@@ -107,8 +107,9 @@ app/
     Jobs/                      # Job, JobDispatcher, JobHandler
     Localization/              # CatalogueLoader, LocaleResolver, Translator
     Logging/                   # Redactor (PSR-3 logger)
+    Mail/                      # EmailMessage, MailTransport, Mailer
     Rendering/                 # TemplateEngine, Escaper, SafeHtml
-    Security/                  # CsrfTokenManager, PasswordHasher, RateLimiter, AuditLogger, Crypto
+    Security/                  # SecretBox, TotpVerifier, PasskeyVerifier, CsrfTokenManager, PasswordHasher, RateLimiter, AuditLogger
     Seo/                       # MarkdownRepresentation, SitemapSource, StructuredData
     Validation/                # Validator, ValidationResult, Rule
 
@@ -125,7 +126,8 @@ app/
     Cache/                     # AtomicFileCache, ApcuCache, StampedeGuard, TagIndex, PageCache, InvalidationBus
     Events/                    # CompiledEventDispatcher
     Logging/                   # JsonFileLogger, SecretRedactor, LogRotator
-    Security/                  # PasswordHasher, SessionManager, RbacAuthorizer, CsrfGuard, CryptoBox, UploadGuard
+    Mail/                      # QueuedMailer, SmtpTransport, DkimSigner, LogTransport, NullTransport
+    Security/                  # SodiumSecretBox, Rfc6238Totp, WebAuthnPasskey, PasswordHasher, SessionManager, RbacAuthorizer, CsrfGuard, UploadGuard
     Localization/              # DefaultLocaleResolver, PhpCatalogueLoader, IcuTranslator
     Jobs/                      # DbJobQueue, OpportunisticRunner
     Module/                    # ModuleRegistry
@@ -143,12 +145,16 @@ app/
 4. **Contextual templates (`CORE-008`, `SEC-C-02`, `SEC-C-08`):** Explicit sink escaping (`html`, `attr`, `url`, `jsonLd`). Raw HTML requires a typed `SafeHtml` value produced only by audited sanitizers/renderers. Named template slots support extension UI without core edits.
 5. **Database and read projections (`DB-001`–`DB-005`, `PERF-004`, `PERF-007`):** PDO with `ATTR_EMULATE_PREPARES => false`, explicit transactions, keyset pagination, no ORM on read paths, and per-route query budgets enforced in tests.
 6. **Cache and invalidation (`CACHE-001`–`CACHE-007`, `PERF-005`):** Atomic file writes (`tmp` + `rename`), honest keys (`locale + theme + visibility + representation + formatVersion`), single-flight stampede locks, and synchronous immediate invalidation whenever content transitions from public to non-public (`SEC-D-04`).
-7. **Security primitives (`SEC-001`–`SEC-009`):**
+7. **Security primitives (`SEC-001`–`SEC-009`, [AUTH](AUTH.md)):**
    - `Authorizer` always evaluates object-level permissions; API/MCP token scopes only intersect/constrain permissions (`SEC-B-02`).
+   - `SessionManager` enforces an explicit three-state session machine (`anonymous` → `pending_mfa` → `authenticated`) plus bounded step-up ("sudo") re-authentication for destructive actions (`SEC-A-02`, `SEC-A-05`).
+   - `TotpVerifier` and `PasskeyVerifier` provide RFC 6238 TOTP (with replay floor) and WebAuthn/FIDO2 passkeys (`ES256`/`EdDSA`/`RS256`, origin/RP ID checks, `sign_count` clone detection) (`SEC-A-05`, `SEC-A-07`).
+   - `SecretBox` provides versioned AEAD encryption (`sodium_crypto_aead_xchacha20poly1305_ietf_*`) with mandatory AAD for TOTP seeds, SMTP passwords, DKIM keys, AI provider keys and webhook secrets (`SEC-D-05`).
    - `OutboundHttpClient` is the sole sanctioned egress client: enforces scheme allow-list, resolves DNS, blocks loopback/private/link-local/CGNAT/metadata IPv4/IPv6 ranges at dial time and on every redirect, and bounds time and bytes (`SEC-C-05`).
    - `SecretRedactor` runs inside the logger pipeline so credentials, sessions and prompt secrets are redacted centrally (`SEC-D-01`).
-8. **Jobs (`CORE-013`):** Database-backed `jobs` table executed by optional cron (`bin/qa jobs:run`) or bounded, single-flight opportunistic post-response batches on shared hosts without cron.
-9. **Modules and extensions (`CORE-011`, `EXT-001`–`EXT-007`, `PERF-008`):** Core modules and extensions register through the same declarative `ModuleInterface`/manifest. A `config/safe_mode.lock` flag boots core-only compiled artifacts for recovery if an extension fails.
+8. **Transactional mail (`MAIL`, [ADR 0006](adr/0006-mail-and-smtp.md)):** `Mailer` enqueues validated `EmailMessage` instances (`CR`/`LF` rejected at construction) into the DB job queue so HTTP requests never block on SMTP; `SmtpTransport` enforces implicit TLS (`465`) or mandatory `STARTTLS` (`587`) with strict certificate verification, SSRF host checks, encrypted credentials via `SecretBox`, optional DKIM signing, and localized multipart templates in the recipient's locale (`SEC-C-09`).
+9. **Jobs (`CORE-013`):** Database-backed `jobs` table executed by optional cron (`bin/qa jobs:run`) or bounded, single-flight opportunistic post-response batches on shared hosts without cron.
+10. **Modules and extensions (`CORE-011`, `EXT-001`–`EXT-007`, `PERF-008`):** Core modules and extensions register through the same declarative `ModuleInterface`/manifest. A `config/safe_mode.lock` flag boots core-only compiled artifacts for recovery if an extension fails.
 
 ## Public contracts map (`GOV-011`)
 
@@ -159,6 +165,8 @@ Before parallel implementation begins in `v0.1`, public contracts live under `ap
 | `Contracts/Config` | `ConfigRepository` | `CORE-002`, `DB-001`, `CACHE-001`, `LOG-001` |
 | `Contracts/Http` | `Request`, `Response`, `Middleware`, `Router`, `UrlGenerator`, `OutboundHttpClient` | `CORE-003`, `CORE-005`, `CORE-006`, `SEO-002`, `API-*` |
 | `Contracts/Auth` | `Actor`, `Authorizer`, `Policy`, `SessionStore` | `SEC-001`–`SEC-004`, `QA-001`, `CACHE-006`, `API-*`, `MCP-*` |
+| `Contracts/Security` | `SecretBox`, `TotpVerifier`, `PasskeyVerifier` *(drafted)*; `CsrfTokenManager`, `RateLimiter`, `AuditLogger` | `SEC-001`–`SEC-009`, `MAIL`, `AI-001`, `API-005` |
+| `Contracts/Mail` | `EmailMessage`, `MailTransport`, `Mailer` *(drafted)* | `SEC-001`, `SEC-007`, `QA-010`, `ADMIN-004` |
 | `Contracts/Database` | `Connection`, `TransactionManager`, `Migration`, `QueryProfiler` | `DB-001`–`DB-005`, `PERF-007` |
 | `Contracts/Cache` | `CacheStore`, `TaggedCache`, `StampedeLock`, `InvalidationBus` | `CACHE-001`–`CACHE-007`, `PERF-004`, `PERF-005` |
 | `Contracts/Rendering` | `TemplateEngine`, `Escaper`, `SafeHtml` | `CORE-008`, `UI-*`, `EXT-004` |

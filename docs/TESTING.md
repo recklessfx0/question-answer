@@ -17,6 +17,10 @@ CI runs the benchmark harness on fixed fixtures and fails on a regression beyond
 
 Every control in [security requirements](SECURITY_REQUIREMENTS.md) needs a negative test that fails closed — a test that only proves the happy path does not satisfy SEC-J-01. Security tests belong beside the behaviour they guard, name the control ID they cover, and are listed in a mapping table that the release checklist checks. A control without a negative test is unimplemented regardless of the code present.
 
+## Authentication and mail gates
+
+Contract and negative tests cover `SecretBox` (tampered ciphertext, mismatched AAD, key rotation), `TotpVerifier` (replay within time step, out-of-window codes, throttling), `PasskeyVerifier` (wrong origin, wrong RP ID, replayed challenge, missing `UV`, regressed `sign_count`), `pending_mfa` session isolation, single-use hashed recovery/reset tokens, and `EmailMessage`/`MailTransport`/`Mailer` (`CR`/`LF` header injection, missing/invalid `STARTTLS` certificate, metadata/private SMTP host rejection, secret redaction in logs/dead-letter queues, and email-bombing rate caps). See [authentication](AUTH.md) and [mail](MAIL.md).
+
 ## SEO gates
 
 CI validates sitemaps against the sitemaps.org XSD and feeds against RFC 4287; JSON-LD parses and its required properties match visible content; Open Graph and Twitter tags are asserted per page type; Markdown snapshots are deterministic with absolute links and no raw HTML; `llms.txt` format and links are checked; canonical and `hreflang` reciprocity plus `noindex` placement are asserted. Leakage tests prove drafts, private questions and permission-gated content never appear in any artifact. See [SEO](SEO.md) and SEO-002 through SEO-009.
