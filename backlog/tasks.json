@@ -3045,5 +3045,135 @@
     "review": [
       "independent maintainer"
     ]
+  },
+  {
+    "id": "SEC-010",
+    "title": "SecretBox AEAD encryption and key rotation",
+    "milestone": "v0.2",
+    "workstream": "security",
+    "priority": "P0",
+    "depends_on": [
+      "CORE-002",
+      "GOV-008"
+    ],
+    "allowed_paths": [
+      "app/Contracts/Security/",
+      "app/Core/Security/",
+      "tests/"
+    ],
+    "acceptance": "Implement SecretBox via sodium_crypto_aead_xchacha20poly1305_ietf with versioned key envelopes, mandatory AAD binding and key rotation; add fail-closed negative tests for tampered ciphertext, unknown key ID and mismatched AAD (SEC-D-05).",
+    "review": [
+      "independent maintainer",
+      "security reviewer"
+    ]
+  },
+  {
+    "id": "SEC-011",
+    "title": "Passkeys and WebAuthn FIDO2 authentication",
+    "milestone": "v0.2",
+    "workstream": "security",
+    "priority": "P0",
+    "depends_on": [
+      "SEC-007",
+      "SEC-010"
+    ],
+    "allowed_paths": [
+      "app/Contracts/Security/",
+      "app/Core/Security/",
+      "app/Modules/Users/",
+      "tests/"
+    ],
+    "acceptance": "Implement PasskeyVerifier for discoverable passkeys and 2FA security keys (ES256, EdDSA, RS256) with single-use session challenges, exact origin/RP ID checks, UV enforcement and sign_count clone detection; add fail-closed negative tests (SEC-A-07).",
+    "review": [
+      "independent maintainer",
+      "security reviewer"
+    ]
+  },
+  {
+    "id": "MAIL-001",
+    "title": "Transactional Mailer queue and EmailMessage validation",
+    "milestone": "v0.2",
+    "workstream": "mail",
+    "priority": "P0",
+    "depends_on": [
+      "CORE-013",
+      "CORE-008",
+      "I18N-003",
+      "GOV-008"
+    ],
+    "allowed_paths": [
+      "app/Contracts/Mail/",
+      "app/Core/Mail/",
+      "tests/"
+    ],
+    "acceptance": "Implement QueuedMailer, LogTransport and NullTransport over CORE-013 jobs with priority queues, exponential backoff retries, per-recipient/per-IP rate caps and recipient-locale multipart templates; add negative tests for CRLF header injection and rate-limit bursts (SEC-C-09).",
+    "review": [
+      "independent maintainer",
+      "security reviewer"
+    ]
+  },
+  {
+    "id": "MAIL-002",
+    "title": "Authenticated TLS SMTP transport with SSRF protection",
+    "milestone": "v0.2",
+    "workstream": "mail",
+    "priority": "P0",
+    "depends_on": [
+      "MAIL-001",
+      "SEC-010",
+      "LOG-002"
+    ],
+    "allowed_paths": [
+      "app/Core/Mail/",
+      "tests/"
+    ],
+    "acceptance": "Implement SmtpTransport supporting implicit TLS (465) and mandatory STARTTLS (587) with strict certificate/hostname verification, SecretBox-encrypted credentials, SSRF host validation and log redaction; add negative tests for TLS downgrade, invalid cert and metadata/private host rejection (SEC-C-09).",
+    "review": [
+      "independent maintainer",
+      "security reviewer"
+    ]
+  },
+  {
+    "id": "MAIL-003",
+    "title": "Account verification password reset and security alert emails",
+    "milestone": "v0.2",
+    "workstream": "mail",
+    "priority": "P0",
+    "depends_on": [
+      "MAIL-002",
+      "SEC-001",
+      "SEC-007"
+    ],
+    "allowed_paths": [
+      "app/Modules/Users/",
+      "resources/",
+      "tests/"
+    ],
+    "acceptance": "Deliver email verification, password reset, email-change confirmation and MFA/passkey security alerts using >=256-bit single-use hashed tokens, uniform anti-enumeration responses, session revocation on reset and recipient-locale mail templates (SEC-A-08).",
+    "review": [
+      "independent maintainer",
+      "security reviewer"
+    ]
+  },
+  {
+    "id": "MAIL-004",
+    "title": "Optional DKIM signing and Admin SMTP diagnostics",
+    "milestone": "v0.2",
+    "workstream": "mail",
+    "priority": "P0",
+    "depends_on": [
+      "MAIL-002",
+      "SEC-003"
+    ],
+    "allowed_paths": [
+      "app/Core/Mail/",
+      "app/Modules/Admin/",
+      "tests/"
+    ],
+    "acceptance": "Add optional RSA-2048/Ed25519 DKIM signing with SecretBox-encrypted private keys, DNS TXT guidance, step-up protected Admin test-email diagnostic and dead-letter queue visibility without leaking credentials or reset tokens.",
+    "review": [
+      "independent maintainer",
+      "security reviewer"
+    ]
   }
 ]

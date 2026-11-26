@@ -3,7 +3,7 @@ PHP 8.5 lint, PHPUnit unit/integration, PHPStan, coding style, Composer audit, s
 
 ## What CI runs now
 
-`Foundation checks` validates the backlog dependency graph (`tools/validate_backlog.py`), validates the GitHub Spec Kit milestones (`tools/validate_specs.py`), validates PSR-4 namespaces, `strict_types` and four-layer architecture boundaries (`tools/validate_architecture.py`), lints any PHP present and validates the Composer manifest. `Security checks` runs the secret scan (gitleaks), workflow lint (actionlint), the repository policy job (commit-pinned actions, no committed environment files), Python static analysis (bandit, medium and above) and, on pull requests, dependency review once a dependency lockfile exists. None of these are required status checks until branch protection is configured per [GitHub setup](GITHUB_SETUP.md); without that, a red gate is advisory.
+`Foundation checks` validates the backlog dependency graph (`tools/validate_backlog.py`), validates the GitHub Spec Kit milestones including one-to-one parity with the backlog (`tools/validate_specs.py`), validates PSR-4 namespaces, `strict_types` and four-layer architecture boundaries (`tools/validate_architecture.py`), lints any PHP present and validates the Composer manifest. `Security checks` runs the secret scan (gitleaks), workflow lint (actionlint), the repository policy job (commit-pinned actions, no committed environment files), Python static analysis (bandit, medium and above) and, on pull requests, dependency review once a dependency lockfile exists. None of these are required status checks until branch protection is configured per [GitHub setup](GITHUB_SETUP.md); without that, a red gate is advisory.
 
 ## Architecture gates
 
