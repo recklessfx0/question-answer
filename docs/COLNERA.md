@@ -34,7 +34,7 @@ This repository organizes its roadmap into **GitHub Spec Kit** folders under [`s
 | [`specs/007-v06-optional-ai-and-mcp/`](../specs/007-v06-optional-ai-and-mcp/tasks.md) | Optional AI drafts/citations, read-only & scoped-write MCP server | `T141`–`T152` |
 | [`specs/008-v10-release-readiness-and-audit/`](../specs/008-v10-release-readiness-and-audit/tasks.md) | Cross-DB integration, security/accessibility/SEO/i18n/Lighthouse audits, signed release | `T153`–`T159` |
 
-`tools/validate_specs.py` runs in GitHub Actions on every PR to guarantee that all `specs/NNN-name/tasks.md` files parse cleanly, have unique task IDs, and form an acyclic dependency graph. It also cross-checks the export against `backlog/tasks.json`: every spec task must name exactly one backlog id, and the two id sets must match, so a task cannot exist in the export without existing in the ledger.
+`tools/validate_specs.py` runs in GitHub Actions on every PR to guarantee that all `specs/NNN-name/tasks.md` files parse cleanly, have unique task IDs, and form an acyclic dependency graph. It also cross-checks the export against `backlog/tasks.json`: every spec task must name exactly one backlog id, and the two id sets must match, so a task cannot exist in the export without existing in the ledger. The ledger is authoritative and `specs/` is its checked projection — see [ADR 0007](adr/0007-colnera-and-spec-kit-tooling.md).
 
 ## Setting up a Colnera project for this repo
 
