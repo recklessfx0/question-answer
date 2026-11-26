@@ -1,0 +1,2 @@
+# Contributing
+Read charter, architecture and AGENTS.md. Claim a ready issue; confirm dependencies are merged. Branch `task/<id>-<slug>` from main. Keep changes scoped, write tests and docs, report security/performance/compatibility impact, submit PR linked to issue. Do not merge your own PR. Propose contract or schema changes through ADRs first. Reviewers reproduce tests and check acceptance criteria. Follow respectful conduct; report security privately. No generated code without review and provenance where required.

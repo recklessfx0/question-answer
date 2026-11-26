@@ -1,0 +1,13 @@
+name: Bug report
+description: Report a non-security defect
+body:
+  - type: textarea
+    id: reproduction
+    attributes:
+      label: Version, environment, steps, expected and actual behavior
+    validations:
+      required: true
+  - type: textarea
+    id: logs
+    attributes:
+      label: Redacted logs (no secrets)

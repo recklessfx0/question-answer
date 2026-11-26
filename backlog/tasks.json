@@ -1,0 +1,2451 @@
+[
+  {
+    "id": "GOV-001",
+    "title": "Approve charter and license",
+    "milestone": "M0",
+    "workstream": "governance",
+    "priority": "P0",
+    "depends_on": [],
+    "allowed_paths": [
+      "docs/",
+      "AGENTS.md",
+      "GOVERNANCE.md",
+      "CONTRIBUTING.md",
+      ".github/"
+    ],
+    "acceptance": "Maintainer-approved written specification; record open decisions and affected contracts.",
+    "review": [
+      "independent maintainer"
+    ]
+  },
+  {
+    "id": "GOV-002",
+    "title": "Define governance and ownership",
+    "milestone": "M0",
+    "workstream": "governance",
+    "priority": "P0",
+    "depends_on": [
+      "GOV-001"
+    ],
+    "allowed_paths": [
+      "docs/",
+      "AGENTS.md",
+      "GOVERNANCE.md",
+      "CONTRIBUTING.md",
+      ".github/"
+    ],
+    "acceptance": "Maintainer-approved written specification; record open decisions and affected contracts.",
+    "review": [
+      "independent maintainer"
+    ]
+  },
+  {
+    "id": "GOV-003",
+    "title": "Approve contribution and agent policies",
+    "milestone": "M0",
+    "workstream": "governance",
+    "priority": "P0",
+    "depends_on": [
+      "GOV-001"
+    ],
+    "allowed_paths": [
+      "docs/",
+      "AGENTS.md",
+      "GOVERNANCE.md",
+      "CONTRIBUTING.md",
+      ".github/"
+    ],
+    "acceptance": "Maintainer-approved written specification; record open decisions and affected contracts.",
+    "review": [
+      "independent maintainer"
+    ]
+  },
+  {
+    "id": "GOV-004",
+    "title": "Define architecture and module boundaries",
+    "milestone": "M0",
+    "workstream": "governance",
+    "priority": "P0",
+    "depends_on": [
+      "GOV-001"
+    ],
+    "allowed_paths": [
+      "docs/",
+      "AGENTS.md",
+      "GOVERNANCE.md",
+      "CONTRIBUTING.md",
+      ".github/"
+    ],
+    "acceptance": "Maintainer-approved written specification; record open decisions and affected contracts.",
+    "review": [
+      "independent maintainer"
+    ]
+  },
+  {
+    "id": "GOV-005",
+    "title": "Approve hosting baseline",
+    "milestone": "M0",
+    "workstream": "governance",
+    "priority": "P0",
+    "depends_on": [
+      "GOV-001"
+    ],
+    "allowed_paths": [
+      "docs/",
+      "AGENTS.md",
+      "GOVERNANCE.md",
+      "CONTRIBUTING.md",
+      ".github/"
+    ],
+    "acceptance": "Maintainer-approved written specification; record open decisions and affected contracts.",
+    "review": [
+      "independent maintainer"
+    ]
+  },
+  {
+    "id": "GOV-006",
+    "title": "Define testing and CI gates",
+    "milestone": "M0",
+    "workstream": "governance",
+    "priority": "P0",
+    "depends_on": [
+      "GOV-001"
+    ],
+    "allowed_paths": [
+      "docs/",
+      "AGENTS.md",
+      "GOVERNANCE.md",
+      "CONTRIBUTING.md",
+      ".github/"
+    ],
+    "acceptance": "Maintainer-approved written specification; record open decisions and affected contracts.",
+    "review": [
+      "independent maintainer"
+    ]
+  },
+  {
+    "id": "GOV-007",
+    "title": "Define performance budgets",
+    "milestone": "M0",
+    "workstream": "governance",
+    "priority": "P0",
+    "depends_on": [
+      "GOV-001"
+    ],
+    "allowed_paths": [
+      "docs/",
+      "AGENTS.md",
+      "GOVERNANCE.md",
+      "CONTRIBUTING.md",
+      ".github/"
+    ],
+    "acceptance": "Maintainer-approved written specification; record open decisions and affected contracts.",
+    "review": [
+      "independent maintainer"
+    ]
+  },
+  {
+    "id": "GOV-008",
+    "title": "Threat model and security requirements",
+    "milestone": "M0",
+    "workstream": "governance",
+    "priority": "P0",
+    "depends_on": [
+      "GOV-001"
+    ],
+    "allowed_paths": [
+      "docs/",
+      "AGENTS.md",
+      "GOVERNANCE.md",
+      "CONTRIBUTING.md",
+      ".github/"
+    ],
+    "acceptance": "Maintainer-approved written specification; record open decisions and affected contracts.",
+    "review": [
+      "independent maintainer"
+    ]
+  },
+  {
+    "id": "GOV-009",
+    "title": "Define database schema and migration contract",
+    "milestone": "M0",
+    "workstream": "governance",
+    "priority": "P0",
+    "depends_on": [
+      "GOV-001"
+    ],
+    "allowed_paths": [
+      "docs/",
+      "AGENTS.md",
+      "GOVERNANCE.md",
+      "CONTRIBUTING.md",
+      ".github/"
+    ],
+    "acceptance": "Maintainer-approved written specification; record open decisions and affected contracts.",
+    "review": [
+      "independent maintainer"
+    ]
+  },
+  {
+    "id": "GOV-010",
+    "title": "Define design system and accessibility",
+    "milestone": "M0",
+    "workstream": "governance",
+    "priority": "P0",
+    "depends_on": [
+      "GOV-001"
+    ],
+    "allowed_paths": [
+      "docs/",
+      "AGENTS.md",
+      "GOVERNANCE.md",
+      "CONTRIBUTING.md",
+      ".github/"
+    ],
+    "acceptance": "Maintainer-approved written specification; record open decisions and affected contracts.",
+    "review": [
+      "independent maintainer"
+    ]
+  },
+  {
+    "id": "GOV-011",
+    "title": "Approve public framework contracts",
+    "milestone": "M0",
+    "workstream": "governance",
+    "priority": "P0",
+    "depends_on": [
+      "GOV-001"
+    ],
+    "allowed_paths": [
+      "docs/",
+      "AGENTS.md",
+      "GOVERNANCE.md",
+      "CONTRIBUTING.md",
+      ".github/"
+    ],
+    "acceptance": "Maintainer-approved written specification; record open decisions and affected contracts.",
+    "review": [
+      "independent maintainer"
+    ]
+  },
+  {
+    "id": "CORE-001",
+    "title": "Bootstrap and autoloading",
+    "milestone": "v0.1",
+    "workstream": "framework",
+    "priority": "P0",
+    "depends_on": [
+      "GOV-004",
+      "GOV-011",
+      "GOV-005",
+      "HOST-001"
+    ],
+    "allowed_paths": [
+      "app/Core/",
+      "app/Contracts/",
+      "tests/"
+    ],
+    "acceptance": "Deliver bootstrap and autoloading within approved contracts; add positive and failure tests; document public interfaces and report actual test results and security/performance/hosting impact.",
+    "review": [
+      "independent maintainer"
+    ]
+  },
+  {
+    "id": "CORE-002",
+    "title": "Configuration",
+    "milestone": "v0.1",
+    "workstream": "framework",
+    "priority": "P0",
+    "depends_on": [
+      "CORE-001"
+    ],
+    "allowed_paths": [
+      "app/Core/",
+      "app/Contracts/",
+      "tests/"
+    ],
+    "acceptance": "Deliver configuration within approved contracts; add positive and failure tests; document public interfaces and report actual test results and security/performance/hosting impact.",
+    "review": [
+      "independent maintainer"
+    ]
+  },
+  {
+    "id": "CORE-003",
+    "title": "HTTP request response",
+    "milestone": "v0.1",
+    "workstream": "framework",
+    "priority": "P0",
+    "depends_on": [
+      "CORE-002"
+    ],
+    "allowed_paths": [
+      "app/Core/",
+      "app/Contracts/",
+      "tests/"
+    ],
+    "acceptance": "Deliver http request response within approved contracts; add positive and failure tests; document public interfaces and report actual test results and security/performance/hosting impact.",
+    "review": [
+      "independent maintainer"
+    ]
+  },
+  {
+    "id": "CORE-004",
+    "title": "Dependency container",
+    "milestone": "v0.1",
+    "workstream": "framework",
+    "priority": "P0",
+    "depends_on": [
+      "CORE-003"
+    ],
+    "allowed_paths": [
+      "app/Core/",
+      "app/Contracts/",
+      "tests/"
+    ],
+    "acceptance": "Deliver dependency container within approved contracts; add positive and failure tests; document public interfaces and report actual test results and security/performance/hosting impact.",
+    "review": [
+      "independent maintainer"
+    ]
+  },
+  {
+    "id": "CORE-005",
+    "title": "Router",
+    "milestone": "v0.1",
+    "workstream": "framework",
+    "priority": "P0",
+    "depends_on": [
+      "CORE-004"
+    ],
+    "allowed_paths": [
+      "app/Core/",
+      "app/Contracts/",
+      "tests/"
+    ],
+    "acceptance": "Deliver router within approved contracts; add positive and failure tests; document public interfaces and report actual test results and security/performance/hosting impact.",
+    "review": [
+      "independent maintainer"
+    ]
+  },
+  {
+    "id": "CORE-006",
+    "title": "Middleware",
+    "milestone": "v0.1",
+    "workstream": "framework",
+    "priority": "P0",
+    "depends_on": [
+      "CORE-005"
+    ],
+    "allowed_paths": [
+      "app/Core/",
+      "app/Contracts/",
+      "tests/"
+    ],
+    "acceptance": "Deliver middleware within approved contracts; add positive and failure tests; document public interfaces and report actual test results and security/performance/hosting impact.",
+    "review": [
+      "independent maintainer"
+    ]
+  },
+  {
+    "id": "CORE-007",
+    "title": "Validation",
+    "milestone": "v0.1",
+    "workstream": "framework",
+    "priority": "P0",
+    "depends_on": [
+      "CORE-006"
+    ],
+    "allowed_paths": [
+      "app/Core/",
+      "app/Contracts/",
+      "tests/"
+    ],
+    "acceptance": "Deliver validation within approved contracts; add positive and failure tests; document public interfaces and report actual test results and security/performance/hosting impact.",
+    "review": [
+      "independent maintainer"
+    ]
+  },
+  {
+    "id": "CORE-008",
+    "title": "Safe templates",
+    "milestone": "v0.1",
+    "workstream": "framework",
+    "priority": "P0",
+    "depends_on": [
+      "CORE-007"
+    ],
+    "allowed_paths": [
+      "app/Core/",
+      "app/Contracts/",
+      "tests/"
+    ],
+    "acceptance": "Deliver safe templates within approved contracts; add positive and failure tests; document public interfaces and report actual test results and security/performance/hosting impact.",
+    "review": [
+      "independent maintainer"
+    ]
+  },
+  {
+    "id": "CORE-009",
+    "title": "Error handling",
+    "milestone": "v0.1",
+    "workstream": "framework",
+    "priority": "P0",
+    "depends_on": [
+      "CORE-008"
+    ],
+    "allowed_paths": [
+      "app/Core/",
+      "app/Contracts/",
+      "tests/"
+    ],
+    "acceptance": "Deliver error handling within approved contracts; add positive and failure tests; document public interfaces and report actual test results and security/performance/hosting impact.",
+    "review": [
+      "independent maintainer"
+    ]
+  },
+  {
+    "id": "CORE-010",
+    "title": "Event dispatcher",
+    "milestone": "v0.1",
+    "workstream": "framework",
+    "priority": "P0",
+    "depends_on": [
+      "CORE-009"
+    ],
+    "allowed_paths": [
+      "app/Core/",
+      "app/Contracts/",
+      "tests/"
+    ],
+    "acceptance": "Deliver event dispatcher within approved contracts; add positive and failure tests; document public interfaces and report actual test results and security/performance/hosting impact.",
+    "review": [
+      "independent maintainer"
+    ]
+  },
+  {
+    "id": "CORE-011",
+    "title": "Module registration",
+    "milestone": "v0.1",
+    "workstream": "framework",
+    "priority": "P0",
+    "depends_on": [
+      "CORE-010"
+    ],
+    "allowed_paths": [
+      "app/Core/",
+      "app/Contracts/",
+      "tests/"
+    ],
+    "acceptance": "Deliver module registration within approved contracts; add positive and failure tests; document public interfaces and report actual test results and security/performance/hosting impact.",
+    "review": [
+      "independent maintainer"
+    ]
+  },
+  {
+    "id": "CORE-012",
+    "title": "Localization",
+    "milestone": "v0.1",
+    "workstream": "framework",
+    "priority": "P0",
+    "depends_on": [
+      "CORE-011"
+    ],
+    "allowed_paths": [
+      "app/Core/",
+      "app/Contracts/",
+      "tests/"
+    ],
+    "acceptance": "Deliver localization within approved contracts; add positive and failure tests; document public interfaces and report actual test results and security/performance/hosting impact.",
+    "review": [
+      "independent maintainer"
+    ]
+  },
+  {
+    "id": "CORE-013",
+    "title": "Job scheduler",
+    "milestone": "v0.1",
+    "workstream": "framework",
+    "priority": "P0",
+    "depends_on": [
+      "CORE-012"
+    ],
+    "allowed_paths": [
+      "app/Core/",
+      "app/Contracts/",
+      "tests/"
+    ],
+    "acceptance": "Deliver job scheduler within approved contracts; add positive and failure tests; document public interfaces and report actual test results and security/performance/hosting impact.",
+    "review": [
+      "independent maintainer"
+    ]
+  },
+  {
+    "id": "DB-001",
+    "title": "PDO connection and transactions",
+    "milestone": "v0.1",
+    "workstream": "database",
+    "priority": "P0",
+    "depends_on": [
+      "GOV-009",
+      "CORE-002"
+    ],
+    "allowed_paths": [
+      "app/Core/Database/",
+      "database/",
+      "tests/"
+    ],
+    "acceptance": "Deliver pdo connection and transactions within approved contracts; add positive and failure tests; document public interfaces and report actual test results and security/performance/hosting impact.",
+    "review": [
+      "independent maintainer"
+    ]
+  },
+  {
+    "id": "DB-002",
+    "title": "Migration engine",
+    "milestone": "v0.1",
+    "workstream": "database",
+    "priority": "P0",
+    "depends_on": [
+      "DB-001"
+    ],
+    "allowed_paths": [
+      "app/Core/Database/",
+      "database/",
+      "tests/"
+    ],
+    "acceptance": "Deliver migration engine within approved contracts; add positive and failure tests; document public interfaces and report actual test results and security/performance/hosting impact.",
+    "review": [
+      "independent maintainer"
+    ]
+  },
+  {
+    "id": "DB-003",
+    "title": "Schema and indexes",
+    "milestone": "v0.1",
+    "workstream": "database",
+    "priority": "P0",
+    "depends_on": [
+      "DB-002"
+    ],
+    "allowed_paths": [
+      "app/Core/Database/",
+      "database/",
+      "tests/"
+    ],
+    "acceptance": "Deliver schema and indexes within approved contracts; add positive and failure tests; document public interfaces and report actual test results and security/performance/hosting impact.",
+    "review": [
+      "independent maintainer"
+    ]
+  },
+  {
+    "id": "DB-004",
+    "title": "Repository contract and fixtures",
+    "milestone": "v0.1",
+    "workstream": "database",
+    "priority": "P0",
+    "depends_on": [
+      "DB-003"
+    ],
+    "allowed_paths": [
+      "app/Core/Database/",
+      "database/",
+      "tests/"
+    ],
+    "acceptance": "Deliver repository contract and fixtures within approved contracts; add positive and failure tests; document public interfaces and report actual test results and security/performance/hosting impact.",
+    "review": [
+      "independent maintainer"
+    ]
+  },
+  {
+    "id": "DB-005",
+    "title": "Query profiling",
+    "milestone": "v0.1",
+    "workstream": "database",
+    "priority": "P0",
+    "depends_on": [
+      "DB-004"
+    ],
+    "allowed_paths": [
+      "app/Core/Database/",
+      "database/",
+      "tests/"
+    ],
+    "acceptance": "Deliver query profiling within approved contracts; add positive and failure tests; document public interfaces and report actual test results and security/performance/hosting impact.",
+    "review": [
+      "independent maintainer"
+    ]
+  },
+  {
+    "id": "LOG-001",
+    "title": "PSR logger and request IDs",
+    "milestone": "v0.1",
+    "workstream": "observability",
+    "priority": "P0",
+    "depends_on": [
+      "CORE-002",
+      "GOV-008"
+    ],
+    "allowed_paths": [
+      "app/Core/Logging/",
+      "tests/"
+    ],
+    "acceptance": "Deliver psr logger and request ids within approved contracts; add positive and failure tests; document public interfaces and report actual test results and security/performance/hosting impact.",
+    "review": [
+      "independent maintainer"
+    ]
+  },
+  {
+    "id": "LOG-002",
+    "title": "JSON channels and redaction",
+    "milestone": "v0.1",
+    "workstream": "observability",
+    "priority": "P0",
+    "depends_on": [
+      "LOG-001"
+    ],
+    "allowed_paths": [
+      "app/Core/Logging/",
+      "tests/"
+    ],
+    "acceptance": "Deliver json channels and redaction within approved contracts; add positive and failure tests; document public interfaces and report actual test results and security/performance/hosting impact.",
+    "review": [
+      "independent maintainer"
+    ]
+  },
+  {
+    "id": "LOG-003",
+    "title": "Rotation and retention",
+    "milestone": "v0.1",
+    "workstream": "observability",
+    "priority": "P0",
+    "depends_on": [
+      "LOG-002"
+    ],
+    "allowed_paths": [
+      "app/Core/Logging/",
+      "tests/"
+    ],
+    "acceptance": "Deliver rotation and retention within approved contracts; add positive and failure tests; document public interfaces and report actual test results and security/performance/hosting impact.",
+    "review": [
+      "independent maintainer"
+    ]
+  },
+  {
+    "id": "LOG-004",
+    "title": "Debug profiler and toolbar",
+    "milestone": "v0.1",
+    "workstream": "observability",
+    "priority": "P0",
+    "depends_on": [
+      "LOG-003"
+    ],
+    "allowed_paths": [
+      "app/Core/Logging/",
+      "tests/"
+    ],
+    "acceptance": "Deliver debug profiler and toolbar within approved contracts; add positive and failure tests; document public interfaces and report actual test results and security/performance/hosting impact.",
+    "review": [
+      "independent maintainer"
+    ]
+  },
+  {
+    "id": "LOG-005",
+    "title": "Admin diagnostics export",
+    "milestone": "v0.1",
+    "workstream": "observability",
+    "priority": "P0",
+    "depends_on": [
+      "LOG-004",
+      "ADMIN-001"
+    ],
+    "allowed_paths": [
+      "app/Core/Logging/",
+      "tests/"
+    ],
+    "acceptance": "Deliver admin diagnostics export within approved contracts; add positive and failure tests; document public interfaces and report actual test results and security/performance/hosting impact.",
+    "review": [
+      "independent maintainer"
+    ]
+  },
+  {
+    "id": "CACHE-001",
+    "title": "Cache contract",
+    "milestone": "v0.1",
+    "workstream": "performance",
+    "priority": "P0",
+    "depends_on": [
+      "CORE-002",
+      "GOV-007",
+      "GOV-008"
+    ],
+    "allowed_paths": [
+      "app/Core/Cache/",
+      "tests/"
+    ],
+    "acceptance": "Deliver cache contract within approved contracts; add positive and failure tests; document public interfaces and report actual test results and security/performance/hosting impact.",
+    "review": [
+      "independent maintainer"
+    ]
+  },
+  {
+    "id": "CACHE-002",
+    "title": "Atomic file adapter",
+    "milestone": "v0.1",
+    "workstream": "performance",
+    "priority": "P0",
+    "depends_on": [
+      "CACHE-001"
+    ],
+    "allowed_paths": [
+      "app/Core/Cache/",
+      "tests/"
+    ],
+    "acceptance": "Deliver atomic file adapter within approved contracts; add positive and failure tests; document public interfaces and report actual test results and security/performance/hosting impact.",
+    "review": [
+      "independent maintainer"
+    ]
+  },
+  {
+    "id": "CACHE-003",
+    "title": "TTL and cleanup",
+    "milestone": "v0.1",
+    "workstream": "performance",
+    "priority": "P0",
+    "depends_on": [
+      "CACHE-002"
+    ],
+    "allowed_paths": [
+      "app/Core/Cache/",
+      "tests/"
+    ],
+    "acceptance": "Deliver ttl and cleanup within approved contracts; add positive and failure tests; document public interfaces and report actual test results and security/performance/hosting impact.",
+    "review": [
+      "independent maintainer"
+    ]
+  },
+  {
+    "id": "CACHE-004",
+    "title": "Stampede protection",
+    "milestone": "v0.1",
+    "workstream": "performance",
+    "priority": "P0",
+    "depends_on": [
+      "CACHE-003"
+    ],
+    "allowed_paths": [
+      "app/Core/Cache/",
+      "tests/"
+    ],
+    "acceptance": "Deliver stampede protection within approved contracts; add positive and failure tests; document public interfaces and report actual test results and security/performance/hosting impact.",
+    "review": [
+      "independent maintainer"
+    ]
+  },
+  {
+    "id": "CACHE-005",
+    "title": "Tags and invalidation",
+    "milestone": "v0.1",
+    "workstream": "performance",
+    "priority": "P0",
+    "depends_on": [
+      "CACHE-004"
+    ],
+    "allowed_paths": [
+      "app/Core/Cache/",
+      "tests/"
+    ],
+    "acceptance": "Deliver tags and invalidation within approved contracts; add positive and failure tests; document public interfaces and report actual test results and security/performance/hosting impact.",
+    "review": [
+      "independent maintainer"
+    ]
+  },
+  {
+    "id": "CACHE-006",
+    "title": "Public page and fragment cache",
+    "milestone": "v0.1",
+    "workstream": "performance",
+    "priority": "P0",
+    "depends_on": [
+      "CACHE-005",
+      "SEC-003"
+    ],
+    "allowed_paths": [
+      "app/Core/Cache/",
+      "tests/"
+    ],
+    "acceptance": "Deliver public page and fragment cache within approved contracts; add positive and failure tests; document public interfaces and report actual test results and security/performance/hosting impact.",
+    "review": [
+      "independent maintainer"
+    ]
+  },
+  {
+    "id": "CACHE-007",
+    "title": "HTTP caching and benchmarks",
+    "milestone": "v0.1",
+    "workstream": "performance",
+    "priority": "P0",
+    "depends_on": [
+      "CACHE-006"
+    ],
+    "allowed_paths": [
+      "app/Core/Cache/",
+      "tests/"
+    ],
+    "acceptance": "Deliver http caching and benchmarks within approved contracts; add positive and failure tests; document public interfaces and report actual test results and security/performance/hosting impact.",
+    "review": [
+      "independent maintainer"
+    ]
+  },
+  {
+    "id": "SEC-001",
+    "title": "Authentication and password hashing",
+    "milestone": "v0.2",
+    "workstream": "security",
+    "priority": "P0",
+    "depends_on": [
+      "CORE-006",
+      "DB-003",
+      "GOV-008"
+    ],
+    "allowed_paths": [
+      "app/Core/Security/",
+      "app/Modules/Users/",
+      "tests/"
+    ],
+    "acceptance": "Deliver authentication and password hashing within approved contracts; add positive and failure tests; document public interfaces and report actual test results and security/performance/hosting impact.",
+    "review": [
+      "independent maintainer",
+      "security reviewer"
+    ]
+  },
+  {
+    "id": "SEC-002",
+    "title": "Secure sessions",
+    "milestone": "v0.2",
+    "workstream": "security",
+    "priority": "P0",
+    "depends_on": [
+      "SEC-001"
+    ],
+    "allowed_paths": [
+      "app/Core/Security/",
+      "app/Modules/Users/",
+      "tests/"
+    ],
+    "acceptance": "Deliver secure sessions within approved contracts; add positive and failure tests; document public interfaces and report actual test results and security/performance/hosting impact.",
+    "review": [
+      "independent maintainer",
+      "security reviewer"
+    ]
+  },
+  {
+    "id": "SEC-003",
+    "title": "Resource authorization and RBAC",
+    "milestone": "v0.2",
+    "workstream": "security",
+    "priority": "P0",
+    "depends_on": [
+      "SEC-002"
+    ],
+    "allowed_paths": [
+      "app/Core/Security/",
+      "app/Modules/Users/",
+      "tests/"
+    ],
+    "acceptance": "Deliver resource authorization and rbac within approved contracts; add positive and failure tests; document public interfaces and report actual test results and security/performance/hosting impact.",
+    "review": [
+      "independent maintainer",
+      "security reviewer"
+    ]
+  },
+  {
+    "id": "SEC-004",
+    "title": "CSRF and security headers",
+    "milestone": "v0.2",
+    "workstream": "security",
+    "priority": "P0",
+    "depends_on": [
+      "SEC-003"
+    ],
+    "allowed_paths": [
+      "app/Core/Security/",
+      "app/Modules/Users/",
+      "tests/"
+    ],
+    "acceptance": "Deliver csrf and security headers within approved contracts; add positive and failure tests; document public interfaces and report actual test results and security/performance/hosting impact.",
+    "review": [
+      "independent maintainer",
+      "security reviewer"
+    ]
+  },
+  {
+    "id": "SEC-005",
+    "title": "Rate limits and brute-force defense",
+    "milestone": "v0.2",
+    "workstream": "security",
+    "priority": "P0",
+    "depends_on": [
+      "SEC-004"
+    ],
+    "allowed_paths": [
+      "app/Core/Security/",
+      "app/Modules/Users/",
+      "tests/"
+    ],
+    "acceptance": "Deliver rate limits and brute-force defense within approved contracts; add positive and failure tests; document public interfaces and report actual test results and security/performance/hosting impact.",
+    "review": [
+      "independent maintainer",
+      "security reviewer"
+    ]
+  },
+  {
+    "id": "SEC-006",
+    "title": "Upload and sanitization safeguards",
+    "milestone": "v0.2",
+    "workstream": "security",
+    "priority": "P0",
+    "depends_on": [
+      "SEC-005"
+    ],
+    "allowed_paths": [
+      "app/Core/Security/",
+      "app/Modules/Users/",
+      "tests/"
+    ],
+    "acceptance": "Deliver upload and sanitization safeguards within approved contracts; add positive and failure tests; document public interfaces and report actual test results and security/performance/hosting impact.",
+    "review": [
+      "independent maintainer",
+      "security reviewer"
+    ]
+  },
+  {
+    "id": "SEC-007",
+    "title": "MFA and recovery",
+    "milestone": "v0.2",
+    "workstream": "security",
+    "priority": "P0",
+    "depends_on": [
+      "SEC-006"
+    ],
+    "allowed_paths": [
+      "app/Core/Security/",
+      "app/Modules/Users/",
+      "tests/"
+    ],
+    "acceptance": "Deliver mfa and recovery within approved contracts; add positive and failure tests; document public interfaces and report actual test results and security/performance/hosting impact.",
+    "review": [
+      "independent maintainer",
+      "security reviewer"
+    ]
+  },
+  {
+    "id": "SEC-008",
+    "title": "Privacy export and deletion",
+    "milestone": "v0.2",
+    "workstream": "security",
+    "priority": "P0",
+    "depends_on": [
+      "SEC-007"
+    ],
+    "allowed_paths": [
+      "app/Core/Security/",
+      "app/Modules/Users/",
+      "tests/"
+    ],
+    "acceptance": "Deliver privacy export and deletion within approved contracts; add positive and failure tests; document public interfaces and report actual test results and security/performance/hosting impact.",
+    "review": [
+      "independent maintainer",
+      "security reviewer"
+    ]
+  },
+  {
+    "id": "SEC-009",
+    "title": "Audit trails and abuse tests",
+    "milestone": "v0.2",
+    "workstream": "security",
+    "priority": "P0",
+    "depends_on": [
+      "SEC-008"
+    ],
+    "allowed_paths": [
+      "app/Core/Security/",
+      "app/Modules/Users/",
+      "tests/"
+    ],
+    "acceptance": "Deliver audit trails and abuse tests within approved contracts; add positive and failure tests; document public interfaces and report actual test results and security/performance/hosting impact.",
+    "review": [
+      "independent maintainer",
+      "security reviewer"
+    ]
+  },
+  {
+    "id": "QA-001",
+    "title": "Content node model and invariants",
+    "milestone": "v0.2",
+    "workstream": "content",
+    "priority": "P0",
+    "depends_on": [
+      "DB-003",
+      "SEC-003",
+      "CORE-007",
+      "CORE-010",
+      "CACHE-005"
+    ],
+    "allowed_paths": [
+      "app/Modules/Questions/",
+      "app/Modules/Answers/",
+      "app/Modules/Clarifications/",
+      "app/Modules/Comments/",
+      "tests/"
+    ],
+    "acceptance": "Deliver content node model and invariants within approved contracts; add positive and failure tests; document public interfaces and report actual test results and security/performance/hosting impact.",
+    "review": [
+      "independent maintainer"
+    ]
+  },
+  {
+    "id": "QA-002",
+    "title": "Question CRUD",
+    "milestone": "v0.2",
+    "workstream": "content",
+    "priority": "P0",
+    "depends_on": [
+      "QA-001"
+    ],
+    "allowed_paths": [
+      "app/Modules/Questions/",
+      "app/Modules/Answers/",
+      "app/Modules/Clarifications/",
+      "app/Modules/Comments/",
+      "tests/"
+    ],
+    "acceptance": "Deliver question crud within approved contracts; add positive and failure tests; document public interfaces and report actual test results and security/performance/hosting impact.",
+    "review": [
+      "independent maintainer"
+    ]
+  },
+  {
+    "id": "QA-003",
+    "title": "Answer CRUD",
+    "milestone": "v0.2",
+    "workstream": "content",
+    "priority": "P0",
+    "depends_on": [
+      "QA-002"
+    ],
+    "allowed_paths": [
+      "app/Modules/Questions/",
+      "app/Modules/Answers/",
+      "app/Modules/Clarifications/",
+      "app/Modules/Comments/",
+      "tests/"
+    ],
+    "acceptance": "Deliver answer crud within approved contracts; add positive and failure tests; document public interfaces and report actual test results and security/performance/hosting impact.",
+    "review": [
+      "independent maintainer"
+    ]
+  },
+  {
+    "id": "QA-004",
+    "title": "Nested clarifications and replies",
+    "milestone": "v0.2",
+    "workstream": "content",
+    "priority": "P0",
+    "depends_on": [
+      "QA-003"
+    ],
+    "allowed_paths": [
+      "app/Modules/Questions/",
+      "app/Modules/Answers/",
+      "app/Modules/Clarifications/",
+      "app/Modules/Comments/",
+      "tests/"
+    ],
+    "acceptance": "Deliver nested clarifications and replies within approved contracts; add positive and failure tests; document public interfaces and report actual test results and security/performance/hosting impact.",
+    "review": [
+      "independent maintainer"
+    ]
+  },
+  {
+    "id": "QA-005",
+    "title": "Nested comments",
+    "milestone": "v0.2",
+    "workstream": "content",
+    "priority": "P0",
+    "depends_on": [
+      "QA-004"
+    ],
+    "allowed_paths": [
+      "app/Modules/Questions/",
+      "app/Modules/Answers/",
+      "app/Modules/Clarifications/",
+      "app/Modules/Comments/",
+      "tests/"
+    ],
+    "acceptance": "Deliver nested comments within approved contracts; add positive and failure tests; document public interfaces and report actual test results and security/performance/hosting impact.",
+    "review": [
+      "independent maintainer"
+    ]
+  },
+  {
+    "id": "QA-006",
+    "title": "Accepted answers and votes",
+    "milestone": "v0.2",
+    "workstream": "content",
+    "priority": "P0",
+    "depends_on": [
+      "QA-005"
+    ],
+    "allowed_paths": [
+      "app/Modules/Questions/",
+      "app/Modules/Answers/",
+      "app/Modules/Clarifications/",
+      "app/Modules/Comments/",
+      "tests/"
+    ],
+    "acceptance": "Deliver accepted answers and votes within approved contracts; add positive and failure tests; document public interfaces and report actual test results and security/performance/hosting impact.",
+    "review": [
+      "independent maintainer"
+    ]
+  },
+  {
+    "id": "QA-007",
+    "title": "Revision history and moderation",
+    "milestone": "v0.2",
+    "workstream": "content",
+    "priority": "P0",
+    "depends_on": [
+      "QA-006"
+    ],
+    "allowed_paths": [
+      "app/Modules/Questions/",
+      "app/Modules/Answers/",
+      "app/Modules/Clarifications/",
+      "app/Modules/Comments/",
+      "tests/"
+    ],
+    "acceptance": "Deliver revision history and moderation within approved contracts; add positive and failure tests; document public interfaces and report actual test results and security/performance/hosting impact.",
+    "review": [
+      "independent maintainer"
+    ]
+  },
+  {
+    "id": "QA-008",
+    "title": "Taxonomy and collections",
+    "milestone": "v0.2",
+    "workstream": "content",
+    "priority": "P0",
+    "depends_on": [
+      "QA-007"
+    ],
+    "allowed_paths": [
+      "app/Modules/Questions/",
+      "app/Modules/Answers/",
+      "app/Modules/Clarifications/",
+      "app/Modules/Comments/",
+      "tests/"
+    ],
+    "acceptance": "Deliver taxonomy and collections within approved contracts; add positive and failure tests; document public interfaces and report actual test results and security/performance/hosting impact.",
+    "review": [
+      "independent maintainer"
+    ]
+  },
+  {
+    "id": "QA-009",
+    "title": "Related and duplicate questions",
+    "milestone": "v0.2",
+    "workstream": "content",
+    "priority": "P0",
+    "depends_on": [
+      "QA-008"
+    ],
+    "allowed_paths": [
+      "app/Modules/Questions/",
+      "app/Modules/Answers/",
+      "app/Modules/Clarifications/",
+      "app/Modules/Comments/",
+      "tests/"
+    ],
+    "acceptance": "Deliver related and duplicate questions within approved contracts; add positive and failure tests; document public interfaces and report actual test results and security/performance/hosting impact.",
+    "review": [
+      "independent maintainer"
+    ]
+  },
+  {
+    "id": "QA-010",
+    "title": "Bookmarks and notifications",
+    "milestone": "v0.2",
+    "workstream": "content",
+    "priority": "P0",
+    "depends_on": [
+      "QA-009"
+    ],
+    "allowed_paths": [
+      "app/Modules/Questions/",
+      "app/Modules/Answers/",
+      "app/Modules/Clarifications/",
+      "app/Modules/Comments/",
+      "tests/"
+    ],
+    "acceptance": "Deliver bookmarks and notifications within approved contracts; add positive and failure tests; document public interfaces and report actual test results and security/performance/hosting impact.",
+    "review": [
+      "independent maintainer"
+    ]
+  },
+  {
+    "id": "QA-011",
+    "title": "Canonical answers and citations",
+    "milestone": "v0.2",
+    "workstream": "content",
+    "priority": "P0",
+    "depends_on": [
+      "QA-010"
+    ],
+    "allowed_paths": [
+      "app/Modules/Questions/",
+      "app/Modules/Answers/",
+      "app/Modules/Clarifications/",
+      "app/Modules/Comments/",
+      "tests/"
+    ],
+    "acceptance": "Deliver canonical answers and citations within approved contracts; add positive and failure tests; document public interfaces and report actual test results and security/performance/hosting impact.",
+    "review": [
+      "independent maintainer"
+    ]
+  },
+  {
+    "id": "QA-012",
+    "title": "Import export and lifecycle",
+    "milestone": "v0.2",
+    "workstream": "content",
+    "priority": "P0",
+    "depends_on": [
+      "QA-011"
+    ],
+    "allowed_paths": [
+      "app/Modules/Questions/",
+      "app/Modules/Answers/",
+      "app/Modules/Clarifications/",
+      "app/Modules/Comments/",
+      "tests/"
+    ],
+    "acceptance": "Deliver import export and lifecycle within approved contracts; add positive and failure tests; document public interfaces and report actual test results and security/performance/hosting impact.",
+    "review": [
+      "independent maintainer"
+    ]
+  },
+  {
+    "id": "SEARCH-001",
+    "title": "Full-text search and permissions",
+    "milestone": "v0.3",
+    "workstream": "search",
+    "priority": "P0",
+    "depends_on": [
+      "QA-003"
+    ],
+    "allowed_paths": [
+      "app/Modules/Search/",
+      "tests/"
+    ],
+    "acceptance": "Deliver full-text search and permissions within approved contracts; add positive and failure tests; document public interfaces and report actual test results and security/performance/hosting impact.",
+    "review": [
+      "independent maintainer"
+    ]
+  },
+  {
+    "id": "SEARCH-002",
+    "title": "Ranking filters and pagination",
+    "milestone": "v0.3",
+    "workstream": "search",
+    "priority": "P0",
+    "depends_on": [
+      "SEARCH-001"
+    ],
+    "allowed_paths": [
+      "app/Modules/Search/",
+      "tests/"
+    ],
+    "acceptance": "Deliver ranking filters and pagination within approved contracts; add positive and failure tests; document public interfaces and report actual test results and security/performance/hosting impact.",
+    "review": [
+      "independent maintainer"
+    ]
+  },
+  {
+    "id": "SEARCH-003",
+    "title": "Index invalidation and relevance tests",
+    "milestone": "v0.3",
+    "workstream": "search",
+    "priority": "P0",
+    "depends_on": [
+      "SEARCH-002"
+    ],
+    "allowed_paths": [
+      "app/Modules/Search/",
+      "tests/"
+    ],
+    "acceptance": "Deliver index invalidation and relevance tests within approved contracts; add positive and failure tests; document public interfaces and report actual test results and security/performance/hosting impact.",
+    "review": [
+      "independent maintainer"
+    ]
+  },
+  {
+    "id": "UI-001",
+    "title": "CSS tokens and app shell",
+    "milestone": "v0.3",
+    "workstream": "frontend",
+    "priority": "P0",
+    "depends_on": [
+      "GOV-010",
+      "CORE-008",
+      "QA-004"
+    ],
+    "allowed_paths": [
+      "resources/",
+      "themes/",
+      "public/assets/",
+      "tests/"
+    ],
+    "acceptance": "Deliver css tokens and app shell within approved contracts; add positive and failure tests; document public interfaces and report actual test results and security/performance/hosting impact.",
+    "review": [
+      "independent maintainer"
+    ]
+  },
+  {
+    "id": "UI-002",
+    "title": "Question feed and detail",
+    "milestone": "v0.3",
+    "workstream": "frontend",
+    "priority": "P0",
+    "depends_on": [
+      "UI-001"
+    ],
+    "allowed_paths": [
+      "resources/",
+      "themes/",
+      "public/assets/",
+      "tests/"
+    ],
+    "acceptance": "Deliver question feed and detail within approved contracts; add positive and failure tests; document public interfaces and report actual test results and security/performance/hosting impact.",
+    "review": [
+      "independent maintainer"
+    ]
+  },
+  {
+    "id": "UI-003",
+    "title": "Nested threads and composer",
+    "milestone": "v0.3",
+    "workstream": "frontend",
+    "priority": "P0",
+    "depends_on": [
+      "UI-002"
+    ],
+    "allowed_paths": [
+      "resources/",
+      "themes/",
+      "public/assets/",
+      "tests/"
+    ],
+    "acceptance": "Deliver nested threads and composer within approved contracts; add positive and failure tests; document public interfaces and report actual test results and security/performance/hosting impact.",
+    "review": [
+      "independent maintainer"
+    ]
+  },
+  {
+    "id": "UI-004",
+    "title": "Search and navigation",
+    "milestone": "v0.3",
+    "workstream": "frontend",
+    "priority": "P0",
+    "depends_on": [
+      "UI-003",
+      "SEARCH-001"
+    ],
+    "allowed_paths": [
+      "resources/",
+      "themes/",
+      "public/assets/",
+      "tests/"
+    ],
+    "acceptance": "Deliver search and navigation within approved contracts; add positive and failure tests; document public interfaces and report actual test results and security/performance/hosting impact.",
+    "review": [
+      "independent maintainer"
+    ]
+  },
+  {
+    "id": "UI-005",
+    "title": "Accessible dialogs and themes",
+    "milestone": "v0.3",
+    "workstream": "frontend",
+    "priority": "P0",
+    "depends_on": [
+      "UI-004"
+    ],
+    "allowed_paths": [
+      "resources/",
+      "themes/",
+      "public/assets/",
+      "tests/"
+    ],
+    "acceptance": "Deliver accessible dialogs and themes within approved contracts; add positive and failure tests; document public interfaces and report actual test results and security/performance/hosting impact.",
+    "review": [
+      "independent maintainer"
+    ]
+  },
+  {
+    "id": "UI-006",
+    "title": "PWA manifest and safe offline fallback",
+    "milestone": "v0.3",
+    "workstream": "frontend",
+    "priority": "P0",
+    "depends_on": [
+      "UI-005"
+    ],
+    "allowed_paths": [
+      "resources/",
+      "themes/",
+      "public/assets/",
+      "tests/"
+    ],
+    "acceptance": "Deliver pwa manifest and safe offline fallback within approved contracts; add positive and failure tests; document public interfaces and report actual test results and security/performance/hosting impact.",
+    "review": [
+      "independent maintainer"
+    ]
+  },
+  {
+    "id": "UI-007",
+    "title": "RTL and keyboard tests",
+    "milestone": "v0.3",
+    "workstream": "frontend",
+    "priority": "P0",
+    "depends_on": [
+      "UI-006"
+    ],
+    "allowed_paths": [
+      "resources/",
+      "themes/",
+      "public/assets/",
+      "tests/"
+    ],
+    "acceptance": "Deliver rtl and keyboard tests within approved contracts; add positive and failure tests; document public interfaces and report actual test results and security/performance/hosting impact.",
+    "review": [
+      "independent maintainer"
+    ]
+  },
+  {
+    "id": "UI-008",
+    "title": "Asset budgets and visual regression",
+    "milestone": "v0.3",
+    "workstream": "frontend",
+    "priority": "P0",
+    "depends_on": [
+      "UI-007"
+    ],
+    "allowed_paths": [
+      "resources/",
+      "themes/",
+      "public/assets/",
+      "tests/"
+    ],
+    "acceptance": "Deliver asset budgets and visual regression within approved contracts; add positive and failure tests; document public interfaces and report actual test results and security/performance/hosting impact.",
+    "review": [
+      "independent maintainer"
+    ]
+  },
+  {
+    "id": "ADMIN-001",
+    "title": "Admin shell and dashboard",
+    "milestone": "v0.3",
+    "workstream": "admin",
+    "priority": "P0",
+    "depends_on": [
+      "SEC-003",
+      "QA-007",
+      "UI-001"
+    ],
+    "allowed_paths": [
+      "app/Modules/Administration/",
+      "resources/",
+      "tests/"
+    ],
+    "acceptance": "Deliver admin shell and dashboard within approved contracts; add positive and failure tests; document public interfaces and report actual test results and security/performance/hosting impact.",
+    "review": [
+      "independent maintainer"
+    ]
+  },
+  {
+    "id": "ADMIN-002",
+    "title": "Content and moderation",
+    "milestone": "v0.3",
+    "workstream": "admin",
+    "priority": "P0",
+    "depends_on": [
+      "ADMIN-001"
+    ],
+    "allowed_paths": [
+      "app/Modules/Administration/",
+      "resources/",
+      "tests/"
+    ],
+    "acceptance": "Deliver content and moderation within approved contracts; add positive and failure tests; document public interfaces and report actual test results and security/performance/hosting impact.",
+    "review": [
+      "independent maintainer"
+    ]
+  },
+  {
+    "id": "ADMIN-003",
+    "title": "Users roles and permissions",
+    "milestone": "v0.3",
+    "workstream": "admin",
+    "priority": "P0",
+    "depends_on": [
+      "ADMIN-002"
+    ],
+    "allowed_paths": [
+      "app/Modules/Administration/",
+      "resources/",
+      "tests/"
+    ],
+    "acceptance": "Deliver users roles and permissions within approved contracts; add positive and failure tests; document public interfaces and report actual test results and security/performance/hosting impact.",
+    "review": [
+      "independent maintainer"
+    ]
+  },
+  {
+    "id": "ADMIN-004",
+    "title": "Settings and appearance",
+    "milestone": "v0.3",
+    "workstream": "admin",
+    "priority": "P0",
+    "depends_on": [
+      "ADMIN-003"
+    ],
+    "allowed_paths": [
+      "app/Modules/Administration/",
+      "resources/",
+      "tests/"
+    ],
+    "acceptance": "Deliver settings and appearance within approved contracts; add positive and failure tests; document public interfaces and report actual test results and security/performance/hosting impact.",
+    "review": [
+      "independent maintainer"
+    ]
+  },
+  {
+    "id": "ADMIN-005",
+    "title": "System health and log viewer",
+    "milestone": "v0.3",
+    "workstream": "admin",
+    "priority": "P0",
+    "depends_on": [
+      "ADMIN-004"
+    ],
+    "allowed_paths": [
+      "app/Modules/Administration/",
+      "resources/",
+      "tests/"
+    ],
+    "acceptance": "Deliver system health and log viewer within approved contracts; add positive and failure tests; document public interfaces and report actual test results and security/performance/hosting impact.",
+    "review": [
+      "independent maintainer"
+    ]
+  },
+  {
+    "id": "ADMIN-006",
+    "title": "Privacy and maintenance",
+    "milestone": "v0.3",
+    "workstream": "admin",
+    "priority": "P0",
+    "depends_on": [
+      "ADMIN-005"
+    ],
+    "allowed_paths": [
+      "app/Modules/Administration/",
+      "resources/",
+      "tests/"
+    ],
+    "acceptance": "Deliver privacy and maintenance within approved contracts; add positive and failure tests; document public interfaces and report actual test results and security/performance/hosting impact.",
+    "review": [
+      "independent maintainer"
+    ]
+  },
+  {
+    "id": "ADMIN-007",
+    "title": "Extension API AI MCP settings integration",
+    "milestone": "v0.3",
+    "workstream": "admin",
+    "priority": "P0",
+    "depends_on": [
+      "ADMIN-006",
+      "EXT-007",
+      "API-006",
+      "AI-006",
+      "MCP-006"
+    ],
+    "allowed_paths": [
+      "app/Modules/Administration/",
+      "resources/",
+      "tests/"
+    ],
+    "acceptance": "Deliver extension api ai mcp settings integration within approved contracts; add positive and failure tests; document public interfaces and report actual test results and security/performance/hosting impact.",
+    "review": [
+      "independent maintainer"
+    ]
+  },
+  {
+    "id": "EXT-001",
+    "title": "Manifest and discovery",
+    "milestone": "v0.4",
+    "workstream": "extensions",
+    "priority": "P0",
+    "depends_on": [
+      "CORE-011",
+      "SEC-003",
+      "GOV-011"
+    ],
+    "allowed_paths": [
+      "app/Modules/Extensions/",
+      "extensions/",
+      "tests/"
+    ],
+    "acceptance": "Deliver manifest and discovery within approved contracts; add positive and failure tests; document public interfaces and report actual test results and security/performance/hosting impact.",
+    "review": [
+      "independent maintainer",
+      "security reviewer"
+    ]
+  },
+  {
+    "id": "EXT-002",
+    "title": "Lifecycle and dependencies",
+    "milestone": "v0.4",
+    "workstream": "extensions",
+    "priority": "P0",
+    "depends_on": [
+      "EXT-001"
+    ],
+    "allowed_paths": [
+      "app/Modules/Extensions/",
+      "extensions/",
+      "tests/"
+    ],
+    "acceptance": "Deliver lifecycle and dependencies within approved contracts; add positive and failure tests; document public interfaces and report actual test results and security/performance/hosting impact.",
+    "review": [
+      "independent maintainer",
+      "security reviewer"
+    ]
+  },
+  {
+    "id": "EXT-003",
+    "title": "Hooks routes and services",
+    "milestone": "v0.4",
+    "workstream": "extensions",
+    "priority": "P0",
+    "depends_on": [
+      "EXT-002"
+    ],
+    "allowed_paths": [
+      "app/Modules/Extensions/",
+      "extensions/",
+      "tests/"
+    ],
+    "acceptance": "Deliver hooks routes and services within approved contracts; add positive and failure tests; document public interfaces and report actual test results and security/performance/hosting impact.",
+    "review": [
+      "independent maintainer",
+      "security reviewer"
+    ]
+  },
+  {
+    "id": "EXT-004",
+    "title": "Admin navigation and template slots",
+    "milestone": "v0.4",
+    "workstream": "extensions",
+    "priority": "P0",
+    "depends_on": [
+      "EXT-003"
+    ],
+    "allowed_paths": [
+      "app/Modules/Extensions/",
+      "extensions/",
+      "tests/"
+    ],
+    "acceptance": "Deliver admin navigation and template slots within approved contracts; add positive and failure tests; document public interfaces and report actual test results and security/performance/hosting impact.",
+    "review": [
+      "independent maintainer",
+      "security reviewer"
+    ]
+  },
+  {
+    "id": "EXT-005",
+    "title": "Migrations and compatibility",
+    "milestone": "v0.4",
+    "workstream": "extensions",
+    "priority": "P0",
+    "depends_on": [
+      "EXT-004"
+    ],
+    "allowed_paths": [
+      "app/Modules/Extensions/",
+      "extensions/",
+      "tests/"
+    ],
+    "acceptance": "Deliver migrations and compatibility within approved contracts; add positive and failure tests; document public interfaces and report actual test results and security/performance/hosting impact.",
+    "review": [
+      "independent maintainer",
+      "security reviewer"
+    ]
+  },
+  {
+    "id": "EXT-006",
+    "title": "Package integrity and safe mode",
+    "milestone": "v0.4",
+    "workstream": "extensions",
+    "priority": "P0",
+    "depends_on": [
+      "EXT-005"
+    ],
+    "allowed_paths": [
+      "app/Modules/Extensions/",
+      "extensions/",
+      "tests/"
+    ],
+    "acceptance": "Deliver package integrity and safe mode within approved contracts; add positive and failure tests; document public interfaces and report actual test results and security/performance/hosting impact.",
+    "review": [
+      "independent maintainer",
+      "security reviewer"
+    ]
+  },
+  {
+    "id": "EXT-007",
+    "title": "SDK and sample extension",
+    "milestone": "v0.4",
+    "workstream": "extensions",
+    "priority": "P0",
+    "depends_on": [
+      "EXT-006"
+    ],
+    "allowed_paths": [
+      "app/Modules/Extensions/",
+      "extensions/",
+      "tests/"
+    ],
+    "acceptance": "Deliver sdk and sample extension within approved contracts; add positive and failure tests; document public interfaces and report actual test results and security/performance/hosting impact.",
+    "review": [
+      "independent maintainer",
+      "security reviewer"
+    ]
+  },
+  {
+    "id": "API-001",
+    "title": "OpenAPI and versioned routes",
+    "milestone": "v0.4",
+    "workstream": "api",
+    "priority": "P0",
+    "depends_on": [
+      "QA-003",
+      "SEC-005",
+      "CORE-006"
+    ],
+    "allowed_paths": [
+      "app/Modules/Api/",
+      "docs/api/",
+      "tests/"
+    ],
+    "acceptance": "Deliver openapi and versioned routes within approved contracts; add positive and failure tests; document public interfaces and report actual test results and security/performance/hosting impact.",
+    "review": [
+      "independent maintainer"
+    ]
+  },
+  {
+    "id": "API-002",
+    "title": "Scopes and error responses",
+    "milestone": "v0.4",
+    "workstream": "api",
+    "priority": "P0",
+    "depends_on": [
+      "API-001"
+    ],
+    "allowed_paths": [
+      "app/Modules/Api/",
+      "docs/api/",
+      "tests/"
+    ],
+    "acceptance": "Deliver scopes and error responses within approved contracts; add positive and failure tests; document public interfaces and report actual test results and security/performance/hosting impact.",
+    "review": [
+      "independent maintainer"
+    ]
+  },
+  {
+    "id": "API-003",
+    "title": "Pagination and filters",
+    "milestone": "v0.4",
+    "workstream": "api",
+    "priority": "P0",
+    "depends_on": [
+      "API-002"
+    ],
+    "allowed_paths": [
+      "app/Modules/Api/",
+      "docs/api/",
+      "tests/"
+    ],
+    "acceptance": "Deliver pagination and filters within approved contracts; add positive and failure tests; document public interfaces and report actual test results and security/performance/hosting impact.",
+    "review": [
+      "independent maintainer"
+    ]
+  },
+  {
+    "id": "API-004",
+    "title": "Mutation idempotency",
+    "milestone": "v0.4",
+    "workstream": "api",
+    "priority": "P0",
+    "depends_on": [
+      "API-003"
+    ],
+    "allowed_paths": [
+      "app/Modules/Api/",
+      "docs/api/",
+      "tests/"
+    ],
+    "acceptance": "Deliver mutation idempotency within approved contracts; add positive and failure tests; document public interfaces and report actual test results and security/performance/hosting impact.",
+    "review": [
+      "independent maintainer"
+    ]
+  },
+  {
+    "id": "API-005",
+    "title": "Signed webhooks",
+    "milestone": "v0.4",
+    "workstream": "api",
+    "priority": "P0",
+    "depends_on": [
+      "API-004"
+    ],
+    "allowed_paths": [
+      "app/Modules/Api/",
+      "docs/api/",
+      "tests/"
+    ],
+    "acceptance": "Deliver signed webhooks within approved contracts; add positive and failure tests; document public interfaces and report actual test results and security/performance/hosting impact.",
+    "review": [
+      "independent maintainer"
+    ]
+  },
+  {
+    "id": "API-006",
+    "title": "Contract tests and documentation",
+    "milestone": "v0.4",
+    "workstream": "api",
+    "priority": "P0",
+    "depends_on": [
+      "API-005"
+    ],
+    "allowed_paths": [
+      "app/Modules/Api/",
+      "docs/api/",
+      "tests/"
+    ],
+    "acceptance": "Deliver contract tests and documentation within approved contracts; add positive and failure tests; document public interfaces and report actual test results and security/performance/hosting impact.",
+    "review": [
+      "independent maintainer"
+    ]
+  },
+  {
+    "id": "INS-001",
+    "title": "Hosting feasibility and private paths",
+    "milestone": "v0.5",
+    "workstream": "installer",
+    "priority": "P0",
+    "depends_on": [
+      "GOV-005",
+      "DB-002",
+      "SEC-001"
+    ],
+    "allowed_paths": [
+      "app/Modules/Installer/",
+      "tests/"
+    ],
+    "acceptance": "Deliver hosting feasibility and private paths within approved contracts; add positive and failure tests; document public interfaces and report actual test results and security/performance/hosting impact.",
+    "review": [
+      "independent maintainer",
+      "security reviewer"
+    ]
+  },
+  {
+    "id": "INS-002",
+    "title": "Browser setup and ownership proof",
+    "milestone": "v0.5",
+    "workstream": "installer",
+    "priority": "P0",
+    "depends_on": [
+      "INS-001"
+    ],
+    "allowed_paths": [
+      "app/Modules/Installer/",
+      "tests/"
+    ],
+    "acceptance": "Deliver browser setup and ownership proof within approved contracts; add positive and failure tests; document public interfaces and report actual test results and security/performance/hosting impact.",
+    "review": [
+      "independent maintainer",
+      "security reviewer"
+    ]
+  },
+  {
+    "id": "INS-003",
+    "title": "Database and admin creation",
+    "milestone": "v0.5",
+    "workstream": "installer",
+    "priority": "P0",
+    "depends_on": [
+      "INS-002"
+    ],
+    "allowed_paths": [
+      "app/Modules/Installer/",
+      "tests/"
+    ],
+    "acceptance": "Deliver database and admin creation within approved contracts; add positive and failure tests; document public interfaces and report actual test results and security/performance/hosting impact.",
+    "review": [
+      "independent maintainer",
+      "security reviewer"
+    ]
+  },
+  {
+    "id": "INS-004",
+    "title": "Subdirectory and rewrite fallback",
+    "milestone": "v0.5",
+    "workstream": "installer",
+    "priority": "P0",
+    "depends_on": [
+      "INS-003"
+    ],
+    "allowed_paths": [
+      "app/Modules/Installer/",
+      "tests/"
+    ],
+    "acceptance": "Deliver subdirectory and rewrite fallback within approved contracts; add positive and failure tests; document public interfaces and report actual test results and security/performance/hosting impact.",
+    "review": [
+      "independent maintainer",
+      "security reviewer"
+    ]
+  },
+  {
+    "id": "INS-005",
+    "title": "Lock and health checks",
+    "milestone": "v0.5",
+    "workstream": "installer",
+    "priority": "P0",
+    "depends_on": [
+      "INS-004"
+    ],
+    "allowed_paths": [
+      "app/Modules/Installer/",
+      "tests/"
+    ],
+    "acceptance": "Deliver lock and health checks within approved contracts; add positive and failure tests; document public interfaces and report actual test results and security/performance/hosting impact.",
+    "review": [
+      "independent maintainer",
+      "security reviewer"
+    ]
+  },
+  {
+    "id": "INS-006",
+    "title": "Release ZIP and hosting tests",
+    "milestone": "v0.5",
+    "workstream": "installer",
+    "priority": "P0",
+    "depends_on": [
+      "INS-005"
+    ],
+    "allowed_paths": [
+      "app/Modules/Installer/",
+      "tests/"
+    ],
+    "acceptance": "Deliver release zip and hosting tests within approved contracts; add positive and failure tests; document public interfaces and report actual test results and security/performance/hosting impact.",
+    "review": [
+      "independent maintainer",
+      "security reviewer"
+    ]
+  },
+  {
+    "id": "UPD-001",
+    "title": "Signed metadata and trusted keys",
+    "milestone": "v0.5",
+    "workstream": "updates",
+    "priority": "P0",
+    "depends_on": [
+      "INS-005",
+      "SEC-003"
+    ],
+    "allowed_paths": [
+      "app/Modules/Updater/",
+      "tests/"
+    ],
+    "acceptance": "Deliver signed metadata and trusted keys within approved contracts; add positive and failure tests; document public interfaces and report actual test results and security/performance/hosting impact.",
+    "review": [
+      "independent maintainer",
+      "security reviewer"
+    ]
+  },
+  {
+    "id": "UPD-002",
+    "title": "Archive validation and staging",
+    "milestone": "v0.5",
+    "workstream": "updates",
+    "priority": "P0",
+    "depends_on": [
+      "UPD-001"
+    ],
+    "allowed_paths": [
+      "app/Modules/Updater/",
+      "tests/"
+    ],
+    "acceptance": "Deliver archive validation and staging within approved contracts; add positive and failure tests; document public interfaces and report actual test results and security/performance/hosting impact.",
+    "review": [
+      "independent maintainer",
+      "security reviewer"
+    ]
+  },
+  {
+    "id": "UPD-003",
+    "title": "Backup and restore",
+    "milestone": "v0.5",
+    "workstream": "updates",
+    "priority": "P0",
+    "depends_on": [
+      "UPD-002"
+    ],
+    "allowed_paths": [
+      "app/Modules/Updater/",
+      "tests/"
+    ],
+    "acceptance": "Deliver backup and restore within approved contracts; add positive and failure tests; document public interfaces and report actual test results and security/performance/hosting impact.",
+    "review": [
+      "independent maintainer",
+      "security reviewer"
+    ]
+  },
+  {
+    "id": "UPD-004",
+    "title": "Maintenance lock and journal",
+    "milestone": "v0.5",
+    "workstream": "updates",
+    "priority": "P0",
+    "depends_on": [
+      "UPD-003"
+    ],
+    "allowed_paths": [
+      "app/Modules/Updater/",
+      "tests/"
+    ],
+    "acceptance": "Deliver maintenance lock and journal within approved contracts; add positive and failure tests; document public interfaces and report actual test results and security/performance/hosting impact.",
+    "review": [
+      "independent maintainer",
+      "security reviewer"
+    ]
+  },
+  {
+    "id": "UPD-005",
+    "title": "Resumable migration and recovery",
+    "milestone": "v0.5",
+    "workstream": "updates",
+    "priority": "P0",
+    "depends_on": [
+      "UPD-004"
+    ],
+    "allowed_paths": [
+      "app/Modules/Updater/",
+      "tests/"
+    ],
+    "acceptance": "Deliver resumable migration and recovery within approved contracts; add positive and failure tests; document public interfaces and report actual test results and security/performance/hosting impact.",
+    "review": [
+      "independent maintainer",
+      "security reviewer"
+    ]
+  },
+  {
+    "id": "UPD-006",
+    "title": "Admin UI and manual fallback",
+    "milestone": "v0.5",
+    "workstream": "updates",
+    "priority": "P0",
+    "depends_on": [
+      "UPD-005",
+      "ADMIN-001"
+    ],
+    "allowed_paths": [
+      "app/Modules/Updater/",
+      "tests/"
+    ],
+    "acceptance": "Deliver admin ui and manual fallback within approved contracts; add positive and failure tests; document public interfaces and report actual test results and security/performance/hosting impact.",
+    "review": [
+      "independent maintainer",
+      "security reviewer"
+    ]
+  },
+  {
+    "id": "UPD-007",
+    "title": "Interrupted update and rotation tests",
+    "milestone": "v0.5",
+    "workstream": "updates",
+    "priority": "P0",
+    "depends_on": [
+      "UPD-006"
+    ],
+    "allowed_paths": [
+      "app/Modules/Updater/",
+      "tests/"
+    ],
+    "acceptance": "Deliver interrupted update and rotation tests within approved contracts; add positive and failure tests; document public interfaces and report actual test results and security/performance/hosting impact.",
+    "review": [
+      "independent maintainer",
+      "security reviewer"
+    ]
+  },
+  {
+    "id": "AI-001",
+    "title": "Provider interface and settings",
+    "milestone": "v0.6",
+    "workstream": "ai",
+    "priority": "P1",
+    "depends_on": [
+      "API-002",
+      "QA-011"
+    ],
+    "allowed_paths": [
+      "app/Modules/Ai/",
+      "tests/"
+    ],
+    "acceptance": "Deliver provider interface and settings within approved contracts; add positive and failure tests; document public interfaces and report actual test results and security/performance/hosting impact.",
+    "review": [
+      "independent maintainer"
+    ]
+  },
+  {
+    "id": "AI-002",
+    "title": "Cost limits and privacy",
+    "milestone": "v0.6",
+    "workstream": "ai",
+    "priority": "P1",
+    "depends_on": [
+      "AI-001"
+    ],
+    "allowed_paths": [
+      "app/Modules/Ai/",
+      "tests/"
+    ],
+    "acceptance": "Deliver cost limits and privacy within approved contracts; add positive and failure tests; document public interfaces and report actual test results and security/performance/hosting impact.",
+    "review": [
+      "independent maintainer"
+    ]
+  },
+  {
+    "id": "AI-003",
+    "title": "Draft answers and clarifications",
+    "milestone": "v0.6",
+    "workstream": "ai",
+    "priority": "P1",
+    "depends_on": [
+      "AI-002"
+    ],
+    "allowed_paths": [
+      "app/Modules/Ai/",
+      "tests/"
+    ],
+    "acceptance": "Deliver draft answers and clarifications within approved contracts; add positive and failure tests; document public interfaces and report actual test results and security/performance/hosting impact.",
+    "review": [
+      "independent maintainer"
+    ]
+  },
+  {
+    "id": "AI-004",
+    "title": "Grounded citations and provenance",
+    "milestone": "v0.6",
+    "workstream": "ai",
+    "priority": "P1",
+    "depends_on": [
+      "AI-003"
+    ],
+    "allowed_paths": [
+      "app/Modules/Ai/",
+      "tests/"
+    ],
+    "acceptance": "Deliver grounded citations and provenance within approved contracts; add positive and failure tests; document public interfaces and report actual test results and security/performance/hosting impact.",
+    "review": [
+      "independent maintainer"
+    ]
+  },
+  {
+    "id": "AI-005",
+    "title": "Duplicate and gap detection",
+    "milestone": "v0.6",
+    "workstream": "ai",
+    "priority": "P1",
+    "depends_on": [
+      "AI-004"
+    ],
+    "allowed_paths": [
+      "app/Modules/Ai/",
+      "tests/"
+    ],
+    "acceptance": "Deliver duplicate and gap detection within approved contracts; add positive and failure tests; document public interfaces and report actual test results and security/performance/hosting impact.",
+    "review": [
+      "independent maintainer"
+    ]
+  },
+  {
+    "id": "AI-006",
+    "title": "Optional semantic retrieval and evaluation",
+    "milestone": "v0.6",
+    "workstream": "ai",
+    "priority": "P1",
+    "depends_on": [
+      "AI-005"
+    ],
+    "allowed_paths": [
+      "app/Modules/Ai/",
+      "tests/"
+    ],
+    "acceptance": "Deliver optional semantic retrieval and evaluation within approved contracts; add positive and failure tests; document public interfaces and report actual test results and security/performance/hosting impact.",
+    "review": [
+      "independent maintainer"
+    ]
+  },
+  {
+    "id": "MCP-001",
+    "title": "Protocol ADR and transport",
+    "milestone": "v0.6",
+    "workstream": "mcp",
+    "priority": "P1",
+    "depends_on": [
+      "API-002",
+      "QA-011"
+    ],
+    "allowed_paths": [
+      "app/Modules/Mcp/",
+      "tests/"
+    ],
+    "acceptance": "Deliver protocol adr and transport within approved contracts; add positive and failure tests; document public interfaces and report actual test results and security/performance/hosting impact.",
+    "review": [
+      "independent maintainer",
+      "security reviewer"
+    ]
+  },
+  {
+    "id": "MCP-002",
+    "title": "Read-only registry and tools",
+    "milestone": "v0.6",
+    "workstream": "mcp",
+    "priority": "P1",
+    "depends_on": [
+      "MCP-001"
+    ],
+    "allowed_paths": [
+      "app/Modules/Mcp/",
+      "tests/"
+    ],
+    "acceptance": "Deliver read-only registry and tools within approved contracts; add positive and failure tests; document public interfaces and report actual test results and security/performance/hosting impact.",
+    "review": [
+      "independent maintainer",
+      "security reviewer"
+    ]
+  },
+  {
+    "id": "MCP-003",
+    "title": "Resource authorization and audit",
+    "milestone": "v0.6",
+    "workstream": "mcp",
+    "priority": "P1",
+    "depends_on": [
+      "MCP-002"
+    ],
+    "allowed_paths": [
+      "app/Modules/Mcp/",
+      "tests/"
+    ],
+    "acceptance": "Deliver resource authorization and audit within approved contracts; add positive and failure tests; document public interfaces and report actual test results and security/performance/hosting impact.",
+    "review": [
+      "independent maintainer",
+      "security reviewer"
+    ]
+  },
+  {
+    "id": "MCP-004",
+    "title": "Scoped draft and feedback mutations",
+    "milestone": "v0.6",
+    "workstream": "mcp",
+    "priority": "P1",
+    "depends_on": [
+      "MCP-003"
+    ],
+    "allowed_paths": [
+      "app/Modules/Mcp/",
+      "tests/"
+    ],
+    "acceptance": "Deliver scoped draft and feedback mutations within approved contracts; add positive and failure tests; document public interfaces and report actual test results and security/performance/hosting impact.",
+    "review": [
+      "independent maintainer",
+      "security reviewer"
+    ]
+  },
+  {
+    "id": "MCP-005",
+    "title": "Optional outbound client and SSRF protections",
+    "milestone": "v0.6",
+    "workstream": "mcp",
+    "priority": "P1",
+    "depends_on": [
+      "MCP-004"
+    ],
+    "allowed_paths": [
+      "app/Modules/Mcp/",
+      "tests/"
+    ],
+    "acceptance": "Deliver optional outbound client and ssrf protections within approved contracts; add positive and failure tests; document public interfaces and report actual test results and security/performance/hosting impact.",
+    "review": [
+      "independent maintainer",
+      "security reviewer"
+    ]
+  },
+  {
+    "id": "MCP-006",
+    "title": "Conformance and compatibility tests",
+    "milestone": "v0.6",
+    "workstream": "mcp",
+    "priority": "P1",
+    "depends_on": [
+      "MCP-005"
+    ],
+    "allowed_paths": [
+      "app/Modules/Mcp/",
+      "tests/"
+    ],
+    "acceptance": "Deliver conformance and compatibility tests within approved contracts; add positive and failure tests; document public interfaces and report actual test results and security/performance/hosting impact.",
+    "review": [
+      "independent maintainer",
+      "security reviewer"
+    ]
+  },
+  {
+    "id": "REL-001",
+    "title": "Integration and cross-database tests",
+    "milestone": "v1.0",
+    "workstream": "quality",
+    "priority": "P0",
+    "depends_on": [
+      "UI-008",
+      "ADMIN-007",
+      "EXT-007",
+      "API-006",
+      "INS-006",
+      "UPD-007",
+      "AI-006",
+      "MCP-006",
+      "SEARCH-003",
+      "LOG-005",
+      "CACHE-007",
+      "QA-012",
+      "SEC-009"
+    ],
+    "allowed_paths": [
+      "tests/",
+      "docs/",
+      ".github/"
+    ],
+    "acceptance": "Deliver integration and cross-database tests within approved contracts; add positive and failure tests; document public interfaces and report actual test results and security/performance/hosting impact.",
+    "review": [
+      "independent maintainer"
+    ]
+  },
+  {
+    "id": "REL-002",
+    "title": "Security and accessibility audit",
+    "milestone": "v1.0",
+    "workstream": "quality",
+    "priority": "P0",
+    "depends_on": [
+      "REL-001"
+    ],
+    "allowed_paths": [
+      "tests/",
+      "docs/",
+      ".github/"
+    ],
+    "acceptance": "Deliver security and accessibility audit within approved contracts; add positive and failure tests; document public interfaces and report actual test results and security/performance/hosting impact.",
+    "review": [
+      "independent maintainer"
+    ]
+  },
+  {
+    "id": "REL-003",
+    "title": "Shared hosting and Lighthouse benchmarks",
+    "milestone": "v1.0",
+    "workstream": "quality",
+    "priority": "P0",
+    "depends_on": [
+      "REL-002"
+    ],
+    "allowed_paths": [
+      "tests/",
+      "docs/",
+      ".github/"
+    ],
+    "acceptance": "Deliver shared hosting and lighthouse benchmarks within approved contracts; add positive and failure tests; document public interfaces and report actual test results and security/performance/hosting impact.",
+    "review": [
+      "independent maintainer"
+    ]
+  },
+  {
+    "id": "REL-004",
+    "title": "Alpha beta feedback and regression fixes",
+    "milestone": "v1.0",
+    "workstream": "quality",
+    "priority": "P0",
+    "depends_on": [
+      "REL-003"
+    ],
+    "allowed_paths": [
+      "tests/",
+      "docs/",
+      ".github/"
+    ],
+    "acceptance": "Deliver alpha beta feedback and regression fixes within approved contracts; add positive and failure tests; document public interfaces and report actual test results and security/performance/hosting impact.",
+    "review": [
+      "independent maintainer"
+    ]
+  },
+  {
+    "id": "REL-005",
+    "title": "Signed release SBOM and recovery evidence",
+    "milestone": "v1.0",
+    "workstream": "quality",
+    "priority": "P0",
+    "depends_on": [
+      "REL-004"
+    ],
+    "allowed_paths": [
+      "tests/",
+      "docs/",
+      ".github/"
+    ],
+    "acceptance": "Deliver signed release sbom and recovery evidence within approved contracts; add positive and failure tests; document public interfaces and report actual test results and security/performance/hosting impact.",
+    "review": [
+      "independent maintainer"
+    ]
+  },
+  {
+    "id": "HOST-001",
+    "title": "Prototype shared hosting filesystem and PHP limits",
+    "milestone": "M0",
+    "workstream": "installer",
+    "priority": "P0",
+    "depends_on": [
+      "GOV-005"
+    ],
+    "allowed_paths": [
+      "docs/",
+      "tests/"
+    ],
+    "acceptance": "Record real or reproducible reference hosting checks; identify blockers and safe deployment layout.",
+    "review": [
+      "independent maintainer",
+      "security reviewer"
+    ]
+  }
+]

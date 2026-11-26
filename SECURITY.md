@@ -1,0 +1,2 @@
+# Security policy
+Pre-alpha: no supported production release yet. Do not disclose exploitable vulnerabilities in public issues. Use GitHub private vulnerability reporting once the maintainer enables it. If unavailable, request a private reporting channel without disclosing details publicly. Include affected version, reproduction and impact. Maintainers coordinate remediation and disclosure. See [security requirements](docs/SECURITY_REQUIREMENTS.md).

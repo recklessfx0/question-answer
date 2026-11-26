@@ -1,0 +1,2 @@
+# Roadmap
+M0 governance and contracts; v0.1 framework/data/cache/logging; v0.2 authentication and Q&A; v0.3 public UI/admin; v0.4 extension SDK and REST; v0.5 installer/updater; v0.6 optional AI/MCP; v0.7 integration; v0.8 alpha; v0.9 beta; v1.0 RC and stable. Security, performance, hosting feasibility and tests run from day one. Milestones are dependency gates, not dates. See backlog/tasks.json for issue-level dependencies. Do not start blocked work.

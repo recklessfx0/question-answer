@@ -1,0 +1,21 @@
+name: Engineering task
+description: Scoped implementation or specification
+body:
+  - type: input
+    id: task
+    attributes:
+      label: Task ID
+    validations:
+      required: true
+  - type: textarea
+    id: spec
+    attributes:
+      label: Objective, dependencies, allowed paths and scope
+    validations:
+      required: true
+  - type: textarea
+    id: acceptance
+    attributes:
+      label: Acceptance criteria, tests and review requirements
+    validations:
+      required: true

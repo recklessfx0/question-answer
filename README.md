@@ -1,31 +1,23 @@
-# Open Knowledge Q&A Platform
+# QuestionAnswer
 
-> Working title · AI-native, headless Q&A CMS · Design proposal
+**Open-source knowledge infrastructure for humans and AI.**
 
-Create knowledge once, verify it continuously, and deliver it to people, applications and AI agents.
+QuestionAnswer is a planned self-hosted Q&A CMS with a lightweight PHP 8.5 framework, nested questions, answers and clarifications, mobile-first progressive enhancement, extensions, REST and MCP. It is designed for ordinary shared hosting.
 
-## Vision
+> Status: pre-alpha planning repository. No CMS runtime is implemented yet. Do not deploy this repository as a CMS.
 
-A source-backed knowledge management platform where questions, contextual answers, evidence and revisions are first-class objects. The platform provides a web experience, management API and native Model Context Protocol (MCP) interface over the same permission-aware knowledge services.
+## Start contributing
 
-## Documentation
+Read [project charter](docs/PROJECT_CHARTER.md), [architecture](docs/ARCHITECTURE.md), [AGENTS.md](AGENTS.md), [contribution guide](CONTRIBUTING.md) and [roadmap](docs/ROADMAP.md). Claim an approved issue before coding. Colnera may coordinate contributors and agents; GitHub is the authoritative code and review record.
 
-- [Whitepaper](docs/WHITEPAPER.md) — rationale, product principles, requirements and governance.
-- [Project map and roadmap](docs/PROJECT_MAP.md) — workstreams, dependencies, milestones and acceptance criteria.
-- [Technical architecture](docs/ARCHITECTURE.md) — domain model, service boundaries, API and MCP contracts, security and deployment.
+## Maintainer setup
 
-## Initial scope
+Create an empty GitHub repository, push this directory, configure branch protection and review ownership, then create issues using `tools/import_issues.py --help`. See [GitHub setup](docs/GITHUB_SETUP.md). The issue importer is optional and requires Python 3 and authenticated GitHub CLI on a maintainer machine, not production.
 
-The MVP focuses on editorially managed Q&A, evidence, publication workflows, hybrid retrieval and read-only MCP access. Generated answers, autonomous editing, community voting and marketplace capabilities are later milestones.
+## Goals
 
-## Status
-
-Pre-implementation. These documents describe intended functionality, not existing software. No installation command is provided until a runnable implementation exists.
-
-## Contributing
-
-Open a GitHub issue to discuss a feature, architecture decision or documentation correction. For significant changes, propose an architecture decision record (ADR) describing context, alternatives, decision and consequences. Never submit credentials or private knowledge in public issues.
+PHP 8.5; HTML/CSS/JS; no mandatory Node, Redis, Docker, SSH or worker on production; installable ZIP; browser installer and recoverable updater; optional AI; public read-only MCP before scoped mutations. Lighthouse 100 in four categories is an aspirational reference-environment target, not a guarantee.
 
 ## License
 
-Not yet selected. The repository owner should choose a license before distributing or accepting code contributions. Apache-2.0 is a candidate if permissive adoption and an explicit patent grant are desired.
+Apache-2.0 is the proposed project license; confirm before accepting contributions. See LICENSE.

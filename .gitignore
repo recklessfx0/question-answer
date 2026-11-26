@@ -1,0 +1,11 @@
+/vendor/
+/node_modules/
+/.env
+/.env.*
+!/.env.example
+/storage/*
+!/storage/.gitkeep
+/config/local.php
+/.phpunit.cache/
+/coverage/
+/backlog/github-issue-map.json
