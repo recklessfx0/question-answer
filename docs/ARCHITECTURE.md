@@ -8,6 +8,9 @@ Request → bootstrap/kernel → middleware → router → controller → applic
 ## Contracts before parallel coding
 Approve interfaces for HTTP, routing, configuration, database/migrations, authorization, events, cache, logging, rendering, jobs, extension lifecycle and content service. Publish contract tests and ADRs. Changes require architecture review and affected owners. Use versioned public contracts; internal classes are not extension APIs.
 
+## Framework architecture and boundaries
+Four unidirectional layers separate the framework from the CMS: `app/Contracts` (zero internal dependencies), `app/Core` (depends only on `app/Contracts`), `app/Modules/*` (depend only on `app/Contracts`, never on `app/Core` internals or other modules), and `extensions/*` (depend only on `app/Contracts`). Discovery, configuration, container wiring, routing, events and templates compile at build/deploy/install time into `storage/compiled/`, while requests run a pre-boot L1 fast path and a deterministic compiled middleware pipeline over a shared application spine for Web, REST, MCP and CLI. See [framework architecture](FRAMEWORK_ARCHITECTURE.md) and [ADR 0004](adr/0004-framework-architecture.md).
+
 ## Data
 Content nodes with type, parent, root, author, status, visibility, timestamps and revision pointer; specialized questions/answers; revisions, sources, translations, tags, collections, votes, reports, users, roles, permissions, sessions, tokens, settings, extensions, jobs and audit events. Enforce parent/type rules, no cycles, bounded traversal, indexes on root/parent and status, transactions for accepted answers and vote uniqueness. Separate clarification from comments. Deletion and moderation must preserve privacy and thread integrity. Test both database engines; avoid vendor-specific SQL in core unless abstracted.
 
