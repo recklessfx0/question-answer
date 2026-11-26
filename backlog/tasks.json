@@ -2447,5 +2447,233 @@
       "independent maintainer",
       "security reviewer"
     ]
+  },
+  {
+    "id": "I18N-001",
+    "title": "Approve localization model and contracts",
+    "milestone": "M0",
+    "workstream": "localization",
+    "priority": "P0",
+    "depends_on": [
+      "GOV-004",
+      "GOV-011"
+    ],
+    "allowed_paths": [
+      "docs/",
+      "app/Contracts/",
+      "backlog/"
+    ],
+    "acceptance": "ADR 0001 accepted by an independent maintainer with the three localization contracts approved; open decisions recorded with owners; no implementation merged before approval.",
+    "review": [
+      "independent maintainer"
+    ]
+  },
+  {
+    "id": "I18N-002",
+    "title": "Locale negotiation and fallback chain",
+    "milestone": "v0.1",
+    "workstream": "localization",
+    "priority": "P0",
+    "depends_on": [
+      "I18N-001",
+      "CORE-002",
+      "CORE-003"
+    ],
+    "allowed_paths": [
+      "app/Core/",
+      "app/Contracts/",
+      "config/",
+      "tests/"
+    ],
+    "acceptance": "Explicit preference then header then default resolves deterministically; unknown and disabled locales are rejected against the installed allow-list; negative tests cover malformed oversized and CRLF header input.",
+    "review": [
+      "independent maintainer"
+    ]
+  },
+  {
+    "id": "I18N-003",
+    "title": "ICU catalogues and pluralization",
+    "milestone": "v0.1",
+    "workstream": "localization",
+    "priority": "P0",
+    "depends_on": [
+      "I18N-002",
+      "CORE-008"
+    ],
+    "allowed_paths": [
+      "app/Core/",
+      "resources/lang/",
+      "tests/"
+    ],
+    "acceptance": "Catalogues load per locale and domain through the loader contract; plural and select messages render correctly; a missing default-locale key fails the build; the request path performs no directory scanning.",
+    "review": [
+      "independent maintainer"
+    ]
+  },
+  {
+    "id": "I18N-004",
+    "title": "Content translation groups and stale detection",
+    "milestone": "v0.2",
+    "workstream": "localization",
+    "priority": "P0",
+    "depends_on": [
+      "QA-001",
+      "QA-007"
+    ],
+    "allowed_paths": [
+      "app/Modules/Localization/",
+      "database/migrations/",
+      "tests/"
+    ],
+    "acceptance": "One translation group links per-locale records that keep their own revision chain; editing a source marks dependents stale by revision hash; migrations are additive and reversible by dropping the new tables.",
+    "review": [
+      "independent maintainer"
+    ]
+  },
+  {
+    "id": "I18N-005",
+    "title": "Translation workflow and four-eyes review",
+    "milestone": "v0.2",
+    "workstream": "localization",
+    "priority": "P0",
+    "depends_on": [
+      "I18N-004",
+      "SEC-003"
+    ],
+    "allowed_paths": [
+      "app/Modules/Localization/",
+      "app/Modules/Questions/",
+      "tests/"
+    ],
+    "acceptance": "Status transitions are enforced server-side; a reviewer cannot approve their own translation; machine drafts record provider and timestamp and are disclosed; every transition is audited.",
+    "review": [
+      "independent maintainer",
+      "security reviewer"
+    ]
+  },
+  {
+    "id": "I18N-006",
+    "title": "Locale routing canonical and hreflang",
+    "milestone": "v0.3",
+    "workstream": "localization",
+    "priority": "P0",
+    "depends_on": [
+      "I18N-002",
+      "UI-002"
+    ],
+    "allowed_paths": [
+      "app/Modules/Routing/",
+      "resources/",
+      "themes/",
+      "tests/"
+    ],
+    "acceptance": "The default locale is unprefixed and other locales are path-prefixed; every locale page emits its own canonical and a reciprocal hreflang set with x-default; unknown locale prefixes return 404 without redirect.",
+    "review": [
+      "independent maintainer"
+    ]
+  },
+  {
+    "id": "I18N-007",
+    "title": "Localization administration and XLIFF exchange",
+    "milestone": "v0.3",
+    "workstream": "localization",
+    "priority": "P0",
+    "depends_on": [
+      "ADMIN-004",
+      "I18N-003"
+    ],
+    "allowed_paths": [
+      "app/Modules/Administration/",
+      "app/Modules/Localization/",
+      "tools/",
+      "tests/"
+    ],
+    "acceptance": "Administrators enable locales and edit message overrides with an audit trail; completeness and stale reports render; XLIFF import validates and previews before applying; exports are deterministic.",
+    "review": [
+      "independent maintainer"
+    ]
+  },
+  {
+    "id": "I18N-008",
+    "title": "Per-locale search indexing and normalization",
+    "milestone": "v0.3",
+    "workstream": "localization",
+    "priority": "P0",
+    "depends_on": [
+      "SEARCH-001",
+      "I18N-004"
+    ],
+    "allowed_paths": [
+      "app/Modules/Search/",
+      "tests/"
+    ],
+    "acceptance": "Each published locale is indexed separately with language-aware normalization; queries search the requested locale then the documented fallback with disclosure; an unindexed locale never returns silently empty results.",
+    "review": [
+      "independent maintainer"
+    ]
+  },
+  {
+    "id": "I18N-009",
+    "title": "Locale negotiation for REST and MCP",
+    "milestone": "v0.4",
+    "workstream": "localization",
+    "priority": "P0",
+    "depends_on": [
+      "API-001",
+      "MCP-001",
+      "I18N-002"
+    ],
+    "allowed_paths": [
+      "app/Modules/Api/",
+      "app/Modules/Mcp/",
+      "docs/",
+      "tests/"
+    ],
+    "acceptance": "Read endpoints accept an explicit locale and otherwise negotiate the header; responses disclose resolved locale and fallback with Content-Language; write endpoints reject a missing locale as a validation error.",
+    "review": [
+      "independent maintainer"
+    ]
+  },
+  {
+    "id": "I18N-010",
+    "title": "Language pack extension type",
+    "milestone": "v0.4",
+    "workstream": "localization",
+    "priority": "P0",
+    "depends_on": [
+      "EXT-001",
+      "I18N-003"
+    ],
+    "allowed_paths": [
+      "app/Modules/Extensions/",
+      "extensions/",
+      "tests/"
+    ],
+    "acceptance": "Language packs install through the existing lifecycle as data only with no entrypoint; manifests declare locale and domains; conflicting keys resolve by declared precedence and uninstall leaves no orphan keys.",
+    "review": [
+      "independent maintainer",
+      "security reviewer"
+    ]
+  },
+  {
+    "id": "I18N-011",
+    "title": "Pseudo-localization and completeness gate",
+    "milestone": "v1.0",
+    "workstream": "localization",
+    "priority": "P1",
+    "depends_on": [
+      "I18N-006",
+      "REL-001"
+    ],
+    "allowed_paths": [
+      ".github/",
+      "resources/lang/",
+      "tools/",
+      "tests/"
+    ],
+    "acceptance": "CI renders every default message under pseudo-localization at 40% width expansion; default-locale completeness is enforced at 100%; RTL snapshots and hreflang reciprocity run automatically.",
+    "review": [
+      "independent maintainer"
+    ]
   }
 ]

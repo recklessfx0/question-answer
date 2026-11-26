@@ -34,6 +34,7 @@ Gates: **Merge** — required before code lands on `main`. **Release** — requi
 | SEC-C-04 | Uploads validated by allow-list and `finfo`, stored non-executable outside the document root, served with `nosniff`. | Malicious-upload test. | Release |
 | SEC-C-05 | Server-side requests accept only allow-listed schemes and hosts; resolved IPs are checked against loopback, private, link-local, CGNAT and metadata ranges at dial time and again on every redirect; responses are size- and time-bounded. | SSRF test against a metadata address and a redirect pivot. | Release |
 | SEC-C-06 | Request bodies, headers, upload sizes and pagination bounds are capped; malformed input is rejected before work is done. | Boundary tests at each limit. | Merge |
+| SEC-C-07 | Locale input is validated against an installed allow-list before use in a path, cache key, header or catalogue load; `Accept-Language` parsing is bounded and rejects control characters; catalogue values are escaped at output and never evaluated. | Negative tests for unknown locale, traversal-shaped tag and CRLF header; bidi control characters stripped from input and imports. | Merge |
 
 ## D. Data, privacy and logging
 

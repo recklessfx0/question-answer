@@ -9,4 +9,8 @@ PHP 8.5 lint, PHPUnit unit/integration, PHPStan, coding style, Composer audit, s
 
 Every control in [security requirements](SECURITY_REQUIREMENTS.md) needs a negative test that fails closed — a test that only proves the happy path does not satisfy SEC-J-01. Security tests belong beside the behaviour they guard, name the control ID they cover, and are listed in a mapping table that the release checklist checks. A control without a negative test is unimplemented regardless of the code present.
 
+## Localization gates
+
+Contract tests cover `Translator`, `LocaleResolver` and `CatalogueLoader`; per-locale unit tests cover plural categories, selects, number and date patterns and the fallback chain. Negative tests cover unknown and disabled locales, malformed and oversized `Accept-Language`, CRLF injection, missing keys, malformed ICU patterns and bidi controls in input. CI renders every default message under pseudo-localization at 40% expansion, enforces 100% default-locale completeness, and runs RTL snapshots plus hreflang reciprocity. See [localization](I18N.md) and I18N-002 through I18N-011.
+
 The starter validates planning files and PHP syntax only. Implementation teams add the real suites and make the checks required; a release with a waived control records the reason, owner and expiry in the release checklist.

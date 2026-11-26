@@ -48,6 +48,7 @@ Anonymous reader or scraper · registered user · editor · administrator · ext
 10. **Dependency substitution.** A package typo-squat or a compromised release enters through Composer or a CI action. Control: lockfile, exact versions, review of new dependencies, SBOM per release (SEC-H-04).
 11. **Answer poisoning.** An unverified contributor publishes plausible but wrong content that agents then cite. Control: editorial verification state, evidence requirement, revision audit trail (SEC-D-03).
 12. **Secret echoes.** Tokens, passwords or prompt payloads appear in logs, error pages or stack traces. Control: redaction at the logger, generic production error pages (SEC-D-01).
+13. **Translation poisoning and direction spoofing.** A machine translation is published as editorial fact, a malicious language pack overrides a security-relevant message, or bidi override characters make one string render as another in an administrator's session. Control: four-eyes publication with machine-draft labelling and disclosure, catalogue precedence with signed packs, escaped output, and bidi control stripping on input and import (SEC-D-03, SEC-C-07, SEC-C-02).
 
 ## Assumptions and non-goals
 
@@ -59,4 +60,4 @@ Anonymous reader or scraper · registered user · editor · administrator · ext
 
 ## Review triggers
 
-New entry point or route · new credential or token type · new outbound request path · new file write or upload path · any change under `.github/` · any change to extension loading, installer or updater · any change to how AI or MCP output is consumed · new third-party dependency · first public release.
+New entry point or route · new credential or token type · new outbound request path · new file write or upload path · any change under `.github/` · any change to extension loading, installer or updater · any change to how AI or MCP output is consumed · new locale, catalogue or translation path · new third-party dependency · first public release.
