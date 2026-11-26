@@ -1,0 +1,158 @@
+<!-- specs/003-v02-security-auth-mail-and-qa-core/tasks.md -->
+# v0.2 — Security, Auth/2FA/Passkeys, SMTP Mail & Q&A Core — Tasks
+
+- [ ] T051 [SEC] Authentication and password hashing (`SEC-001`)
+  - Deliver authentication and password hashing within approved contracts; add positive and failure tests; document public interfaces and report actual test results and security/performance/hosting impact.
+  - **Allowed paths:** `app/Core/Security/`, `app/Modules/Users/`, `tests/`
+  - **References:** `docs/AUTH.md`, `docs/SECURITY_REQUIREMENTS.md`, `docs/THREAT_MODEL.md`, `docs/adr/0005-authentication-mfa-passkeys.md`
+  - **Needs:** T021, T031, T008.
+- [ ] T052 [SEC] Secure sessions (`SEC-002`)
+  - Deliver secure sessions within approved contracts; add positive and failure tests; document public interfaces and report actual test results and security/performance/hosting impact.
+  - **Allowed paths:** `app/Core/Security/`, `app/Modules/Users/`, `tests/`
+  - **References:** `docs/AUTH.md`, `docs/SECURITY_REQUIREMENTS.md`, `docs/THREAT_MODEL.md`, `docs/adr/0005-authentication-mfa-passkeys.md`
+  - **Needs:** T051.
+- [ ] T053 [SEC] Resource authorization and RBAC (`SEC-003`)
+  - Deliver resource authorization and rbac within approved contracts; add positive and failure tests; document public interfaces and report actual test results and security/performance/hosting impact.
+  - **Allowed paths:** `app/Core/Security/`, `app/Modules/Users/`, `tests/`
+  - **References:** `docs/AUTH.md`, `docs/SECURITY_REQUIREMENTS.md`, `docs/THREAT_MODEL.md`, `docs/adr/0005-authentication-mfa-passkeys.md`
+  - **Needs:** T052.
+- [ ] T054 [SEC] CSRF and security headers (`SEC-004`)
+  - Deliver csrf and security headers within approved contracts; add positive and failure tests; document public interfaces and report actual test results and security/performance/hosting impact.
+  - **Allowed paths:** `app/Core/Security/`, `app/Modules/Users/`, `tests/`
+  - **References:** `docs/AUTH.md`, `docs/SECURITY_REQUIREMENTS.md`, `docs/THREAT_MODEL.md`, `docs/adr/0005-authentication-mfa-passkeys.md`
+  - **Needs:** T053.
+- [ ] T055 [SEC] Rate limits and brute-force defense (`SEC-005`)
+  - Deliver rate limits and brute-force defense within approved contracts; add positive and failure tests; document public interfaces and report actual test results and security/performance/hosting impact.
+  - **Allowed paths:** `app/Core/Security/`, `app/Modules/Users/`, `tests/`
+  - **References:** `docs/AUTH.md`, `docs/SECURITY_REQUIREMENTS.md`, `docs/THREAT_MODEL.md`, `docs/adr/0005-authentication-mfa-passkeys.md`
+  - **Needs:** T054.
+- [ ] T056 [SEC] Upload and sanitization safeguards (`SEC-006`)
+  - Deliver upload and sanitization safeguards within approved contracts; add positive and failure tests; document public interfaces and report actual test results and security/performance/hosting impact.
+  - **Allowed paths:** `app/Core/Security/`, `app/Modules/Users/`, `tests/`
+  - **References:** `docs/AUTH.md`, `docs/SECURITY_REQUIREMENTS.md`, `docs/THREAT_MODEL.md`, `docs/adr/0005-authentication-mfa-passkeys.md`
+  - **Needs:** T055.
+- [ ] T057 [SEC] MFA and recovery (`SEC-007`)
+  - Deliver mfa and recovery within approved contracts; add positive and failure tests; document public interfaces and report actual test results and security/performance/hosting impact.
+  - **Allowed paths:** `app/Core/Security/`, `app/Modules/Users/`, `tests/`
+  - **References:** `docs/AUTH.md`, `docs/SECURITY_REQUIREMENTS.md`, `docs/THREAT_MODEL.md`, `docs/adr/0005-authentication-mfa-passkeys.md`
+  - **Needs:** T056.
+- [ ] T058 [SEC] Privacy export and deletion (`SEC-008`)
+  - Deliver privacy export and deletion within approved contracts; add positive and failure tests; document public interfaces and report actual test results and security/performance/hosting impact.
+  - **Allowed paths:** `app/Core/Security/`, `app/Modules/Users/`, `tests/`
+  - **References:** `docs/AUTH.md`, `docs/SECURITY_REQUIREMENTS.md`, `docs/THREAT_MODEL.md`, `docs/adr/0005-authentication-mfa-passkeys.md`
+  - **Needs:** T057.
+- [ ] T059 [SEC] Audit trails and abuse tests (`SEC-009`)
+  - Deliver audit trails and abuse tests within approved contracts; add positive and failure tests; document public interfaces and report actual test results and security/performance/hosting impact.
+  - **Allowed paths:** `app/Core/Security/`, `app/Modules/Users/`, `tests/`
+  - **References:** `docs/AUTH.md`, `docs/SECURITY_REQUIREMENTS.md`, `docs/THREAT_MODEL.md`, `docs/adr/0005-authentication-mfa-passkeys.md`
+  - **Needs:** T058.
+- [ ] T060 [QA] Content node model and invariants (`QA-001`)
+  - Deliver content node model and invariants within approved contracts; add positive and failure tests; document public interfaces and report actual test results and security/performance/hosting impact.
+  - **Allowed paths:** `app/Modules/Questions/`, `app/Modules/Answers/`, `app/Modules/Clarifications/`, `app/Modules/Comments/`, `tests/`
+  - **References:** `docs/ARCHITECTURE.md`, `docs/FRAMEWORK_ARCHITECTURE.md`
+  - **Needs:** T031, T053, T022, T025, T043.
+- [ ] T061 [QA] Question CRUD (`QA-002`)
+  - Deliver question crud within approved contracts; add positive and failure tests; document public interfaces and report actual test results and security/performance/hosting impact.
+  - **Allowed paths:** `app/Modules/Questions/`, `app/Modules/Answers/`, `app/Modules/Clarifications/`, `app/Modules/Comments/`, `tests/`
+  - **References:** `docs/ARCHITECTURE.md`, `docs/FRAMEWORK_ARCHITECTURE.md`
+  - **Needs:** T060.
+- [ ] T062 [QA] Answer CRUD (`QA-003`)
+  - Deliver answer crud within approved contracts; add positive and failure tests; document public interfaces and report actual test results and security/performance/hosting impact.
+  - **Allowed paths:** `app/Modules/Questions/`, `app/Modules/Answers/`, `app/Modules/Clarifications/`, `app/Modules/Comments/`, `tests/`
+  - **References:** `docs/ARCHITECTURE.md`, `docs/FRAMEWORK_ARCHITECTURE.md`
+  - **Needs:** T061.
+- [ ] T063 [QA] Nested clarifications and replies (`QA-004`)
+  - Deliver nested clarifications and replies within approved contracts; add positive and failure tests; document public interfaces and report actual test results and security/performance/hosting impact.
+  - **Allowed paths:** `app/Modules/Questions/`, `app/Modules/Answers/`, `app/Modules/Clarifications/`, `app/Modules/Comments/`, `tests/`
+  - **References:** `docs/ARCHITECTURE.md`, `docs/FRAMEWORK_ARCHITECTURE.md`
+  - **Needs:** T062.
+- [ ] T064 [QA] Nested comments (`QA-005`)
+  - Deliver nested comments within approved contracts; add positive and failure tests; document public interfaces and report actual test results and security/performance/hosting impact.
+  - **Allowed paths:** `app/Modules/Questions/`, `app/Modules/Answers/`, `app/Modules/Clarifications/`, `app/Modules/Comments/`, `tests/`
+  - **References:** `docs/ARCHITECTURE.md`, `docs/FRAMEWORK_ARCHITECTURE.md`
+  - **Needs:** T063.
+- [ ] T065 [QA] Accepted answers and votes (`QA-006`)
+  - Deliver accepted answers and votes within approved contracts; add positive and failure tests; document public interfaces and report actual test results and security/performance/hosting impact.
+  - **Allowed paths:** `app/Modules/Questions/`, `app/Modules/Answers/`, `app/Modules/Clarifications/`, `app/Modules/Comments/`, `tests/`
+  - **References:** `docs/ARCHITECTURE.md`, `docs/FRAMEWORK_ARCHITECTURE.md`
+  - **Needs:** T064.
+- [ ] T066 [QA] Revision history and moderation (`QA-007`)
+  - Deliver revision history and moderation within approved contracts; add positive and failure tests; document public interfaces and report actual test results and security/performance/hosting impact.
+  - **Allowed paths:** `app/Modules/Questions/`, `app/Modules/Answers/`, `app/Modules/Clarifications/`, `app/Modules/Comments/`, `tests/`
+  - **References:** `docs/ARCHITECTURE.md`, `docs/FRAMEWORK_ARCHITECTURE.md`
+  - **Needs:** T065.
+- [ ] T067 [QA] Taxonomy and collections (`QA-008`)
+  - Deliver taxonomy and collections within approved contracts; add positive and failure tests; document public interfaces and report actual test results and security/performance/hosting impact.
+  - **Allowed paths:** `app/Modules/Questions/`, `app/Modules/Answers/`, `app/Modules/Clarifications/`, `app/Modules/Comments/`, `tests/`
+  - **References:** `docs/ARCHITECTURE.md`, `docs/FRAMEWORK_ARCHITECTURE.md`
+  - **Needs:** T066.
+- [ ] T068 [QA] Related and duplicate questions (`QA-009`)
+  - Deliver related and duplicate questions within approved contracts; add positive and failure tests; document public interfaces and report actual test results and security/performance/hosting impact.
+  - **Allowed paths:** `app/Modules/Questions/`, `app/Modules/Answers/`, `app/Modules/Clarifications/`, `app/Modules/Comments/`, `tests/`
+  - **References:** `docs/ARCHITECTURE.md`, `docs/FRAMEWORK_ARCHITECTURE.md`
+  - **Needs:** T067.
+- [ ] T069 [QA] Bookmarks and notifications (`QA-010`)
+  - Deliver bookmarks and notifications within approved contracts; add positive and failure tests; document public interfaces and report actual test results and security/performance/hosting impact.
+  - **Allowed paths:** `app/Modules/Questions/`, `app/Modules/Answers/`, `app/Modules/Clarifications/`, `app/Modules/Comments/`, `tests/`
+  - **References:** `docs/ARCHITECTURE.md`, `docs/FRAMEWORK_ARCHITECTURE.md`
+  - **Needs:** T068.
+- [ ] T070 [QA] Canonical answers and citations (`QA-011`)
+  - Deliver canonical answers and citations within approved contracts; add positive and failure tests; document public interfaces and report actual test results and security/performance/hosting impact.
+  - **Allowed paths:** `app/Modules/Questions/`, `app/Modules/Answers/`, `app/Modules/Clarifications/`, `app/Modules/Comments/`, `tests/`
+  - **References:** `docs/ARCHITECTURE.md`, `docs/FRAMEWORK_ARCHITECTURE.md`
+  - **Needs:** T069.
+- [ ] T071 [QA] Import export and lifecycle (`QA-012`)
+  - Deliver import export and lifecycle within approved contracts; add positive and failure tests; document public interfaces and report actual test results and security/performance/hosting impact.
+  - **Allowed paths:** `app/Modules/Questions/`, `app/Modules/Answers/`, `app/Modules/Clarifications/`, `app/Modules/Comments/`, `tests/`
+  - **References:** `docs/ARCHITECTURE.md`, `docs/FRAMEWORK_ARCHITECTURE.md`
+  - **Needs:** T070.
+- [ ] T072 [I18N] Content translation groups and stale detection (`I18N-004`)
+  - One translation group links per-locale records that keep their own revision chain; editing a source marks dependents stale by revision hash; migrations are additive and reversible by dropping the new tables.
+  - **Allowed paths:** `app/Modules/Localization/`, `database/migrations/`, `tests/`
+  - **References:** `docs/I18N.md`, `docs/adr/0001-localization.md`
+  - **Needs:** T060, T066.
+- [ ] T073 [I18N] Translation workflow and four-eyes review (`I18N-005`)
+  - Status transitions are enforced server-side; a reviewer cannot approve their own translation; machine drafts record provider and timestamp and are disclosed; every transition is audited.
+  - **Allowed paths:** `app/Modules/Localization/`, `app/Modules/Questions/`, `tests/`
+  - **References:** `docs/I18N.md`, `docs/adr/0001-localization.md`
+  - **Needs:** T072, T053.
+- [ ] T074 [PERF] Read-model projection shared across representations (`PERF-004`)
+  - One cached projection per resource and locale serves HTML Markdown JSON-LD feeds and sitemaps; a publish changes the revision hash and invalidates exactly the affected keys; query count per page is asserted.
+  - **Allowed paths:** `app/Core/`, `app/Modules/`, `tests/`
+  - **References:** `docs/FRAMEWORK_PERFORMANCE.md`, `docs/PERFORMANCE.md`, `docs/adr/0003-performance-architecture.md`
+  - **Needs:** T060, T026, T040.
+- [ ] T075 [PERF] Query budget and N+1 detection (`PERF-007`)
+  - Every page declares a query budget; tests fail on N+1 or budget overrun; cached paths issue zero queries.
+  - **Allowed paths:** `tests/`, `app/Core/`, `app/Modules/`
+  - **References:** `docs/FRAMEWORK_PERFORMANCE.md`, `docs/PERFORMANCE.md`, `docs/adr/0003-performance-architecture.md`
+  - **Needs:** T033, T060.
+- [ ] T076 [SEC] SecretBox AEAD encryption and key rotation (`SEC-010`)
+  - Implement SecretBox via sodium_crypto_aead_xchacha20poly1305_ietf with versioned key envelopes, mandatory AAD binding and key rotation; add fail-closed negative tests for tampered ciphertext, unknown key ID and mismatched AAD (SEC-D-05).
+  - **Allowed paths:** `app/Contracts/Security/`, `app/Core/Security/`, `tests/`
+  - **References:** `docs/AUTH.md`, `docs/SECURITY_REQUIREMENTS.md`, `docs/THREAT_MODEL.md`, `docs/adr/0005-authentication-mfa-passkeys.md`
+  - **Needs:** T017, T008.
+- [ ] T077 [SEC] Passkeys and WebAuthn FIDO2 authentication (`SEC-011`)
+  - Implement PasskeyVerifier for discoverable passkeys and 2FA security keys (ES256, EdDSA, RS256) with single-use session challenges, exact origin/RP ID checks, UV enforcement and sign_count clone detection; add fail-closed negative tests (SEC-A-07).
+  - **Allowed paths:** `app/Contracts/Security/`, `app/Core/Security/`, `app/Modules/Users/`, `tests/`
+  - **References:** `docs/AUTH.md`, `docs/SECURITY_REQUIREMENTS.md`, `docs/THREAT_MODEL.md`, `docs/adr/0005-authentication-mfa-passkeys.md`
+  - **Needs:** T057, T076.
+- [ ] T078 [MAIL] Transactional Mailer queue and EmailMessage validation (`MAIL-001`)
+  - Implement QueuedMailer, LogTransport and NullTransport over CORE-013 jobs with priority queues, exponential backoff retries, per-recipient/per-IP rate caps and recipient-locale multipart templates; add negative tests for CRLF header injection and rate-limit bursts (SEC-C-09).
+  - **Allowed paths:** `app/Contracts/Mail/`, `app/Core/Mail/`, `tests/`
+  - **References:** `docs/MAIL.md`, `docs/SECURITY_REQUIREMENTS.md`, `docs/THREAT_MODEL.md`, `docs/adr/0006-mail-and-smtp.md`
+  - **Needs:** T028, T023, T047, T008.
+- [ ] T079 [MAIL] Authenticated TLS SMTP transport with SSRF protection (`MAIL-002`)
+  - Implement SmtpTransport supporting implicit TLS (465) and mandatory STARTTLS (587) with strict certificate/hostname verification, SecretBox-encrypted credentials, SSRF host validation and log redaction; add negative tests for TLS downgrade, invalid cert and metadata/private host rejection (SEC-C-09).
+  - **Allowed paths:** `app/Core/Mail/`, `tests/`
+  - **References:** `docs/MAIL.md`, `docs/SECURITY_REQUIREMENTS.md`, `docs/THREAT_MODEL.md`, `docs/adr/0006-mail-and-smtp.md`
+  - **Needs:** T078, T076, T035.
+- [ ] T080 [MAIL] Account verification, password reset and security alert emails (`MAIL-003`)
+  - Deliver email verification, password reset, email-change confirmation and MFA/passkey security alerts using >=256-bit single-use hashed tokens, uniform anti-enumeration responses, session revocation on reset and recipient-locale mail templates (SEC-A-08).
+  - **Allowed paths:** `app/Modules/Users/`, `resources/`, `tests/`
+  - **References:** `docs/MAIL.md`, `docs/SECURITY_REQUIREMENTS.md`, `docs/THREAT_MODEL.md`, `docs/adr/0006-mail-and-smtp.md`
+  - **Needs:** T079, T051, T057.
+- [ ] T081 [MAIL] Optional DKIM signing and Admin SMTP diagnostics (`MAIL-004`)
+  - Add optional RSA-2048/Ed25519 DKIM signing with SecretBox-encrypted private keys, DNS TXT guidance, step-up protected Admin test-email diagnostic and dead-letter queue visibility without leaking credentials or reset tokens.
+  - **Allowed paths:** `app/Core/Mail/`, `app/Modules/Admin/`, `tests/`
+  - **References:** `docs/MAIL.md`, `docs/SECURITY_REQUIREMENTS.md`, `docs/THREAT_MODEL.md`, `docs/adr/0006-mail-and-smtp.md`
+  - **Needs:** T079, T053.

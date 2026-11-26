@@ -1,0 +1,38 @@
+<!-- specs/008-v10-release-readiness-and-audit/tasks.md -->
+# v1.0 — Integration, Audits & Signed Release — Tasks
+
+- [ ] T153 [REL] Integration and cross-database tests (`REL-001`)
+  - Deliver integration and cross-database tests within approved contracts; add positive and failure tests; document public interfaces and report actual test results and security/performance/hosting impact.
+  - **Allowed paths:** `tests/`, `docs/`, `.github/`
+  - **References:** `docs/TESTING.md`, `docs/PERFORMANCE.md`, `docs/HARDENING.md`
+  - **Needs:** T092, T099, T118, T124, T133, T140, T146, T152, T084, T038, T045, T071, T059.
+- [ ] T154 [REL] Security and accessibility audit (`REL-002`)
+  - Deliver security and accessibility audit within approved contracts; add positive and failure tests; document public interfaces and report actual test results and security/performance/hosting impact.
+  - **Allowed paths:** `tests/`, `docs/`, `.github/`
+  - **References:** `docs/TESTING.md`, `docs/PERFORMANCE.md`, `docs/HARDENING.md`
+  - **Needs:** T153.
+- [ ] T155 [REL] Shared hosting and Lighthouse benchmarks (`REL-003`)
+  - Deliver shared hosting and lighthouse benchmarks within approved contracts; add positive and failure tests; document public interfaces and report actual test results and security/performance/hosting impact.
+  - **Allowed paths:** `tests/`, `docs/`, `.github/`
+  - **References:** `docs/TESTING.md`, `docs/PERFORMANCE.md`, `docs/HARDENING.md`
+  - **Needs:** T154.
+- [ ] T156 [REL] Alpha beta feedback and regression fixes (`REL-004`)
+  - Deliver alpha beta feedback and regression fixes within approved contracts; add positive and failure tests; document public interfaces and report actual test results and security/performance/hosting impact.
+  - **Allowed paths:** `tests/`, `docs/`, `.github/`
+  - **References:** `docs/TESTING.md`, `docs/PERFORMANCE.md`, `docs/HARDENING.md`
+  - **Needs:** T155.
+- [ ] T157 [REL] Signed release SBOM and recovery evidence (`REL-005`)
+  - Deliver signed release sbom and recovery evidence within approved contracts; add positive and failure tests; document public interfaces and report actual test results and security/performance/hosting impact.
+  - **Allowed paths:** `tests/`, `docs/`, `.github/`
+  - **References:** `docs/TESTING.md`, `docs/PERFORMANCE.md`, `docs/HARDENING.md`
+  - **Needs:** T156.
+- [ ] T158 [I18N] Pseudo-localization and completeness gate (`I18N-011`)
+  - CI renders every default message under pseudo-localization at 40% width expansion; default-locale completeness is enforced at 100%; RTL snapshots and hreflang reciprocity run automatically.
+  - **Allowed paths:** `.github/`, `resources/lang/`, `tools/`, `tests/`
+  - **References:** `docs/I18N.md`, `docs/adr/0001-localization.md`
+  - **Needs:** T100, T153.
+- [ ] T159 [SEO] SEO regression and structured-data validation suite (`SEO-009`)
+  - CI validates sitemaps against the XSD and feeds against RFC 4287; JSON-LD shape and visible-content checks run per page type; OG and Markdown snapshots are asserted; leakage tests prove drafts and private content never reach an artifact.
+  - **Allowed paths:** `tests/`, `tools/`, `.github/`
+  - **References:** `docs/SEO.md`, `docs/adr/0002-seo-and-agent-representations.md`
+  - **Needs:** T104, T106, T107, T108, T153.

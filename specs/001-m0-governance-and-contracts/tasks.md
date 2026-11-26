@@ -1,0 +1,77 @@
+<!-- specs/001-m0-governance-and-contracts/tasks.md -->
+# M0 — Governance, Architecture & Public Contracts — Tasks
+
+- [ ] T001 [GOV] Approve charter and license (`GOV-001`)
+  - Maintainer-approved written specification; record open decisions and affected contracts.
+  - **Allowed paths:** `docs/`, `AGENTS.md`, `GOVERNANCE.md`, `CONTRIBUTING.md`, `.github/`
+  - **References:** `docs/PROJECT_CHARTER.md`, `docs/ARCHITECTURE.md`, `docs/FRAMEWORK_ARCHITECTURE.md`
+- [ ] T002 [P] [GOV] Define governance and ownership (`GOV-002`)
+  - Maintainer-approved written specification; record open decisions and affected contracts.
+  - **Allowed paths:** `docs/`, `AGENTS.md`, `GOVERNANCE.md`, `CONTRIBUTING.md`, `.github/`
+  - **References:** `docs/PROJECT_CHARTER.md`, `docs/ARCHITECTURE.md`, `docs/FRAMEWORK_ARCHITECTURE.md`
+  - **Needs:** T001.
+- [ ] T003 [P] [GOV] Approve contribution and agent policies (`GOV-003`)
+  - Maintainer-approved written specification; record open decisions and affected contracts.
+  - **Allowed paths:** `docs/`, `AGENTS.md`, `GOVERNANCE.md`, `CONTRIBUTING.md`, `.github/`
+  - **References:** `docs/PROJECT_CHARTER.md`, `docs/ARCHITECTURE.md`, `docs/FRAMEWORK_ARCHITECTURE.md`
+  - **Needs:** T001.
+- [ ] T004 [P] [GOV] Define architecture and module boundaries (`GOV-004`)
+  - Maintainer-approved written specification; record open decisions and affected contracts.
+  - **Allowed paths:** `docs/`, `AGENTS.md`, `GOVERNANCE.md`, `CONTRIBUTING.md`, `.github/`
+  - **References:** `docs/PROJECT_CHARTER.md`, `docs/ARCHITECTURE.md`, `docs/FRAMEWORK_ARCHITECTURE.md`
+  - **Needs:** T001.
+- [ ] T005 [P] [GOV] Approve hosting baseline (`GOV-005`)
+  - Maintainer-approved written specification; record open decisions and affected contracts.
+  - **Allowed paths:** `docs/`, `AGENTS.md`, `GOVERNANCE.md`, `CONTRIBUTING.md`, `.github/`
+  - **References:** `docs/PROJECT_CHARTER.md`, `docs/ARCHITECTURE.md`, `docs/FRAMEWORK_ARCHITECTURE.md`
+  - **Needs:** T001.
+- [ ] T006 [P] [GOV] Define testing and CI gates (`GOV-006`)
+  - Maintainer-approved written specification; record open decisions and affected contracts.
+  - **Allowed paths:** `docs/`, `AGENTS.md`, `GOVERNANCE.md`, `CONTRIBUTING.md`, `.github/`
+  - **References:** `docs/PROJECT_CHARTER.md`, `docs/ARCHITECTURE.md`, `docs/FRAMEWORK_ARCHITECTURE.md`
+  - **Needs:** T001.
+- [ ] T007 [P] [GOV] Define performance budgets (`GOV-007`)
+  - Maintainer-approved written specification; record open decisions and affected contracts.
+  - **Allowed paths:** `docs/`, `AGENTS.md`, `GOVERNANCE.md`, `CONTRIBUTING.md`, `.github/`
+  - **References:** `docs/PROJECT_CHARTER.md`, `docs/ARCHITECTURE.md`, `docs/FRAMEWORK_ARCHITECTURE.md`
+  - **Needs:** T001.
+- [ ] T008 [P] [GOV] Threat model and security requirements (`GOV-008`)
+  - Maintainer-approved written specification; record open decisions and affected contracts.
+  - **Allowed paths:** `docs/`, `AGENTS.md`, `GOVERNANCE.md`, `CONTRIBUTING.md`, `.github/`
+  - **References:** `docs/PROJECT_CHARTER.md`, `docs/ARCHITECTURE.md`, `docs/FRAMEWORK_ARCHITECTURE.md`
+  - **Needs:** T001.
+- [ ] T009 [P] [GOV] Define database schema and migration contract (`GOV-009`)
+  - Maintainer-approved written specification; record open decisions and affected contracts.
+  - **Allowed paths:** `docs/`, `AGENTS.md`, `GOVERNANCE.md`, `CONTRIBUTING.md`, `.github/`
+  - **References:** `docs/PROJECT_CHARTER.md`, `docs/ARCHITECTURE.md`, `docs/FRAMEWORK_ARCHITECTURE.md`
+  - **Needs:** T001.
+- [ ] T010 [P] [GOV] Define design system and accessibility (`GOV-010`)
+  - Maintainer-approved written specification; record open decisions and affected contracts.
+  - **Allowed paths:** `docs/`, `AGENTS.md`, `GOVERNANCE.md`, `CONTRIBUTING.md`, `.github/`
+  - **References:** `docs/PROJECT_CHARTER.md`, `docs/ARCHITECTURE.md`, `docs/FRAMEWORK_ARCHITECTURE.md`
+  - **Needs:** T001.
+- [ ] T011 [P] [GOV] Approve public framework contracts (`GOV-011`)
+  - Maintainer-approved written specification; record open decisions and affected contracts.
+  - **Allowed paths:** `docs/`, `AGENTS.md`, `GOVERNANCE.md`, `CONTRIBUTING.md`, `.github/`
+  - **References:** `docs/PROJECT_CHARTER.md`, `docs/ARCHITECTURE.md`, `docs/FRAMEWORK_ARCHITECTURE.md`
+  - **Needs:** T001.
+- [ ] T012 [INS] Prototype shared hosting filesystem and PHP limits (`HOST-001`)
+  - Record real or reproducible reference hosting checks; identify blockers and safe deployment layout.
+  - **Allowed paths:** `docs/`, `tests/`
+  - **References:** `docs/INSTALL_UPDATE.md`, `docs/HARDENING.md`
+  - **Needs:** T005.
+- [ ] T013 [P] [I18N] Approve localization model and contracts (`I18N-001`)
+  - ADR 0001 accepted by an independent maintainer with the three localization contracts approved; open decisions recorded with owners; no implementation merged before approval.
+  - **Allowed paths:** `docs/`, `app/Contracts/`, `backlog/`
+  - **References:** `docs/I18N.md`, `docs/adr/0001-localization.md`
+  - **Needs:** T004, T011.
+- [ ] T014 [P] [SEO] Approve SEO and agent representation model (`SEO-001`)
+  - ADR 0002 accepted by an independent maintainer with the three SEO contracts approved; open decisions recorded; no implementation merged before approval.
+  - **Allowed paths:** `docs/`, `app/Contracts/`, `backlog/`
+  - **References:** `docs/SEO.md`, `docs/adr/0002-seo-and-agent-representations.md`
+  - **Needs:** T004, T011.
+- [ ] T015 [PERF] Approve performance architecture and stage budgets (`PERF-001`)
+  - ADR 0003 accepted with the stage budgets and the performance workstream approved; the projection layer and compiled-artifact decisions recorded; no implementation merged before approval.
+  - **Allowed paths:** `docs/`, `app/Contracts/`, `backlog/`
+  - **References:** `docs/FRAMEWORK_PERFORMANCE.md`, `docs/PERFORMANCE.md`, `docs/adr/0003-performance-architecture.md`
+  - **Needs:** T004, T007.

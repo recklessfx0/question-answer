@@ -1,0 +1,83 @@
+<!-- specs/005-v04-extensions-and-rest-api/tasks.md -->
+# v0.4 — Extension SDK, Language Packs & REST API — Tasks
+
+- [ ] T112 [EXT] Manifest and discovery (`EXT-001`)
+  - Deliver manifest and discovery within approved contracts; add positive and failure tests; document public interfaces and report actual test results and security/performance/hosting impact.
+  - **Allowed paths:** `app/Modules/Extensions/`, `extensions/`, `tests/`
+  - **References:** `docs/EXTENSIONS.md`, `docs/FRAMEWORK_PERFORMANCE.md`
+  - **Needs:** T026, T053, T011.
+- [ ] T113 [EXT] Lifecycle and dependencies (`EXT-002`)
+  - Deliver lifecycle and dependencies within approved contracts; add positive and failure tests; document public interfaces and report actual test results and security/performance/hosting impact.
+  - **Allowed paths:** `app/Modules/Extensions/`, `extensions/`, `tests/`
+  - **References:** `docs/EXTENSIONS.md`, `docs/FRAMEWORK_PERFORMANCE.md`
+  - **Needs:** T112.
+- [ ] T114 [EXT] Hooks routes and services (`EXT-003`)
+  - Deliver hooks routes and services within approved contracts; add positive and failure tests; document public interfaces and report actual test results and security/performance/hosting impact.
+  - **Allowed paths:** `app/Modules/Extensions/`, `extensions/`, `tests/`
+  - **References:** `docs/EXTENSIONS.md`, `docs/FRAMEWORK_PERFORMANCE.md`
+  - **Needs:** T113.
+- [ ] T115 [EXT] Admin navigation and template slots (`EXT-004`)
+  - Deliver admin navigation and template slots within approved contracts; add positive and failure tests; document public interfaces and report actual test results and security/performance/hosting impact.
+  - **Allowed paths:** `app/Modules/Extensions/`, `extensions/`, `tests/`
+  - **References:** `docs/EXTENSIONS.md`, `docs/FRAMEWORK_PERFORMANCE.md`
+  - **Needs:** T114.
+- [ ] T116 [EXT] Migrations and compatibility (`EXT-005`)
+  - Deliver migrations and compatibility within approved contracts; add positive and failure tests; document public interfaces and report actual test results and security/performance/hosting impact.
+  - **Allowed paths:** `app/Modules/Extensions/`, `extensions/`, `tests/`
+  - **References:** `docs/EXTENSIONS.md`, `docs/FRAMEWORK_PERFORMANCE.md`
+  - **Needs:** T115.
+- [ ] T117 [EXT] Package integrity and safe mode (`EXT-006`)
+  - Deliver package integrity and safe mode within approved contracts; add positive and failure tests; document public interfaces and report actual test results and security/performance/hosting impact.
+  - **Allowed paths:** `app/Modules/Extensions/`, `extensions/`, `tests/`
+  - **References:** `docs/EXTENSIONS.md`, `docs/FRAMEWORK_PERFORMANCE.md`
+  - **Needs:** T116.
+- [ ] T118 [EXT] SDK and sample extension (`EXT-007`)
+  - Deliver sdk and sample extension within approved contracts; add positive and failure tests; document public interfaces and report actual test results and security/performance/hosting impact.
+  - **Allowed paths:** `app/Modules/Extensions/`, `extensions/`, `tests/`
+  - **References:** `docs/EXTENSIONS.md`, `docs/FRAMEWORK_PERFORMANCE.md`
+  - **Needs:** T117.
+- [ ] T119 [API] OpenAPI and versioned routes (`API-001`)
+  - Deliver openapi and versioned routes within approved contracts; add positive and failure tests; document public interfaces and report actual test results and security/performance/hosting impact.
+  - **Allowed paths:** `app/Modules/Api/`, `docs/api/`, `tests/`
+  - **References:** `docs/API_MCP_AI.md`, `docs/SECURITY_REQUIREMENTS.md`
+  - **Needs:** T062, T055, T021.
+- [ ] T120 [API] Scopes and error responses (`API-002`)
+  - Deliver scopes and error responses within approved contracts; add positive and failure tests; document public interfaces and report actual test results and security/performance/hosting impact.
+  - **Allowed paths:** `app/Modules/Api/`, `docs/api/`, `tests/`
+  - **References:** `docs/API_MCP_AI.md`, `docs/SECURITY_REQUIREMENTS.md`
+  - **Needs:** T119.
+- [ ] T121 [API] Pagination and filters (`API-003`)
+  - Deliver pagination and filters within approved contracts; add positive and failure tests; document public interfaces and report actual test results and security/performance/hosting impact.
+  - **Allowed paths:** `app/Modules/Api/`, `docs/api/`, `tests/`
+  - **References:** `docs/API_MCP_AI.md`, `docs/SECURITY_REQUIREMENTS.md`
+  - **Needs:** T120.
+- [ ] T122 [API] Mutation idempotency (`API-004`)
+  - Deliver mutation idempotency within approved contracts; add positive and failure tests; document public interfaces and report actual test results and security/performance/hosting impact.
+  - **Allowed paths:** `app/Modules/Api/`, `docs/api/`, `tests/`
+  - **References:** `docs/API_MCP_AI.md`, `docs/SECURITY_REQUIREMENTS.md`
+  - **Needs:** T121.
+- [ ] T123 [API] Signed webhooks (`API-005`)
+  - Deliver signed webhooks within approved contracts; add positive and failure tests; document public interfaces and report actual test results and security/performance/hosting impact.
+  - **Allowed paths:** `app/Modules/Api/`, `docs/api/`, `tests/`
+  - **References:** `docs/API_MCP_AI.md`, `docs/SECURITY_REQUIREMENTS.md`
+  - **Needs:** T122.
+- [ ] T124 [API] Contract tests and documentation (`API-006`)
+  - Deliver contract tests and documentation within approved contracts; add positive and failure tests; document public interfaces and report actual test results and security/performance/hosting impact.
+  - **Allowed paths:** `app/Modules/Api/`, `docs/api/`, `tests/`
+  - **References:** `docs/API_MCP_AI.md`, `docs/SECURITY_REQUIREMENTS.md`
+  - **Needs:** T123.
+- [ ] T125 [I18N] Locale negotiation for REST and MCP (`I18N-009`)
+  - Read endpoints accept an explicit locale and otherwise negotiate the header; responses disclose resolved locale and fallback with Content-Language; write endpoints reject a missing locale as a validation error.
+  - **Allowed paths:** `app/Modules/Api/`, `app/Modules/Mcp/`, `docs/`, `tests/`
+  - **References:** `docs/I18N.md`, `docs/adr/0001-localization.md`
+  - **Needs:** T119, T147, T046.
+- [ ] T126 [I18N] Language pack extension type (`I18N-010`)
+  - Language packs install through the existing lifecycle as data only with no entrypoint; manifests declare locale and domains; conflicting keys resolve by declared precedence and uninstall leaves no orphan keys.
+  - **Allowed paths:** `app/Modules/Extensions/`, `extensions/`, `tests/`
+  - **References:** `docs/I18N.md`, `docs/adr/0001-localization.md`
+  - **Needs:** T112, T047.
+- [ ] T127 [PERF] Extension cost model and compiled artifacts (`PERF-008`)
+  - Extension routes services hooks and templates compile into the deploy artifacts; listeners are lazy; the extension cost budget gate fails CI when an extension exceeds query or render budgets.
+  - **Allowed paths:** `app/Modules/Extensions/`, `tests/`, `docs/`
+  - **References:** `docs/FRAMEWORK_PERFORMANCE.md`, `docs/PERFORMANCE.md`, `docs/adr/0003-performance-architecture.md`
+  - **Needs:** T113, T026.

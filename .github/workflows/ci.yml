@@ -18,6 +18,8 @@ jobs:
           persist-credentials: false
       - name: Validate backlog
         run: python3 tools/validate_backlog.py
+      - name: Validate Spec Kit tasks
+        run: python3 tools/validate_specs.py
       - uses: shivammathur/setup-php@eb7c497e18156a6bbabfef1d3a82760b9eda3962 # 2.40.0
         with:
           php-version: '8.5'
