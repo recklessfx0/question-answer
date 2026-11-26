@@ -2859,5 +2859,191 @@
     "review": [
       "independent maintainer"
     ]
+  },
+  {
+    "id": "PERF-001",
+    "title": "Approve performance architecture and stage budgets",
+    "milestone": "M0",
+    "workstream": "performance",
+    "priority": "P0",
+    "depends_on": [
+      "GOV-004",
+      "GOV-007"
+    ],
+    "allowed_paths": [
+      "docs/",
+      "app/Contracts/",
+      "backlog/"
+    ],
+    "acceptance": "ADR 0003 accepted with the stage budgets and the performance workstream approved; the projection layer and compiled-artifact decisions recorded; no implementation merged before approval.",
+    "review": [
+      "independent maintainer"
+    ]
+  },
+  {
+    "id": "PERF-002",
+    "title": "Deploy-time compiled container routes and templates",
+    "milestone": "v0.1",
+    "workstream": "performance",
+    "priority": "P0",
+    "depends_on": [
+      "CORE-001",
+      "CORE-004",
+      "CORE-005",
+      "CORE-008"
+    ],
+    "allowed_paths": [
+      "app/Core/",
+      "storage/",
+      "tests/"
+    ],
+    "acceptance": "Production builds ship a compiled container route table and templates; no reflection or directory scan runs on the request path; artifacts rebuild atomically on deploy and install.",
+    "review": [
+      "independent maintainer"
+    ]
+  },
+  {
+    "id": "PERF-003",
+    "title": "OPcache baseline and preload capability detection",
+    "milestone": "v0.1",
+    "workstream": "performance",
+    "priority": "P0",
+    "depends_on": [
+      "CORE-001",
+      "HOST-001"
+    ],
+    "allowed_paths": [
+      "app/Core/",
+      "docs/",
+      "tests/"
+    ],
+    "acceptance": "The installer detects opcache settings and reports which uplifts are available; the baseline meets the shared-hosting budget with stock opcache only; preloading never changes correctness.",
+    "review": [
+      "independent maintainer"
+    ]
+  },
+  {
+    "id": "PERF-004",
+    "title": "Read-model projection shared across representations",
+    "milestone": "v0.2",
+    "workstream": "performance",
+    "priority": "P0",
+    "depends_on": [
+      "QA-001",
+      "CORE-011",
+      "CACHE-002"
+    ],
+    "allowed_paths": [
+      "app/Core/",
+      "app/Modules/",
+      "tests/"
+    ],
+    "acceptance": "One cached projection per resource and locale serves HTML Markdown JSON-LD feeds and sitemaps; a publish changes the revision hash and invalidates exactly the affected keys; query count per page is asserted.",
+    "review": [
+      "independent maintainer"
+    ]
+  },
+  {
+    "id": "PERF-005",
+    "title": "Invalidation bus and artifact registry",
+    "milestone": "v0.3",
+    "workstream": "performance",
+    "priority": "P0",
+    "depends_on": [
+      "CACHE-005",
+      "I18N-002",
+      "SEO-005"
+    ],
+    "allowed_paths": [
+      "app/Core/",
+      "app/Modules/",
+      "tests/"
+    ],
+    "acceptance": "A single invalidation bus maps resource changes to tags and artifacts; sitemap feed llms.txt Markdown and social card staleness resolve through the registry; a failed warm leaves the previous artifact serving.",
+    "review": [
+      "independent maintainer"
+    ]
+  },
+  {
+    "id": "PERF-006",
+    "title": "Benchmark harness and performance gate",
+    "milestone": "v0.1",
+    "workstream": "performance",
+    "priority": "P0",
+    "depends_on": [
+      "CACHE-007",
+      "DB-005"
+    ],
+    "allowed_paths": [
+      "tools/",
+      "tests/",
+      ".github/",
+      "docs/"
+    ],
+    "acceptance": "A harness measures p50 p95 p99 CPU memory queries and bytes on fixed fixtures; baselines are committed; a regression beyond tolerance fails CI.",
+    "review": [
+      "independent maintainer"
+    ]
+  },
+  {
+    "id": "PERF-007",
+    "title": "Query budget and N+1 detection",
+    "milestone": "v0.2",
+    "workstream": "performance",
+    "priority": "P0",
+    "depends_on": [
+      "DB-005",
+      "QA-001"
+    ],
+    "allowed_paths": [
+      "tests/",
+      "app/Core/",
+      "app/Modules/"
+    ],
+    "acceptance": "Every page declares a query budget; tests fail on N+1 or budget overrun; cached paths issue zero queries.",
+    "review": [
+      "independent maintainer"
+    ]
+  },
+  {
+    "id": "PERF-008",
+    "title": "Extension cost model and compiled artifacts",
+    "milestone": "v0.4",
+    "workstream": "performance",
+    "priority": "P0",
+    "depends_on": [
+      "EXT-002",
+      "CORE-011"
+    ],
+    "allowed_paths": [
+      "app/Modules/Extensions/",
+      "tests/",
+      "docs/"
+    ],
+    "acceptance": "Extension routes services hooks and templates compile into the deploy artifacts; listeners are lazy; the extension cost budget gate fails CI when an extension exceeds query or render budgets.",
+    "review": [
+      "independent maintainer",
+      "security reviewer"
+    ]
+  },
+  {
+    "id": "PERF-009",
+    "title": "Conditional requests fragments and stale-while-revalidate",
+    "milestone": "v0.3",
+    "workstream": "performance",
+    "priority": "P1",
+    "depends_on": [
+      "CACHE-006",
+      "SEO-002"
+    ],
+    "allowed_paths": [
+      "app/Core/",
+      "app/Modules/Seo/",
+      "tests/"
+    ],
+    "acceptance": "Conditional requests return 304 without rendering; hot fragments cache with tag invalidation; stale-while-revalidate serves stale content only where explicitly allowed.",
+    "review": [
+      "independent maintainer"
+    ]
   }
 ]

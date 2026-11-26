@@ -17,5 +17,8 @@ The UI ships English; every other locale is installed, switched and removed at r
 ## SEO and agent representations
 Public pages are server-rendered from a structured document model that also produces Markdown, JSON-LD, Atom/JSON feeds and XML sitemaps; no representation is derived from rendered HTML. Every indexable page carries a self-referencing canonical and the locale `hreflang` set. Sitemap children, feeds, `llms.txt` and social cards are cached artifacts invalidated on publish, and generation is streamed and bounded so a crawler cannot force a corpus build inside a request. Only published public content enters any artifact. See [SEO](SEO.md) and [ADR 0002](adr/0002-seo-and-agent-representations.md).
 
+## Performance model
+Requests are served by compiled artifacts: classmap-authoritative autoloading, a compiled container, a static route table and compiled templates, with no reflection or discovery on the request path. A cached response returns before boot; an uncached page renders from a read-model projection shared by HTML, Markdown, JSON-LD, feeds and sitemaps. Cache layers, keys and invalidation are defined in [framework performance](FRAMEWORK_PERFORMANCE.md) and [ADR 0003](adr/0003-performance-architecture.md); budgets are in [performance](PERFORMANCE.md).
+
 ## Operations
 File cache default, optional APCu/Redis; HTTP caching for public pages only; key by language/theme/visibility where relevant; atomic writes, TTL, invalidation and stampede control. Cron optional with bounded opportunistic jobs; never run unbounded work in HTTP. Structured redacted logs and request IDs. AI provider gateway optional; MCP protocol version and transport must be verified against official spec at implementation time.
