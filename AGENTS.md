@@ -46,9 +46,10 @@ find . -type f -name '*.php' -not -path './vendor/*' -print0 | xargs -0 -r -n1 p
 composer validate --strict
 test -f composer.lock && composer audit --locked
 
-# 3. Validate planning backlog and Spec Kit task graphs
+# 3. Validate planning backlog, Spec Kit task graphs, and architecture boundaries
 python3 tools/validate_backlog.py
 python3 tools/validate_specs.py
+python3 tools/validate_architecture.py
 
 # 4. Run Python static analysis on maintainer tooling (matches CI security.yml)
 bandit -q -ll -r tools
@@ -65,6 +66,7 @@ Get-ChildItem -Recurse -Filter '*.php' -File | Where-Object { $_.FullName -notma
 composer validate --strict
 python tools/validate_backlog.py
 python tools/validate_specs.py
+python tools/validate_architecture.py
 ```
 
 ## 5. Security rules for agents

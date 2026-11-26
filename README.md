@@ -5,7 +5,7 @@
 QuestionAnswer is a planned self-hosted Q&A CMS with a lightweight compiled PHP 8.5 framework, nested questions, answers and clarifications, mobile-first progressive enhancement, extensions, REST and MCP — engineered to run reliably on ordinary shared hosting.
 
 > [!NOTE]
-> **Status: pre-alpha architecture and planning repository.** No CMS runtime is implemented yet; do not deploy this repository as a CMS. Today it contains the governance and security baseline, 6 architectural specifications and proposed ADRs, 12 PHP 8.5 interface contracts, 8 Colnera-ready GitHub Spec Kit milestones (`159` tasks), and automated CI/security checks.
+> **Status: pre-alpha architecture and contracts foundation.** No CMS runtime is implemented yet; do not deploy this repository as a CMS. Today it contains the governance and security baseline, 6 architectural specifications and proposed ADRs, all 17 `app/Contracts/` packages (`61` PHP 8.5 interfaces & immutable DTOs), the full `Core`/`Modules`/`config`/`resources/lang/en` scaffold, 8 Colnera-ready GitHub Spec Kit milestones (`159` tasks), and automated CI/security/boundary checks.
 
 ---
 
@@ -43,17 +43,21 @@ Additional foundation docs: [PROJECT_CHARTER.md](docs/PROJECT_CHARTER.md) · [AR
 
 ```text
 app/
-  Contracts/                   # 12 drafted PHP 8.5 contracts (zero internal deps)
-    Localization/              # CatalogueLoader, LocaleResolver, Translator
-    Mail/                      # EmailMessage, MailTransport, Mailer
-    Security/                  # SecretBox, TotpVerifier, PasskeyVerifier
-    Seo/                       # MarkdownRepresentation, SitemapSource, StructuredData
-  Core/                        # Planned framework runtime (depends only on Contracts)
-  Modules/                     # Planned CMS modules (depend only on Contracts)
+  Contracts/                   # All 17 public contract packages (61 PHP 8.5 files, zero internal deps)
+    Auth/ Cache/ Config/ Container/ Content/ Database/ Events/ Extension/
+    Http/ Jobs/ Localization/ Logging/ Mail/ Rendering/ Security/ Seo/ Validation/
+  Core/                        # 17 planned framework subsystem directories (depends only on Contracts)
+  Modules/                     # 15 planned CMS domain & delivery modules (depend only on Contracts)
+config/                        # Baseline PHP config templates compiled at deploy/install time
+resources/
+  lang/en/                     # Default English ICU catalogues (default, admin, validation, mail, installer, mcp)
+  views/ assets/               # Planned SSR templates and native CSS/JS/SVG assets
+public/                        # Web root (public/assets/ only; private files stay outside)
 specs/                         # 8 GitHub Spec Kit milestones (T001–T159) for Colnera Feature 065
-docs/                          # Architecture, security, performance, i18n, SEO, auth, mail & ADRs
+docs/                          # Architecture, security, performance, i18n, SEO, auth, mail & ADRs 0001–0006
 backlog/                       # Legacy structured JSON/CSV backlog & dependency export (153 tasks)
-tools/                         # Read-only validators (validate_specs.py, validate_backlog.py) & issue importer
+tests/                         # Unit, Contract, Architecture, Integration, Security, Performance, E2E
+tools/                         # Validators (validate_architecture.py, validate_specs.py, validate_backlog.py)
 .github/workflows/             # Foundation checks (ci.yml) and Security checks (security.yml)
 ```
 
@@ -89,7 +93,7 @@ Each `specs/NNN-name/` directory maps to a Colnera milestone and each unticked `
 
 Every pull request runs two GitHub Actions workflows with read-only default permissions and full 40-character commit-SHA action pins:
 
-- **Foundation checks** ([ci.yml](.github/workflows/ci.yml)): backlog dependency validation (`tools/validate_backlog.py`), Spec Kit milestone & dependency validation (`tools/validate_specs.py`), PHP 8.5 syntax lint (`php -l`), and strict Composer validation/audit.
+- **Foundation checks** ([ci.yml](.github/workflows/ci.yml)): backlog dependency validation (`tools/validate_backlog.py`), Spec Kit milestone & dependency validation (`tools/validate_specs.py`), four-layer architecture & PSR-4 boundary validation (`tools/validate_architecture.py`), PHP 8.5 syntax lint (`php -l`), and strict Composer validation/audit.
 - **Security checks** ([security.yml](.github/workflows/security.yml)): `gitleaks` secret scanning, `actionlint` workflow linting, commit-SHA pinning & no-`.env` policy checks, `bandit` static analysis on `tools/`, and lockfile-gated dependency review.
 
 Run the local checks before opening a PR:
@@ -99,6 +103,7 @@ find . -type f -name '*.php' -not -path './vendor/*' -print0 | xargs -0 -r -n1 p
 composer validate --strict
 python3 tools/validate_backlog.py
 python3 tools/validate_specs.py
+python3 tools/validate_architecture.py
 ```
 
 ---
