@@ -1,0 +1,20 @@
+version: 2
+updates:
+  # Actions are pinned to commit SHAs; Dependabot is the only mechanism allowed
+  # to move those pins, and every bump arrives as a reviewable pull request.
+  - package-ecosystem: github-actions
+    directory: /
+    schedule:
+      interval: weekly
+      day: monday
+      time: '06:00'
+    open-pull-requests-limit: 5
+    labels:
+      - dependencies
+      - security
+    groups:
+      actions:
+        patterns:
+          - '*'
+  # Add a composer entry once composer.lock exists; Dependabot requires a
+  # lockfile for that ecosystem and fails the update job without one.

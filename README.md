@@ -18,6 +18,10 @@ Create an empty GitHub repository, push this directory, configure branch protect
 
 PHP 8.5; HTML/CSS/JS; no mandatory Node, Redis, Docker, SSH or worker on production; installable ZIP; browser installer and recoverable updater; optional AI; public read-only MCP before scoped mutations. Lighthouse 100 in four categories is an aspirational reference-environment target, not a guarantee.
 
+## Security
+
+Report vulnerabilities privately through [the security policy](SECURITY.md) — never in a public issue. Requirements are in [security requirements](docs/SECURITY_REQUIREMENTS.md), trust boundaries and abuse cases in the [threat model](docs/THREAT_MODEL.md), and operator settings in the [hardening baseline](docs/HARDENING.md). CI runs secret scanning, workflow lint, action-pin policy, dependency review and Python static analysis; every third-party action is pinned to a commit SHA.
+
 ## License
 
 Apache-2.0 is the proposed project license; confirm before accepting contributions. See LICENSE.

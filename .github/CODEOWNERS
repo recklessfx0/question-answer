@@ -1,0 +1,15 @@
+# CODEOWNERS — review routing. Enforcement requires branch protection with
+# "Require review from Code Owners" enabled (see docs/GITHUB_SETUP.md).
+# Replace the placeholder owner with maintainer accounts as the team grows.
+
+*                            @recklessfx0
+
+# Security-relevant surfaces: never self-approved, always reviewed.
+/.github/                    @recklessfx0
+/SECURITY.md                 @recklessfx0
+/docs/THREAT_MODEL.md        @recklessfx0
+/docs/HARDENING.md           @recklessfx0
+/docs/SECURITY_REQUIREMENTS.md @recklessfx0
+/tools/                      @recklessfx0
+/composer.json               @recklessfx0
+/LICENSE                     @recklessfx0

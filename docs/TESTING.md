@@ -1,2 +1,12 @@
 # Quality gates
-PHP 8.5 lint, PHPUnit unit/integration, PHPStan, coding style, Composer audit, secret scanning, browser tests (Playwright), axe and manual accessibility, Lighthouse CI, load tests, architecture boundary checks, OpenAPI and MCP contract tests, OWASP ZAP in authorized test environment. Test both database engines and shared-host install/upgrade/recovery. CI starter currently validates planning files and PHP syntax if present; implementation teams must add real suites and make checks required. Release requires passing tests, no unresolved high/critical security findings, documented performance evidence, accessibility validation, signed artifact, SBOM, tested backups and maintainer approval.
+PHP 8.5 lint, PHPUnit unit/integration, PHPStan, coding style, Composer audit, secret scanning, browser tests (Playwright), axe and manual accessibility, Lighthouse CI, load tests, architecture boundary checks, OpenAPI and MCP contract tests, OWASP ZAP in authorized test environment. Test both database engines and shared-host install/upgrade/recovery. Release requires passing tests, no unresolved high/critical security findings, documented performance evidence, accessibility validation, signed artifact, SBOM, tested backups and maintainer approval.
+
+## What CI runs now
+
+`Foundation checks` validates the backlog dependency graph, lints any PHP present and validates the Composer manifest. `Security checks` runs the secret scan (gitleaks), workflow lint (actionlint), the repository policy job (commit-pinned actions, no committed environment files), Python static analysis (bandit, medium and above) and dependency review on pull requests. None of these are required status checks until branch protection is configured per [GitHub setup](GITHUB_SETUP.md); without that, a red gate is advisory.
+
+## Security evidence
+
+Every control in [security requirements](SECURITY_REQUIREMENTS.md) needs a negative test that fails closed — a test that only proves the happy path does not satisfy SEC-J-01. Security tests belong beside the behaviour they guard, name the control ID they cover, and are listed in a mapping table that the release checklist checks. A control without a negative test is unimplemented regardless of the code present.
+
+The starter validates planning files and PHP syntax only. Implementation teams add the real suites and make the checks required; a release with a waived control records the reason, owner and expiry in the release checklist.

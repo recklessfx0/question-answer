@@ -10,6 +10,7 @@ a = p.parse_args()
 tasks = json.loads((root/'backlog/tasks.json').read_text())
 if a.milestone: tasks = [t for t in tasks if t['milestone']==a.milestone]
 def gh(*args):
+    # nosec B603 - fixed binary and argument list, no shell; --repo is passed to gh, never interpolated.
     return subprocess.check_output(['gh', *args, '--repo', a.repo], text=True).strip()
 existing = {}
 if a.apply:

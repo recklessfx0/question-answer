@@ -9,5 +9,8 @@ Closes #
 - [ ] Dependencies complete
 - [ ] Scope respected
 - [ ] Tests and docs included
-- [ ] No secrets or private data
+- [ ] Negative test added for every security control touched (SEC-J-01)
+- [ ] No secrets, tokens or private data in code, logs or fixtures
+- [ ] Actions pinned to commit SHAs; workflow permissions least-privilege
+- [ ] Threat model updated if a trust boundary, entry point or credential changed
 - [ ] Independent review requested
