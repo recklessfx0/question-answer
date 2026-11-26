@@ -3,7 +3,7 @@
 2. Extract ZIP, enter QuestionAnswer, `git init -b main`, `git add .`, `git commit -m "Initialize QuestionAnswer project"`, `git remote add origin https://github.com/OWNER/QuestionAnswer.git`, `git push -u origin main`.
 3. Configure security settings before the first external contributor:
    - Enable private vulnerability reporting (Settings → Security → Advisories) and confirm the advisory link in [SECURITY.md](../SECURITY.md) resolves.
-   - Enable secret scanning with push protection, dependency alerts and Dependabot security updates. Leave the Dependabot version-update config (`.github/dependabot.yml`) enabled — it is the only mechanism that may move a pinned action SHA.
+   - Enable secret scanning with push protection, dependency alerts and Dependabot security updates. Enable the dependency graph — dependency review cannot run without it. Leave the Dependabot version-update config (`.github/dependabot.yml`) enabled — it is the only mechanism that may move a pinned action SHA.
    - Protect `main`: pull request required, independent approval, review from Code Owners, no force push, no branch deletion, no self-merge. Make `Foundation checks / validate` and every `Security checks` job required status checks.
    - Restrict release creation, tags and signing keys to a protected environment with required reviewers.
    - Set workflow permissions to read-only by default. Every action is pinned to a full commit SHA; the `policy` job fails the build on a floating tag, so never merge one.

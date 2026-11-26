@@ -3,7 +3,7 @@ PHP 8.5 lint, PHPUnit unit/integration, PHPStan, coding style, Composer audit, s
 
 ## What CI runs now
 
-`Foundation checks` validates the backlog dependency graph, lints any PHP present and validates the Composer manifest. `Security checks` runs the secret scan (gitleaks), workflow lint (actionlint), the repository policy job (commit-pinned actions, no committed environment files), Python static analysis (bandit, medium and above) and dependency review on pull requests. None of these are required status checks until branch protection is configured per [GitHub setup](GITHUB_SETUP.md); without that, a red gate is advisory.
+`Foundation checks` validates the backlog dependency graph, lints any PHP present and validates the Composer manifest. `Security checks` runs the secret scan (gitleaks), workflow lint (actionlint), the repository policy job (commit-pinned actions, no committed environment files), Python static analysis (bandit, medium and above) and, on pull requests, dependency review once a dependency lockfile exists. None of these are required status checks until branch protection is configured per [GitHub setup](GITHUB_SETUP.md); without that, a red gate is advisory.
 
 ## Security evidence
 
