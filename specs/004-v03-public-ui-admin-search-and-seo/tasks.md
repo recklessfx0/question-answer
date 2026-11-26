@@ -1,0 +1,153 @@
+<!-- specs/004-v03-public-ui-admin-search-and-seo/tasks.md -->
+# v0.3 — Public UI, Admin, Search, SEO & Agent Representations — Tasks
+
+- [ ] T082 [SEARCH] Full-text search and permissions (`SEARCH-001`)
+  - Deliver full-text search and permissions within approved contracts; add positive and failure tests; document public interfaces and report actual test results and security/performance/hosting impact.
+  - **Allowed paths:** `app/Modules/Search/`, `tests/`
+  - **References:** `docs/ARCHITECTURE.md`, `docs/I18N.md`
+  - **Needs:** T062.
+- [ ] T083 [SEARCH] Ranking filters and pagination (`SEARCH-002`)
+  - Deliver ranking filters and pagination within approved contracts; add positive and failure tests; document public interfaces and report actual test results and security/performance/hosting impact.
+  - **Allowed paths:** `app/Modules/Search/`, `tests/`
+  - **References:** `docs/ARCHITECTURE.md`, `docs/I18N.md`
+  - **Needs:** T082.
+- [ ] T084 [SEARCH] Index invalidation and relevance tests (`SEARCH-003`)
+  - Deliver index invalidation and relevance tests within approved contracts; add positive and failure tests; document public interfaces and report actual test results and security/performance/hosting impact.
+  - **Allowed paths:** `app/Modules/Search/`, `tests/`
+  - **References:** `docs/ARCHITECTURE.md`, `docs/I18N.md`
+  - **Needs:** T083.
+- [ ] T085 [UI] CSS tokens and app shell (`UI-001`)
+  - Deliver css tokens and app shell within approved contracts; add positive and failure tests; document public interfaces and report actual test results and security/performance/hosting impact.
+  - **Allowed paths:** `resources/`, `themes/`, `public/assets/`, `tests/`
+  - **References:** `docs/DESIGN_SYSTEM.md`, `docs/PERFORMANCE.md`
+  - **Needs:** T010, T023, T063.
+- [ ] T086 [UI] Question feed and detail (`UI-002`)
+  - Deliver question feed and detail within approved contracts; add positive and failure tests; document public interfaces and report actual test results and security/performance/hosting impact.
+  - **Allowed paths:** `resources/`, `themes/`, `public/assets/`, `tests/`
+  - **References:** `docs/DESIGN_SYSTEM.md`, `docs/PERFORMANCE.md`
+  - **Needs:** T085.
+- [ ] T087 [UI] Nested threads and composer (`UI-003`)
+  - Deliver nested threads and composer within approved contracts; add positive and failure tests; document public interfaces and report actual test results and security/performance/hosting impact.
+  - **Allowed paths:** `resources/`, `themes/`, `public/assets/`, `tests/`
+  - **References:** `docs/DESIGN_SYSTEM.md`, `docs/PERFORMANCE.md`
+  - **Needs:** T086.
+- [ ] T088 [UI] Search and navigation (`UI-004`)
+  - Deliver search and navigation within approved contracts; add positive and failure tests; document public interfaces and report actual test results and security/performance/hosting impact.
+  - **Allowed paths:** `resources/`, `themes/`, `public/assets/`, `tests/`
+  - **References:** `docs/DESIGN_SYSTEM.md`, `docs/PERFORMANCE.md`
+  - **Needs:** T087, T082.
+- [ ] T089 [UI] Accessible dialogs and themes (`UI-005`)
+  - Deliver accessible dialogs and themes within approved contracts; add positive and failure tests; document public interfaces and report actual test results and security/performance/hosting impact.
+  - **Allowed paths:** `resources/`, `themes/`, `public/assets/`, `tests/`
+  - **References:** `docs/DESIGN_SYSTEM.md`, `docs/PERFORMANCE.md`
+  - **Needs:** T088.
+- [ ] T090 [UI] PWA manifest and safe offline fallback (`UI-006`)
+  - Deliver pwa manifest and safe offline fallback within approved contracts; add positive and failure tests; document public interfaces and report actual test results and security/performance/hosting impact.
+  - **Allowed paths:** `resources/`, `themes/`, `public/assets/`, `tests/`
+  - **References:** `docs/DESIGN_SYSTEM.md`, `docs/PERFORMANCE.md`
+  - **Needs:** T089.
+- [ ] T091 [UI] RTL and keyboard tests (`UI-007`)
+  - Deliver rtl and keyboard tests within approved contracts; add positive and failure tests; document public interfaces and report actual test results and security/performance/hosting impact.
+  - **Allowed paths:** `resources/`, `themes/`, `public/assets/`, `tests/`
+  - **References:** `docs/DESIGN_SYSTEM.md`, `docs/PERFORMANCE.md`
+  - **Needs:** T090.
+- [ ] T092 [UI] Asset budgets and visual regression (`UI-008`)
+  - Deliver asset budgets and visual regression within approved contracts; add positive and failure tests; document public interfaces and report actual test results and security/performance/hosting impact.
+  - **Allowed paths:** `resources/`, `themes/`, `public/assets/`, `tests/`
+  - **References:** `docs/DESIGN_SYSTEM.md`, `docs/PERFORMANCE.md`
+  - **Needs:** T091.
+- [ ] T093 [ADMIN] Admin shell and dashboard (`ADMIN-001`)
+  - Deliver admin shell and dashboard within approved contracts; add positive and failure tests; document public interfaces and report actual test results and security/performance/hosting impact.
+  - **Allowed paths:** `app/Modules/Administration/`, `resources/`, `tests/`
+  - **References:** `docs/DESIGN_SYSTEM.md`, `docs/HARDENING.md`
+  - **Needs:** T053, T066, T085.
+- [ ] T094 [ADMIN] Content and moderation (`ADMIN-002`)
+  - Deliver content and moderation within approved contracts; add positive and failure tests; document public interfaces and report actual test results and security/performance/hosting impact.
+  - **Allowed paths:** `app/Modules/Administration/`, `resources/`, `tests/`
+  - **References:** `docs/DESIGN_SYSTEM.md`, `docs/HARDENING.md`
+  - **Needs:** T093.
+- [ ] T095 [ADMIN] Users roles and permissions (`ADMIN-003`)
+  - Deliver users roles and permissions within approved contracts; add positive and failure tests; document public interfaces and report actual test results and security/performance/hosting impact.
+  - **Allowed paths:** `app/Modules/Administration/`, `resources/`, `tests/`
+  - **References:** `docs/DESIGN_SYSTEM.md`, `docs/HARDENING.md`
+  - **Needs:** T094.
+- [ ] T096 [ADMIN] Settings and appearance (`ADMIN-004`)
+  - Deliver settings and appearance within approved contracts; add positive and failure tests; document public interfaces and report actual test results and security/performance/hosting impact.
+  - **Allowed paths:** `app/Modules/Administration/`, `resources/`, `tests/`
+  - **References:** `docs/DESIGN_SYSTEM.md`, `docs/HARDENING.md`
+  - **Needs:** T095.
+- [ ] T097 [ADMIN] System health and log viewer (`ADMIN-005`)
+  - Deliver system health and log viewer within approved contracts; add positive and failure tests; document public interfaces and report actual test results and security/performance/hosting impact.
+  - **Allowed paths:** `app/Modules/Administration/`, `resources/`, `tests/`
+  - **References:** `docs/DESIGN_SYSTEM.md`, `docs/HARDENING.md`
+  - **Needs:** T096.
+- [ ] T098 [ADMIN] Privacy and maintenance (`ADMIN-006`)
+  - Deliver privacy and maintenance within approved contracts; add positive and failure tests; document public interfaces and report actual test results and security/performance/hosting impact.
+  - **Allowed paths:** `app/Modules/Administration/`, `resources/`, `tests/`
+  - **References:** `docs/DESIGN_SYSTEM.md`, `docs/HARDENING.md`
+  - **Needs:** T097.
+- [ ] T099 [ADMIN] Extension API AI MCP settings integration (`ADMIN-007`)
+  - Deliver extension api ai mcp settings integration within approved contracts; add positive and failure tests; document public interfaces and report actual test results and security/performance/hosting impact.
+  - **Allowed paths:** `app/Modules/Administration/`, `resources/`, `tests/`
+  - **References:** `docs/DESIGN_SYSTEM.md`, `docs/HARDENING.md`
+  - **Needs:** T098, T118, T124, T146, T152.
+- [ ] T100 [I18N] Locale routing canonical and hreflang (`I18N-006`)
+  - The default locale is unprefixed and other locales are path-prefixed; every locale page emits its own canonical and a reciprocal hreflang set with x-default; unknown locale prefixes return 404 without redirect.
+  - **Allowed paths:** `app/Modules/Routing/`, `resources/`, `themes/`, `tests/`
+  - **References:** `docs/I18N.md`, `docs/adr/0001-localization.md`
+  - **Needs:** T046, T086.
+- [ ] T101 [I18N] Localization administration and XLIFF exchange (`I18N-007`)
+  - Administrators enable locales and edit message overrides with an audit trail; completeness and stale reports render; XLIFF import validates and previews before applying; exports are deterministic.
+  - **Allowed paths:** `app/Modules/Administration/`, `app/Modules/Localization/`, `tools/`, `tests/`
+  - **References:** `docs/I18N.md`, `docs/adr/0001-localization.md`
+  - **Needs:** T096, T047.
+- [ ] T102 [I18N] Per-locale search indexing and normalization (`I18N-008`)
+  - Each published locale is indexed separately with language-aware normalization; queries search the requested locale then the documented fallback with disclosure; an unindexed locale never returns silently empty results.
+  - **Allowed paths:** `app/Modules/Search/`, `tests/`
+  - **References:** `docs/I18N.md`, `docs/adr/0001-localization.md`
+  - **Needs:** T082, T072.
+- [ ] T103 [SEO] Canonical robots and indexation controls (`SEO-002`)
+  - Every indexable page emits a self-referencing canonical and hreflang set; robots.txt is generated and references the sitemap index; noindex never appears on a canonical page; redirects are single-hop and 404 and 410 stay distinct.
+  - **Allowed paths:** `app/Modules/Seo/`, `resources/`, `tests/`
+  - **References:** `docs/SEO.md`, `docs/adr/0002-seo-and-agent-representations.md`
+  - **Needs:** T100, T020.
+- [ ] T104 [SEO] JSON-LD graph for questions and answers (`SEO-003`)
+  - Question pages emit a valid QAPage graph with Question Answer author dates and upvote counts; values match visible content; breadcrumbs render BreadcrumbList; the graph parses as JSON and user text cannot break out of the script element.
+  - **Allowed paths:** `app/Modules/Seo/`, `resources/`, `tests/`
+  - **References:** `docs/SEO.md`, `docs/adr/0002-seo-and-agent-representations.md`
+  - **Needs:** T070, T103.
+- [ ] T105 [SEO] Open Graph and generated social cards (`SEO-004`)
+  - Required og properties and locale alternates are present; question pages add article timestamps; generated 1200x630 cards are cached by revision and served immutable; a default card is used when image generation is unavailable.
+  - **Allowed paths:** `app/Modules/Seo/`, `public/assets/`, `tests/`
+  - **References:** `docs/SEO.md`, `docs/adr/0002-seo-and-agent-representations.md`
+  - **Needs:** T086, T103.
+- [ ] T106 [SEO] Sitemap index and streamed child sitemaps (`SEO-005`)
+  - The index lists typed gzip children within the 50000 URL and 50 MB limits; lastmod equals the content revision; generation streams through XMLWriter with bounded memory on a 100k document fixture; private and draft URLs never appear.
+  - **Allowed paths:** `app/Modules/Seo/`, `tests/`
+  - **References:** `docs/SEO.md`, `docs/adr/0002-seo-and-agent-representations.md`
+  - **Needs:** T103, T040.
+- [ ] T107 [SEO] Atom and JSON feeds with discovery (`SEO-006`)
+  - Atom feeds validate against RFC 4287 with unique ids and updated timestamps; entries link the HTML page and its Markdown alternate; JSON Feed mirrors the same entries; conditional requests return 304.
+  - **Allowed paths:** `app/Modules/Seo/`, `resources/`, `tests/`
+  - **References:** `docs/SEO.md`, `docs/adr/0002-seo-and-agent-representations.md`
+  - **Needs:** T062, T103.
+- [ ] T108 [SEO] Markdown representations and llms.txt (`SEO-007`)
+  - Every published resource renders deterministic Markdown with front matter; .md responses are noindex and canonical to HTML; raw HTML is dropped and link schemes restricted; llms.txt follows the v2 format and every link resolves.
+  - **Allowed paths:** `app/Modules/Seo/`, `resources/`, `tests/`
+  - **References:** `docs/SEO.md`, `docs/adr/0002-seo-and-agent-representations.md`
+  - **Needs:** T023, T060, T103.
+- [ ] T109 [SEO] IndexNow publication notifications (`SEO-008`)
+  - Publishing enqueues batched IndexNow submissions capped at 10000 URLs; the key file is served from the root; failures retry and never block publishing; submissions follow the SSRF rules.
+  - **Allowed paths:** `app/Modules/Seo/`, `tests/`
+  - **References:** `docs/SEO.md`, `docs/adr/0002-seo-and-agent-representations.md`
+  - **Needs:** T106, T028.
+- [ ] T110 [PERF] Invalidation bus and artifact registry (`PERF-005`)
+  - A single invalidation bus maps resource changes to tags and artifacts; sitemap feed llms.txt Markdown and social card staleness resolve through the registry; a failed warm leaves the previous artifact serving.
+  - **Allowed paths:** `app/Core/`, `app/Modules/`, `tests/`
+  - **References:** `docs/FRAMEWORK_PERFORMANCE.md`, `docs/PERFORMANCE.md`, `docs/adr/0003-performance-architecture.md`
+  - **Needs:** T043, T046, T106.
+- [ ] T111 [PERF] Conditional requests fragments and stale-while-revalidate (`PERF-009`)
+  - Conditional requests return 304 without rendering; hot fragments cache with tag invalidation; stale-while-revalidate serves stale content only where explicitly allowed.
+  - **Allowed paths:** `app/Core/`, `app/Modules/Seo/`, `tests/`
+  - **References:** `docs/FRAMEWORK_PERFORMANCE.md`, `docs/PERFORMANCE.md`, `docs/adr/0003-performance-architecture.md`
+  - **Needs:** T044, T103.

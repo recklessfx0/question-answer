@@ -1,0 +1,178 @@
+<!-- specs/002-v01-core-framework-data-and-cache/tasks.md -->
+# v0.1 — Core Framework, Data, Cache & Localization — Tasks
+
+- [ ] T016 [CORE] Bootstrap and autoloading (`CORE-001`)
+  - Deliver bootstrap and autoloading within approved contracts; add positive and failure tests; document public interfaces and report actual test results and security/performance/hosting impact.
+  - **Allowed paths:** `app/Core/`, `app/Contracts/`, `tests/`
+  - **References:** `docs/FRAMEWORK_ARCHITECTURE.md`, `docs/adr/0004-framework-architecture.md`
+  - **Needs:** T004, T011, T005, T012.
+- [ ] T017 [CORE] Configuration (`CORE-002`)
+  - Deliver configuration within approved contracts; add positive and failure tests; document public interfaces and report actual test results and security/performance/hosting impact.
+  - **Allowed paths:** `app/Core/`, `app/Contracts/`, `tests/`
+  - **References:** `docs/FRAMEWORK_ARCHITECTURE.md`, `docs/adr/0004-framework-architecture.md`
+  - **Needs:** T016.
+- [ ] T018 [CORE] HTTP request response (`CORE-003`)
+  - Deliver http request response within approved contracts; add positive and failure tests; document public interfaces and report actual test results and security/performance/hosting impact.
+  - **Allowed paths:** `app/Core/`, `app/Contracts/`, `tests/`
+  - **References:** `docs/FRAMEWORK_ARCHITECTURE.md`, `docs/adr/0004-framework-architecture.md`
+  - **Needs:** T017.
+- [ ] T019 [CORE] Dependency container (`CORE-004`)
+  - Deliver dependency container within approved contracts; add positive and failure tests; document public interfaces and report actual test results and security/performance/hosting impact.
+  - **Allowed paths:** `app/Core/`, `app/Contracts/`, `tests/`
+  - **References:** `docs/FRAMEWORK_ARCHITECTURE.md`, `docs/adr/0004-framework-architecture.md`
+  - **Needs:** T018.
+- [ ] T020 [CORE] Router (`CORE-005`)
+  - Deliver router within approved contracts; add positive and failure tests; document public interfaces and report actual test results and security/performance/hosting impact.
+  - **Allowed paths:** `app/Core/`, `app/Contracts/`, `tests/`
+  - **References:** `docs/FRAMEWORK_ARCHITECTURE.md`, `docs/adr/0004-framework-architecture.md`
+  - **Needs:** T019.
+- [ ] T021 [CORE] Middleware (`CORE-006`)
+  - Deliver middleware within approved contracts; add positive and failure tests; document public interfaces and report actual test results and security/performance/hosting impact.
+  - **Allowed paths:** `app/Core/`, `app/Contracts/`, `tests/`
+  - **References:** `docs/FRAMEWORK_ARCHITECTURE.md`, `docs/adr/0004-framework-architecture.md`
+  - **Needs:** T020.
+- [ ] T022 [CORE] Validation (`CORE-007`)
+  - Deliver validation within approved contracts; add positive and failure tests; document public interfaces and report actual test results and security/performance/hosting impact.
+  - **Allowed paths:** `app/Core/`, `app/Contracts/`, `tests/`
+  - **References:** `docs/FRAMEWORK_ARCHITECTURE.md`, `docs/adr/0004-framework-architecture.md`
+  - **Needs:** T021.
+- [ ] T023 [CORE] Safe templates (`CORE-008`)
+  - Deliver safe templates within approved contracts; add positive and failure tests; document public interfaces and report actual test results and security/performance/hosting impact.
+  - **Allowed paths:** `app/Core/`, `app/Contracts/`, `tests/`
+  - **References:** `docs/FRAMEWORK_ARCHITECTURE.md`, `docs/adr/0004-framework-architecture.md`
+  - **Needs:** T022.
+- [ ] T024 [CORE] Error handling (`CORE-009`)
+  - Deliver error handling within approved contracts; add positive and failure tests; document public interfaces and report actual test results and security/performance/hosting impact.
+  - **Allowed paths:** `app/Core/`, `app/Contracts/`, `tests/`
+  - **References:** `docs/FRAMEWORK_ARCHITECTURE.md`, `docs/adr/0004-framework-architecture.md`
+  - **Needs:** T023.
+- [ ] T025 [CORE] Event dispatcher (`CORE-010`)
+  - Deliver event dispatcher within approved contracts; add positive and failure tests; document public interfaces and report actual test results and security/performance/hosting impact.
+  - **Allowed paths:** `app/Core/`, `app/Contracts/`, `tests/`
+  - **References:** `docs/FRAMEWORK_ARCHITECTURE.md`, `docs/adr/0004-framework-architecture.md`
+  - **Needs:** T024.
+- [ ] T026 [CORE] Module registration (`CORE-011`)
+  - Deliver module registration within approved contracts; add positive and failure tests; document public interfaces and report actual test results and security/performance/hosting impact.
+  - **Allowed paths:** `app/Core/`, `app/Contracts/`, `tests/`
+  - **References:** `docs/FRAMEWORK_ARCHITECTURE.md`, `docs/adr/0004-framework-architecture.md`
+  - **Needs:** T025.
+- [ ] T027 [CORE] Localization (`CORE-012`)
+  - Deliver localization within approved contracts; add positive and failure tests; document public interfaces and report actual test results and security/performance/hosting impact.
+  - **Allowed paths:** `app/Core/`, `app/Contracts/`, `tests/`
+  - **References:** `docs/FRAMEWORK_ARCHITECTURE.md`, `docs/adr/0004-framework-architecture.md`
+  - **Needs:** T026.
+- [ ] T028 [CORE] Job scheduler (`CORE-013`)
+  - Deliver job scheduler within approved contracts; add positive and failure tests; document public interfaces and report actual test results and security/performance/hosting impact.
+  - **Allowed paths:** `app/Core/`, `app/Contracts/`, `tests/`
+  - **References:** `docs/FRAMEWORK_ARCHITECTURE.md`, `docs/adr/0004-framework-architecture.md`
+  - **Needs:** T027.
+- [ ] T029 [DB] PDO connection and transactions (`DB-001`)
+  - Deliver pdo connection and transactions within approved contracts; add positive and failure tests; document public interfaces and report actual test results and security/performance/hosting impact.
+  - **Allowed paths:** `app/Core/Database/`, `database/`, `tests/`
+  - **References:** `docs/ARCHITECTURE.md`, `docs/FRAMEWORK_PERFORMANCE.md`
+  - **Needs:** T009, T017.
+- [ ] T030 [DB] Migration engine (`DB-002`)
+  - Deliver migration engine within approved contracts; add positive and failure tests; document public interfaces and report actual test results and security/performance/hosting impact.
+  - **Allowed paths:** `app/Core/Database/`, `database/`, `tests/`
+  - **References:** `docs/ARCHITECTURE.md`, `docs/FRAMEWORK_PERFORMANCE.md`
+  - **Needs:** T029.
+- [ ] T031 [DB] Schema and indexes (`DB-003`)
+  - Deliver schema and indexes within approved contracts; add positive and failure tests; document public interfaces and report actual test results and security/performance/hosting impact.
+  - **Allowed paths:** `app/Core/Database/`, `database/`, `tests/`
+  - **References:** `docs/ARCHITECTURE.md`, `docs/FRAMEWORK_PERFORMANCE.md`
+  - **Needs:** T030.
+- [ ] T032 [DB] Repository contract and fixtures (`DB-004`)
+  - Deliver repository contract and fixtures within approved contracts; add positive and failure tests; document public interfaces and report actual test results and security/performance/hosting impact.
+  - **Allowed paths:** `app/Core/Database/`, `database/`, `tests/`
+  - **References:** `docs/ARCHITECTURE.md`, `docs/FRAMEWORK_PERFORMANCE.md`
+  - **Needs:** T031.
+- [ ] T033 [DB] Query profiling (`DB-005`)
+  - Deliver query profiling within approved contracts; add positive and failure tests; document public interfaces and report actual test results and security/performance/hosting impact.
+  - **Allowed paths:** `app/Core/Database/`, `database/`, `tests/`
+  - **References:** `docs/ARCHITECTURE.md`, `docs/FRAMEWORK_PERFORMANCE.md`
+  - **Needs:** T032.
+- [ ] T034 [LOG] PSR logger and request IDs (`LOG-001`)
+  - Deliver psr logger and request ids within approved contracts; add positive and failure tests; document public interfaces and report actual test results and security/performance/hosting impact.
+  - **Allowed paths:** `app/Core/Logging/`, `tests/`
+  - **References:** `docs/SECURITY_REQUIREMENTS.md`, `docs/HARDENING.md`
+  - **Needs:** T017, T008.
+- [ ] T035 [LOG] JSON channels and redaction (`LOG-002`)
+  - Deliver json channels and redaction within approved contracts; add positive and failure tests; document public interfaces and report actual test results and security/performance/hosting impact.
+  - **Allowed paths:** `app/Core/Logging/`, `tests/`
+  - **References:** `docs/SECURITY_REQUIREMENTS.md`, `docs/HARDENING.md`
+  - **Needs:** T034.
+- [ ] T036 [LOG] Rotation and retention (`LOG-003`)
+  - Deliver rotation and retention within approved contracts; add positive and failure tests; document public interfaces and report actual test results and security/performance/hosting impact.
+  - **Allowed paths:** `app/Core/Logging/`, `tests/`
+  - **References:** `docs/SECURITY_REQUIREMENTS.md`, `docs/HARDENING.md`
+  - **Needs:** T035.
+- [ ] T037 [LOG] Debug profiler and toolbar (`LOG-004`)
+  - Deliver debug profiler and toolbar within approved contracts; add positive and failure tests; document public interfaces and report actual test results and security/performance/hosting impact.
+  - **Allowed paths:** `app/Core/Logging/`, `tests/`
+  - **References:** `docs/SECURITY_REQUIREMENTS.md`, `docs/HARDENING.md`
+  - **Needs:** T036.
+- [ ] T038 [LOG] Admin diagnostics export (`LOG-005`)
+  - Deliver admin diagnostics export within approved contracts; add positive and failure tests; document public interfaces and report actual test results and security/performance/hosting impact.
+  - **Allowed paths:** `app/Core/Logging/`, `tests/`
+  - **References:** `docs/SECURITY_REQUIREMENTS.md`, `docs/HARDENING.md`
+  - **Needs:** T037, T093.
+- [ ] T039 [PERF] Cache contract (`CACHE-001`)
+  - Deliver cache contract within approved contracts; add positive and failure tests; document public interfaces and report actual test results and security/performance/hosting impact.
+  - **Allowed paths:** `app/Core/Cache/`, `tests/`
+  - **References:** `docs/FRAMEWORK_PERFORMANCE.md`, `docs/PERFORMANCE.md`, `docs/adr/0003-performance-architecture.md`
+  - **Needs:** T017, T007, T008.
+- [ ] T040 [PERF] Atomic file adapter (`CACHE-002`)
+  - Deliver atomic file adapter within approved contracts; add positive and failure tests; document public interfaces and report actual test results and security/performance/hosting impact.
+  - **Allowed paths:** `app/Core/Cache/`, `tests/`
+  - **References:** `docs/FRAMEWORK_PERFORMANCE.md`, `docs/PERFORMANCE.md`, `docs/adr/0003-performance-architecture.md`
+  - **Needs:** T039.
+- [ ] T041 [PERF] TTL and cleanup (`CACHE-003`)
+  - Deliver ttl and cleanup within approved contracts; add positive and failure tests; document public interfaces and report actual test results and security/performance/hosting impact.
+  - **Allowed paths:** `app/Core/Cache/`, `tests/`
+  - **References:** `docs/FRAMEWORK_PERFORMANCE.md`, `docs/PERFORMANCE.md`, `docs/adr/0003-performance-architecture.md`
+  - **Needs:** T040.
+- [ ] T042 [PERF] Stampede protection (`CACHE-004`)
+  - Deliver stampede protection within approved contracts; add positive and failure tests; document public interfaces and report actual test results and security/performance/hosting impact.
+  - **Allowed paths:** `app/Core/Cache/`, `tests/`
+  - **References:** `docs/FRAMEWORK_PERFORMANCE.md`, `docs/PERFORMANCE.md`, `docs/adr/0003-performance-architecture.md`
+  - **Needs:** T041.
+- [ ] T043 [PERF] Tags and invalidation (`CACHE-005`)
+  - Deliver tags and invalidation within approved contracts; add positive and failure tests; document public interfaces and report actual test results and security/performance/hosting impact.
+  - **Allowed paths:** `app/Core/Cache/`, `tests/`
+  - **References:** `docs/FRAMEWORK_PERFORMANCE.md`, `docs/PERFORMANCE.md`, `docs/adr/0003-performance-architecture.md`
+  - **Needs:** T042.
+- [ ] T044 [PERF] Public page and fragment cache (`CACHE-006`)
+  - Deliver public page and fragment cache within approved contracts; add positive and failure tests; document public interfaces and report actual test results and security/performance/hosting impact.
+  - **Allowed paths:** `app/Core/Cache/`, `tests/`
+  - **References:** `docs/FRAMEWORK_PERFORMANCE.md`, `docs/PERFORMANCE.md`, `docs/adr/0003-performance-architecture.md`
+  - **Needs:** T043, T053.
+- [ ] T045 [PERF] HTTP caching and benchmarks (`CACHE-007`)
+  - Deliver http caching and benchmarks within approved contracts; add positive and failure tests; document public interfaces and report actual test results and security/performance/hosting impact.
+  - **Allowed paths:** `app/Core/Cache/`, `tests/`
+  - **References:** `docs/FRAMEWORK_PERFORMANCE.md`, `docs/PERFORMANCE.md`, `docs/adr/0003-performance-architecture.md`
+  - **Needs:** T044.
+- [ ] T046 [I18N] Locale negotiation and fallback chain (`I18N-002`)
+  - Explicit preference then header then default resolves deterministically; unknown and disabled locales are rejected against the installed allow-list; negative tests cover malformed oversized and CRLF header input.
+  - **Allowed paths:** `app/Core/`, `app/Contracts/`, `config/`, `tests/`
+  - **References:** `docs/I18N.md`, `docs/adr/0001-localization.md`
+  - **Needs:** T013, T017, T018.
+- [ ] T047 [I18N] ICU catalogues and pluralization (`I18N-003`)
+  - Catalogues load per locale and domain through the loader contract; plural and select messages render correctly; a missing default-locale key fails the build; the request path performs no directory scanning.
+  - **Allowed paths:** `app/Core/`, `resources/lang/`, `tests/`
+  - **References:** `docs/I18N.md`, `docs/adr/0001-localization.md`
+  - **Needs:** T046, T023.
+- [ ] T048 [PERF] Deploy-time compiled container routes and templates (`PERF-002`)
+  - Production builds ship a compiled container route table and templates; no reflection or directory scan runs on the request path; artifacts rebuild atomically on deploy and install.
+  - **Allowed paths:** `app/Core/`, `storage/`, `tests/`
+  - **References:** `docs/FRAMEWORK_PERFORMANCE.md`, `docs/PERFORMANCE.md`, `docs/adr/0003-performance-architecture.md`
+  - **Needs:** T016, T019, T020, T023.
+- [ ] T049 [PERF] OPcache baseline and preload capability detection (`PERF-003`)
+  - The installer detects opcache settings and reports which uplifts are available; the baseline meets the shared-hosting budget with stock opcache only; preloading never changes correctness.
+  - **Allowed paths:** `app/Core/`, `docs/`, `tests/`
+  - **References:** `docs/FRAMEWORK_PERFORMANCE.md`, `docs/PERFORMANCE.md`, `docs/adr/0003-performance-architecture.md`
+  - **Needs:** T016, T012.
+- [ ] T050 [PERF] Benchmark harness and performance gate (`PERF-006`)
+  - A harness measures p50 p95 p99 CPU memory queries and bytes on fixed fixtures; baselines are committed; a regression beyond tolerance fails CI.
+  - **Allowed paths:** `tools/`, `tests/`, `.github/`, `docs/`
+  - **References:** `docs/FRAMEWORK_PERFORMANCE.md`, `docs/PERFORMANCE.md`, `docs/adr/0003-performance-architecture.md`
+  - **Needs:** T045, T033.

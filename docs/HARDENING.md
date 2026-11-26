@@ -59,13 +59,13 @@ Remove `X-Powered-By` and any framework banner. Error pages are generic in produ
 - `Secure`, `HttpOnly`, `SameSite=Lax` (or `Strict` where flows permit), `__Host-` prefix where the cookie is host-scoped.
 - Regenerate the session ID on privilege change; expire idle sessions; offer "sign out all devices".
 - Authentication failures are rate limited per account and per IP, with a uniform response and a delay.
-- MFA for administrator accounts; require re-authentication for destructive operations.
+- MFA (TOTP and/or WebAuthn passkeys/security keys) enabled for administrator and editor accounts; require step-up re-authentication for destructive operations.
 
 ## 5. Secrets
 
 - Per-install application key and database password are generated at install, never shipped in the archive.
 - Database user: minimal grants on the application schema only; no `FILE`, `SUPER`, `PROCESS`, `GRANT OPTION`. Prefer a local socket or `127.0.0.1`.
-- AI provider keys and MCP tokens are optional, stored encrypted, scoped, rotatable and revocable; never in the database plaintext when a key store is available.
+- Long-lived secrets (TOTP seeds, SMTP passwords, DKIM private keys, AI provider keys, MCP/webhook secrets) are encrypted at rest via `SecretBox` (AEAD with AAD) and rotatable without downtime; never stored plaintext in the database.
 - No secret in HTML, JavaScript, URLs, logs, error messages, issue trackers or backlog files. Redaction happens in the logger, not at the call site.
 - Rotate on suspicion; document the rotation runbook with the deployment.
 
@@ -115,3 +115,11 @@ Run from a machine outside the host, unauthenticated:
 | Error trigger in production | Generic page, details only in the server log |
 
 Record the results with the deployment; re-run after every host or PHP upgrade.
+
+## 12. Transactional mail and SMTP
+
+- Do not rely on PHP `mail()` in production; configure authenticated SMTP over implicit TLS (`465`) or mandatory `STARTTLS` (`587`) with strict certificate verification enabled.
+- Never allow plaintext SMTP outside an explicitly approved local host relay (`127.0.0.1`/`::1`).
+- Publish aligned **SPF**, **DKIM** (via relay or built-in DKIM signing) and **DMARC** (`p=quarantine` or `p=reject` once monitored) DNS records for the configured `From` domain.
+- Store SMTP passwords and DKIM private keys encrypted via `SecretBox` (`SEC-D-05`); verify they never appear in logs or HTML forms.
+- Confirm outbound mail runs asynchronously through the job queue with per-recipient and per-IP rate limits active; test via the Admin "Send test email" diagnostic after deployment.

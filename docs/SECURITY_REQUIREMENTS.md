@@ -12,8 +12,10 @@ Gates: **Merge** — required before code lands on `main`. **Release** — requi
 | SEC-A-02 | Session IDs regenerated on login and privilege change; idle and absolute timeouts enforced server-side. | Integration test of session lifecycle. | Merge |
 | SEC-A-03 | Session cookies `Secure`, `HttpOnly`, `SameSite`, `__Host-` prefixed where host-scoped. | Header assertion in an HTTP test. | Merge |
 | SEC-A-04 | Uniform authentication failure responses with per-account and per-IP throttling; no account enumeration by message, status or timing. | Negative test driving repeated failures. | Release |
-| SEC-A-05 | MFA available for administrator accounts and required for destructive operations; re-authentication before sensitive changes. | Flow test with and without the second factor. | Release |
-| SEC-A-06 | CSRF tokens validated on every state-changing request, including JSON and MCP-initiated mutations. | Negative test without a token. | Merge |
+| SEC-A-05 | Two-factor authentication (TOTP RFC 6238 with encrypted seeds, `±1` step bound, replay floor and hashed single-use recovery codes) is available to all accounts, configurable as mandatory by role, and enforced with quarantined `pending_mfa` sessions and step-up re-authentication before destructive operations. | Flow and negative tests for `pending_mfa` bypass, TOTP replay, expired step-up and recovery-code reuse. | Release |
+| SEC-A-06 | CSRF tokens (plus `Origin`/`Sec-Fetch-Site` checks) are validated on every state-changing cookie-authenticated request, including HTML, JSON and cookie-backed MCP mutations; stateless Bearer endpoints ignore cookies and enforce token + scope + object authz. | Negative test without a token and with cross-origin cookie request. | Merge |
+| SEC-A-07 | Passkeys and WebAuthn/FIDO2 security keys validate exact origin, RP ID, single-use session challenge, COSE signature (`ES256`/`EdDSA`/`RS256`), `UV` flag on passwordless login, and fail closed with audit + alert on `sign_count` clone regression. | Negative tests for wrong origin, wrong RP ID, replayed challenge, missing `UV` and regressed `sign_count`. | Release |
+| SEC-A-08 | Email verification, password reset and email-change tokens use ≥256-bit CSPRNG entropy, are stored strictly as one-way hashes with short TTLs, are single-use, invalidate prior unused tokens on reissue, revoke active sessions on password reset without disabling MFA, and alert the old address on email change. | Negative tests for expired, replayed and cross-purpose tokens plus enumeration response comparison. | Release |
 
 ## B. Authorization
 
@@ -36,6 +38,7 @@ Gates: **Merge** — required before code lands on `main`. **Release** — requi
 | SEC-C-06 | Request bodies, headers, upload sizes and pagination bounds are capped; malformed input is rejected before work is done. | Boundary tests at each limit. | Merge |
 | SEC-C-07 | Locale input is validated against an installed allow-list before use in a path, cache key, header or catalogue load; `Accept-Language` parsing is bounded and rejects control characters; catalogue values are escaped at output and never evaluated. | Negative tests for unknown locale, traversal-shaped tag and CRLF header; bidi control characters stripped from input and imports. | Merge |
 | SEC-C-08 | Structured data and XML artifacts are encoded for their serialization context: JSON-LD cannot be terminated by user text, sitemaps and feeds are written through an XML writer with no DTD or external entities, and Markdown drops raw HTML and restricts link schemes. | Breakout tests with `</script>` and entity payloads in titles and answers; XML validation of generated artifacts. | Merge |
+| SEC-C-09 | Outbound mail validates addresses, subjects and allow-listed headers against `CR`/`LF`/control-byte injection; SMTP enforces implicit TLS (`465`) or mandatory `STARTTLS` (`587`) with certificate/hostname verification and no plaintext downgrade, applies SSRF host checks, and enforces per-recipient and per-IP rate caps. | Negative tests for CRLF header injection, missing/invalid STARTTLS cert, metadata/private SMTP host and email-bombing bursts. | Merge |
 
 ## D. Data, privacy and logging
 
@@ -45,6 +48,7 @@ Gates: **Merge** — required before code lands on `main`. **Release** — requi
 | SEC-D-02 | Personal data retention, export and deletion are implemented per content type, and exports are scoped to the requester. | Export/deletion test. | Release |
 | SEC-D-03 | Publication requires an editorial verification state and preserves the revision history with author and time. | State-machine test. | Milestone v0.3 |
 | SEC-D-04 | Public artifacts — sitemaps, feeds, JSON-LD, Markdown and `llms.txt` — contain only published, publicly visible content and are built from the same authorization-filtered query as the HTML page. | Leakage tests over drafts, private questions and moderated content in every artifact. | Release |
+| SEC-D-05 | Long-lived application secrets that must be read back (TOTP seeds, SMTP passwords, DKIM private keys, AI provider keys, webhook secrets) are encrypted at rest with versioned AEAD (`SecretBox`) bound to immutable associated data (AAD) and support key rotation. | Unit and negative tests for tampered ciphertext, wrong AAD context and key rotation. | Merge |
 
 ## E. AI and MCP
 

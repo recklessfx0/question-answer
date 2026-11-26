@@ -8,6 +8,9 @@ Request → bootstrap/kernel → middleware → router → controller → applic
 ## Contracts before parallel coding
 Approve interfaces for HTTP, routing, configuration, database/migrations, authorization, events, cache, logging, rendering, jobs, extension lifecycle and content service. Publish contract tests and ADRs. Changes require architecture review and affected owners. Use versioned public contracts; internal classes are not extension APIs.
 
+## Framework architecture and boundaries
+Four unidirectional layers separate the framework from the CMS: `app/Contracts` (zero internal dependencies), `app/Core` (depends only on `app/Contracts`), `app/Modules/*` (depend only on `app/Contracts`, never on `app/Core` internals or other modules), and `extensions/*` (depend only on `app/Contracts`). Discovery, configuration, container wiring, routing, events and templates compile at build/deploy/install time into `storage/compiled/`, while requests run a pre-boot L1 fast path and a deterministic compiled middleware pipeline over a shared application spine for Web, REST, MCP and CLI. See [framework architecture](FRAMEWORK_ARCHITECTURE.md) and [ADR 0004](adr/0004-framework-architecture.md).
+
 ## Data
 Content nodes with type, parent, root, author, status, visibility, timestamps and revision pointer; specialized questions/answers; revisions, sources, translations, tags, collections, votes, reports, users, roles, permissions, sessions, tokens, settings, extensions, jobs and audit events. Enforce parent/type rules, no cycles, bounded traversal, indexes on root/parent and status, transactions for accepted answers and vote uniqueness. Separate clarification from comments. Deletion and moderation must preserve privacy and thread integrity. Test both database engines; avoid vendor-specific SQL in core unless abstracted.
 
@@ -19,6 +22,9 @@ Public pages are server-rendered from a structured document model that also prod
 
 ## Performance model
 Requests are served by compiled artifacts: classmap-authoritative autoloading, a compiled container, a static route table and compiled templates, with no reflection or discovery on the request path. A cached response returns before boot; an uncached page renders from a read-model projection shared by HTML, Markdown, JSON-LD, feeds and sitemaps. Cache layers, keys and invalidation are defined in [framework performance](FRAMEWORK_PERFORMANCE.md) and [ADR 0003](adr/0003-performance-architecture.md); budgets are in [performance](PERFORMANCE.md).
+
+## Authentication and transactional mail
+Authentication enforces a three-state session machine (`anonymous` → `pending_mfa` → `authenticated`) with step-up re-authentication for destructive actions, RFC 6238 TOTP (encrypted seeds, replay floor), WebAuthn/FIDO2 passkeys and hardware security keys, hashed single-use recovery codes, and a shared versioned AEAD `SecretBox` for long-lived secrets. Outbound mail routes through `Mailer` and `MailTransport` onto the database job queue using native authenticated SMTP over strict TLS (`smtps`/`STARTTLS`), header-injection and SSRF checks, optional DKIM signing, and localized multipart templates. See [authentication](AUTH.md), [mail](MAIL.md), [ADR 0005](adr/0005-authentication-mfa-passkeys.md) and [ADR 0006](adr/0006-mail-and-smtp.md).
 
 ## Operations
 File cache default, optional APCu/Redis; HTTP caching for public pages only; key by language/theme/visibility where relevant; atomic writes, TTL, invalidation and stampede control. Cron optional with bounded opportunistic jobs; never run unbounded work in HTTP. Structured redacted logs and request IDs. AI provider gateway optional; MCP protocol version and transport must be verified against official spec at implementation time.

@@ -1,0 +1,68 @@
+<!-- specs/006-v05-installer-and-updater/tasks.md -->
+# v0.5 — Browser Installer & Signed Atomic Updater — Tasks
+
+- [ ] T128 [INS] Hosting feasibility and private paths (`INS-001`)
+  - Deliver hosting feasibility and private paths within approved contracts; add positive and failure tests; document public interfaces and report actual test results and security/performance/hosting impact.
+  - **Allowed paths:** `app/Modules/Installer/`, `tests/`
+  - **References:** `docs/INSTALL_UPDATE.md`, `docs/HARDENING.md`
+  - **Needs:** T005, T030, T051.
+- [ ] T129 [INS] Browser setup and ownership proof (`INS-002`)
+  - Deliver browser setup and ownership proof within approved contracts; add positive and failure tests; document public interfaces and report actual test results and security/performance/hosting impact.
+  - **Allowed paths:** `app/Modules/Installer/`, `tests/`
+  - **References:** `docs/INSTALL_UPDATE.md`, `docs/HARDENING.md`
+  - **Needs:** T128.
+- [ ] T130 [INS] Database and admin creation (`INS-003`)
+  - Deliver database and admin creation within approved contracts; add positive and failure tests; document public interfaces and report actual test results and security/performance/hosting impact.
+  - **Allowed paths:** `app/Modules/Installer/`, `tests/`
+  - **References:** `docs/INSTALL_UPDATE.md`, `docs/HARDENING.md`
+  - **Needs:** T129.
+- [ ] T131 [INS] Subdirectory and rewrite fallback (`INS-004`)
+  - Deliver subdirectory and rewrite fallback within approved contracts; add positive and failure tests; document public interfaces and report actual test results and security/performance/hosting impact.
+  - **Allowed paths:** `app/Modules/Installer/`, `tests/`
+  - **References:** `docs/INSTALL_UPDATE.md`, `docs/HARDENING.md`
+  - **Needs:** T130.
+- [ ] T132 [INS] Lock and health checks (`INS-005`)
+  - Deliver lock and health checks within approved contracts; add positive and failure tests; document public interfaces and report actual test results and security/performance/hosting impact.
+  - **Allowed paths:** `app/Modules/Installer/`, `tests/`
+  - **References:** `docs/INSTALL_UPDATE.md`, `docs/HARDENING.md`
+  - **Needs:** T131.
+- [ ] T133 [INS] Release ZIP and hosting tests (`INS-006`)
+  - Deliver release zip and hosting tests within approved contracts; add positive and failure tests; document public interfaces and report actual test results and security/performance/hosting impact.
+  - **Allowed paths:** `app/Modules/Installer/`, `tests/`
+  - **References:** `docs/INSTALL_UPDATE.md`, `docs/HARDENING.md`
+  - **Needs:** T132.
+- [ ] T134 [UPD] Signed metadata and trusted keys (`UPD-001`)
+  - Deliver signed metadata and trusted keys within approved contracts; add positive and failure tests; document public interfaces and report actual test results and security/performance/hosting impact.
+  - **Allowed paths:** `app/Modules/Updater/`, `tests/`
+  - **References:** `docs/INSTALL_UPDATE.md`, `docs/SECURITY_REQUIREMENTS.md`
+  - **Needs:** T132, T053.
+- [ ] T135 [UPD] Archive validation and staging (`UPD-002`)
+  - Deliver archive validation and staging within approved contracts; add positive and failure tests; document public interfaces and report actual test results and security/performance/hosting impact.
+  - **Allowed paths:** `app/Modules/Updater/`, `tests/`
+  - **References:** `docs/INSTALL_UPDATE.md`, `docs/SECURITY_REQUIREMENTS.md`
+  - **Needs:** T134.
+- [ ] T136 [UPD] Backup and restore (`UPD-003`)
+  - Deliver backup and restore within approved contracts; add positive and failure tests; document public interfaces and report actual test results and security/performance/hosting impact.
+  - **Allowed paths:** `app/Modules/Updater/`, `tests/`
+  - **References:** `docs/INSTALL_UPDATE.md`, `docs/SECURITY_REQUIREMENTS.md`
+  - **Needs:** T135.
+- [ ] T137 [UPD] Maintenance lock and journal (`UPD-004`)
+  - Deliver maintenance lock and journal within approved contracts; add positive and failure tests; document public interfaces and report actual test results and security/performance/hosting impact.
+  - **Allowed paths:** `app/Modules/Updater/`, `tests/`
+  - **References:** `docs/INSTALL_UPDATE.md`, `docs/SECURITY_REQUIREMENTS.md`
+  - **Needs:** T136.
+- [ ] T138 [UPD] Resumable migration and recovery (`UPD-005`)
+  - Deliver resumable migration and recovery within approved contracts; add positive and failure tests; document public interfaces and report actual test results and security/performance/hosting impact.
+  - **Allowed paths:** `app/Modules/Updater/`, `tests/`
+  - **References:** `docs/INSTALL_UPDATE.md`, `docs/SECURITY_REQUIREMENTS.md`
+  - **Needs:** T137.
+- [ ] T139 [UPD] Admin UI and manual fallback (`UPD-006`)
+  - Deliver admin ui and manual fallback within approved contracts; add positive and failure tests; document public interfaces and report actual test results and security/performance/hosting impact.
+  - **Allowed paths:** `app/Modules/Updater/`, `tests/`
+  - **References:** `docs/INSTALL_UPDATE.md`, `docs/SECURITY_REQUIREMENTS.md`
+  - **Needs:** T138, T093.
+- [ ] T140 [UPD] Interrupted update and rotation tests (`UPD-007`)
+  - Deliver interrupted update and rotation tests within approved contracts; add positive and failure tests; document public interfaces and report actual test results and security/performance/hosting impact.
+  - **Allowed paths:** `app/Modules/Updater/`, `tests/`
+  - **References:** `docs/INSTALL_UPDATE.md`, `docs/SECURITY_REQUIREMENTS.md`
+  - **Needs:** T139.

@@ -3,7 +3,11 @@ PHP 8.5 lint, PHPUnit unit/integration, PHPStan, coding style, Composer audit, s
 
 ## What CI runs now
 
-`Foundation checks` validates the backlog dependency graph, lints any PHP present and validates the Composer manifest. `Security checks` runs the secret scan (gitleaks), workflow lint (actionlint), the repository policy job (commit-pinned actions, no committed environment files), Python static analysis (bandit, medium and above) and, on pull requests, dependency review once a dependency lockfile exists. None of these are required status checks until branch protection is configured per [GitHub setup](GITHUB_SETUP.md); without that, a red gate is advisory.
+`Foundation checks` validates the backlog dependency graph (`tools/validate_backlog.py`), validates the GitHub Spec Kit milestones (`tools/validate_specs.py`), lints any PHP present and validates the Composer manifest. `Security checks` runs the secret scan (gitleaks), workflow lint (actionlint), the repository policy job (commit-pinned actions, no committed environment files), Python static analysis (bandit, medium and above) and, on pull requests, dependency review once a dependency lockfile exists. None of these are required status checks until branch protection is configured per [GitHub setup](GITHUB_SETUP.md); without that, a red gate is advisory.
+
+## Architecture gates
+
+Static boundary checks fail CI if `app/Contracts` imports anything internal, `app/Core` imports `app/Modules`, or any module imports another module's internal classes. Every interface in `app/Contracts/` ships a contract test suite, and `ArtifactCompiler` determinism and cycle-detection tests run on every build. See [framework architecture](FRAMEWORK_ARCHITECTURE.md) and [ADR 0004](adr/0004-framework-architecture.md).
 
 ## Performance gates
 
@@ -12,6 +16,10 @@ CI runs the benchmark harness on fixed fixtures and fails on a regression beyond
 ## Security evidence
 
 Every control in [security requirements](SECURITY_REQUIREMENTS.md) needs a negative test that fails closed — a test that only proves the happy path does not satisfy SEC-J-01. Security tests belong beside the behaviour they guard, name the control ID they cover, and are listed in a mapping table that the release checklist checks. A control without a negative test is unimplemented regardless of the code present.
+
+## Authentication and mail gates
+
+Contract and negative tests cover `SecretBox` (tampered ciphertext, mismatched AAD, key rotation), `TotpVerifier` (replay within time step, out-of-window codes, throttling), `PasskeyVerifier` (wrong origin, wrong RP ID, replayed challenge, missing `UV`, regressed `sign_count`), `pending_mfa` session isolation, single-use hashed recovery/reset tokens, and `EmailMessage`/`MailTransport`/`Mailer` (`CR`/`LF` header injection, missing/invalid `STARTTLS` certificate, metadata/private SMTP host rejection, secret redaction in logs/dead-letter queues, and email-bombing rate caps). See [authentication](AUTH.md) and [mail](MAIL.md).
 
 ## SEO gates
 

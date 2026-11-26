@@ -1,0 +1,63 @@
+<!-- specs/007-v06-optional-ai-and-mcp/tasks.md -->
+# v0.6 — Optional AI Gateway & MCP Server — Tasks
+
+- [ ] T141 [P] [AI] Provider interface and settings (`AI-001`)
+  - Deliver provider interface and settings within approved contracts; add positive and failure tests; document public interfaces and report actual test results and security/performance/hosting impact.
+  - **Allowed paths:** `app/Modules/Ai/`, `tests/`
+  - **References:** `docs/API_MCP_AI.md`, `docs/SECURITY_REQUIREMENTS.md`, `docs/THREAT_MODEL.md`
+  - **Needs:** T120, T070.
+- [ ] T142 [AI] Cost limits and privacy (`AI-002`)
+  - Deliver cost limits and privacy within approved contracts; add positive and failure tests; document public interfaces and report actual test results and security/performance/hosting impact.
+  - **Allowed paths:** `app/Modules/Ai/`, `tests/`
+  - **References:** `docs/API_MCP_AI.md`, `docs/SECURITY_REQUIREMENTS.md`, `docs/THREAT_MODEL.md`
+  - **Needs:** T141.
+- [ ] T143 [AI] Draft answers and clarifications (`AI-003`)
+  - Deliver draft answers and clarifications within approved contracts; add positive and failure tests; document public interfaces and report actual test results and security/performance/hosting impact.
+  - **Allowed paths:** `app/Modules/Ai/`, `tests/`
+  - **References:** `docs/API_MCP_AI.md`, `docs/SECURITY_REQUIREMENTS.md`, `docs/THREAT_MODEL.md`
+  - **Needs:** T142.
+- [ ] T144 [AI] Grounded citations and provenance (`AI-004`)
+  - Deliver grounded citations and provenance within approved contracts; add positive and failure tests; document public interfaces and report actual test results and security/performance/hosting impact.
+  - **Allowed paths:** `app/Modules/Ai/`, `tests/`
+  - **References:** `docs/API_MCP_AI.md`, `docs/SECURITY_REQUIREMENTS.md`, `docs/THREAT_MODEL.md`
+  - **Needs:** T143.
+- [ ] T145 [AI] Duplicate and gap detection (`AI-005`)
+  - Deliver duplicate and gap detection within approved contracts; add positive and failure tests; document public interfaces and report actual test results and security/performance/hosting impact.
+  - **Allowed paths:** `app/Modules/Ai/`, `tests/`
+  - **References:** `docs/API_MCP_AI.md`, `docs/SECURITY_REQUIREMENTS.md`, `docs/THREAT_MODEL.md`
+  - **Needs:** T144.
+- [ ] T146 [AI] Optional semantic retrieval and evaluation (`AI-006`)
+  - Deliver optional semantic retrieval and evaluation within approved contracts; add positive and failure tests; document public interfaces and report actual test results and security/performance/hosting impact.
+  - **Allowed paths:** `app/Modules/Ai/`, `tests/`
+  - **References:** `docs/API_MCP_AI.md`, `docs/SECURITY_REQUIREMENTS.md`, `docs/THREAT_MODEL.md`
+  - **Needs:** T145.
+- [ ] T147 [P] [MCP] Protocol ADR and transport (`MCP-001`)
+  - Deliver protocol adr and transport within approved contracts; add positive and failure tests; document public interfaces and report actual test results and security/performance/hosting impact.
+  - **Allowed paths:** `app/Modules/Mcp/`, `tests/`
+  - **References:** `docs/API_MCP_AI.md`, `docs/SECURITY_REQUIREMENTS.md`, `docs/THREAT_MODEL.md`
+  - **Needs:** T120, T070.
+- [ ] T148 [MCP] Read-only registry and tools (`MCP-002`)
+  - Deliver read-only registry and tools within approved contracts; add positive and failure tests; document public interfaces and report actual test results and security/performance/hosting impact.
+  - **Allowed paths:** `app/Modules/Mcp/`, `tests/`
+  - **References:** `docs/API_MCP_AI.md`, `docs/SECURITY_REQUIREMENTS.md`, `docs/THREAT_MODEL.md`
+  - **Needs:** T147.
+- [ ] T149 [MCP] Resource authorization and audit (`MCP-003`)
+  - Deliver resource authorization and audit within approved contracts; add positive and failure tests; document public interfaces and report actual test results and security/performance/hosting impact.
+  - **Allowed paths:** `app/Modules/Mcp/`, `tests/`
+  - **References:** `docs/API_MCP_AI.md`, `docs/SECURITY_REQUIREMENTS.md`, `docs/THREAT_MODEL.md`
+  - **Needs:** T148.
+- [ ] T150 [MCP] Scoped draft and feedback mutations (`MCP-004`)
+  - Deliver scoped draft and feedback mutations within approved contracts; add positive and failure tests; document public interfaces and report actual test results and security/performance/hosting impact.
+  - **Allowed paths:** `app/Modules/Mcp/`, `tests/`
+  - **References:** `docs/API_MCP_AI.md`, `docs/SECURITY_REQUIREMENTS.md`, `docs/THREAT_MODEL.md`
+  - **Needs:** T149.
+- [ ] T151 [MCP] Optional outbound client and SSRF protections (`MCP-005`)
+  - Deliver optional outbound client and ssrf protections within approved contracts; add positive and failure tests; document public interfaces and report actual test results and security/performance/hosting impact.
+  - **Allowed paths:** `app/Modules/Mcp/`, `tests/`
+  - **References:** `docs/API_MCP_AI.md`, `docs/SECURITY_REQUIREMENTS.md`, `docs/THREAT_MODEL.md`
+  - **Needs:** T150.
+- [ ] T152 [MCP] Conformance and compatibility tests (`MCP-006`)
+  - Deliver conformance and compatibility tests within approved contracts; add positive and failure tests; document public interfaces and report actual test results and security/performance/hosting impact.
+  - **Allowed paths:** `app/Modules/Mcp/`, `tests/`
+  - **References:** `docs/API_MCP_AI.md`, `docs/SECURITY_REQUIREMENTS.md`, `docs/THREAT_MODEL.md`
+  - **Needs:** T151.
