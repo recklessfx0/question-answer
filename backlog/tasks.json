@@ -2675,5 +2675,189 @@
     "review": [
       "independent maintainer"
     ]
+  },
+  {
+    "id": "SEO-001",
+    "title": "Approve SEO and agent representation model",
+    "milestone": "M0",
+    "workstream": "seo",
+    "priority": "P0",
+    "depends_on": [
+      "GOV-004",
+      "GOV-011"
+    ],
+    "allowed_paths": [
+      "docs/",
+      "app/Contracts/",
+      "backlog/"
+    ],
+    "acceptance": "ADR 0002 accepted by an independent maintainer with the three SEO contracts approved; open decisions recorded; no implementation merged before approval.",
+    "review": [
+      "independent maintainer"
+    ]
+  },
+  {
+    "id": "SEO-002",
+    "title": "Canonical robots and indexation controls",
+    "milestone": "v0.3",
+    "workstream": "seo",
+    "priority": "P0",
+    "depends_on": [
+      "I18N-006",
+      "CORE-005"
+    ],
+    "allowed_paths": [
+      "app/Modules/Seo/",
+      "resources/",
+      "tests/"
+    ],
+    "acceptance": "Every indexable page emits a self-referencing canonical and hreflang set; robots.txt is generated and references the sitemap index; noindex never appears on a canonical page; redirects are single-hop and 404 and 410 stay distinct.",
+    "review": [
+      "independent maintainer"
+    ]
+  },
+  {
+    "id": "SEO-003",
+    "title": "JSON-LD graph for questions and answers",
+    "milestone": "v0.3",
+    "workstream": "seo",
+    "priority": "P0",
+    "depends_on": [
+      "QA-011",
+      "SEO-002"
+    ],
+    "allowed_paths": [
+      "app/Modules/Seo/",
+      "resources/",
+      "tests/"
+    ],
+    "acceptance": "Question pages emit a valid QAPage graph with Question Answer author dates and upvote counts; values match visible content; breadcrumbs render BreadcrumbList; the graph parses as JSON and user text cannot break out of the script element.",
+    "review": [
+      "independent maintainer",
+      "security reviewer"
+    ]
+  },
+  {
+    "id": "SEO-004",
+    "title": "Open Graph and generated social cards",
+    "milestone": "v0.3",
+    "workstream": "seo",
+    "priority": "P0",
+    "depends_on": [
+      "UI-002",
+      "SEO-002"
+    ],
+    "allowed_paths": [
+      "app/Modules/Seo/",
+      "public/assets/",
+      "tests/"
+    ],
+    "acceptance": "Required og properties and locale alternates are present; question pages add article timestamps; generated 1200x630 cards are cached by revision and served immutable; a default card is used when image generation is unavailable.",
+    "review": [
+      "independent maintainer"
+    ]
+  },
+  {
+    "id": "SEO-005",
+    "title": "Sitemap index and streamed child sitemaps",
+    "milestone": "v0.3",
+    "workstream": "seo",
+    "priority": "P0",
+    "depends_on": [
+      "SEO-002",
+      "CACHE-002"
+    ],
+    "allowed_paths": [
+      "app/Modules/Seo/",
+      "tests/"
+    ],
+    "acceptance": "The index lists typed gzip children within the 50000 URL and 50 MB limits; lastmod equals the content revision; generation streams through XMLWriter with bounded memory on a 100k document fixture; private and draft URLs never appear.",
+    "review": [
+      "independent maintainer"
+    ]
+  },
+  {
+    "id": "SEO-006",
+    "title": "Atom and JSON feeds with discovery",
+    "milestone": "v0.3",
+    "workstream": "seo",
+    "priority": "P0",
+    "depends_on": [
+      "QA-003",
+      "SEO-002"
+    ],
+    "allowed_paths": [
+      "app/Modules/Seo/",
+      "resources/",
+      "tests/"
+    ],
+    "acceptance": "Atom feeds validate against RFC 4287 with unique ids and updated timestamps; entries link the HTML page and its Markdown alternate; JSON Feed mirrors the same entries; conditional requests return 304.",
+    "review": [
+      "independent maintainer"
+    ]
+  },
+  {
+    "id": "SEO-007",
+    "title": "Markdown representations and llms.txt",
+    "milestone": "v0.3",
+    "workstream": "seo",
+    "priority": "P0",
+    "depends_on": [
+      "CORE-008",
+      "QA-001",
+      "SEO-002"
+    ],
+    "allowed_paths": [
+      "app/Modules/Seo/",
+      "resources/",
+      "tests/"
+    ],
+    "acceptance": "Every published resource renders deterministic Markdown with front matter; .md responses are noindex and canonical to HTML; raw HTML is dropped and link schemes restricted; llms.txt follows the v2 format and every link resolves.",
+    "review": [
+      "independent maintainer",
+      "security reviewer"
+    ]
+  },
+  {
+    "id": "SEO-008",
+    "title": "IndexNow publication notifications",
+    "milestone": "v0.3",
+    "workstream": "seo",
+    "priority": "P0",
+    "depends_on": [
+      "SEO-005",
+      "CORE-013"
+    ],
+    "allowed_paths": [
+      "app/Modules/Seo/",
+      "tests/"
+    ],
+    "acceptance": "Publishing enqueues batched IndexNow submissions capped at 10000 URLs; the key file is served from the root; failures retry and never block publishing; submissions follow the SSRF rules.",
+    "review": [
+      "independent maintainer"
+    ]
+  },
+  {
+    "id": "SEO-009",
+    "title": "SEO regression and structured-data validation suite",
+    "milestone": "v1.0",
+    "workstream": "seo",
+    "priority": "P1",
+    "depends_on": [
+      "SEO-003",
+      "SEO-005",
+      "SEO-006",
+      "SEO-007",
+      "REL-001"
+    ],
+    "allowed_paths": [
+      "tests/",
+      "tools/",
+      ".github/"
+    ],
+    "acceptance": "CI validates sitemaps against the XSD and feeds against RFC 4287; JSON-LD shape and visible-content checks run per page type; OG and Markdown snapshots are asserted; leakage tests prove drafts and private content never reach an artifact.",
+    "review": [
+      "independent maintainer"
+    ]
   }
 ]

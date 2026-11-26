@@ -35,6 +35,7 @@ Gates: **Merge** — required before code lands on `main`. **Release** — requi
 | SEC-C-05 | Server-side requests accept only allow-listed schemes and hosts; resolved IPs are checked against loopback, private, link-local, CGNAT and metadata ranges at dial time and again on every redirect; responses are size- and time-bounded. | SSRF test against a metadata address and a redirect pivot. | Release |
 | SEC-C-06 | Request bodies, headers, upload sizes and pagination bounds are capped; malformed input is rejected before work is done. | Boundary tests at each limit. | Merge |
 | SEC-C-07 | Locale input is validated against an installed allow-list before use in a path, cache key, header or catalogue load; `Accept-Language` parsing is bounded and rejects control characters; catalogue values are escaped at output and never evaluated. | Negative tests for unknown locale, traversal-shaped tag and CRLF header; bidi control characters stripped from input and imports. | Merge |
+| SEC-C-08 | Structured data and XML artifacts are encoded for their serialization context: JSON-LD cannot be terminated by user text, sitemaps and feeds are written through an XML writer with no DTD or external entities, and Markdown drops raw HTML and restricts link schemes. | Breakout tests with `</script>` and entity payloads in titles and answers; XML validation of generated artifacts. | Merge |
 
 ## D. Data, privacy and logging
 
@@ -43,6 +44,7 @@ Gates: **Merge** — required before code lands on `main`. **Release** — requi
 | SEC-D-01 | Tokens, passwords, session IDs and sensitive payloads are redacted in logs, error pages and telemetry; production errors are generic. | Log-capture test with a seeded secret. | Merge |
 | SEC-D-02 | Personal data retention, export and deletion are implemented per content type, and exports are scoped to the requester. | Export/deletion test. | Release |
 | SEC-D-03 | Publication requires an editorial verification state and preserves the revision history with author and time. | State-machine test. | Milestone v0.3 |
+| SEC-D-04 | Public artifacts — sitemaps, feeds, JSON-LD, Markdown and `llms.txt` — contain only published, publicly visible content and are built from the same authorization-filtered query as the HTML page. | Leakage tests over drafts, private questions and moderated content in every artifact. | Release |
 
 ## E. AI and MCP
 
