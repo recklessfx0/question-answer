@@ -158,23 +158,27 @@ app/
 
 ## Public contracts map (`GOV-011`)
 
-Before parallel implementation begins in `v0.1`, public contracts live under `app/Contracts/` and carry contract test suites:
+All 17 foundational contract packages are drafted under `app/Contracts/` (zero internal dependencies, enforced by `tools/validate_architecture.py`) and carry contract test suites under `tests/Contract/`:
 
-| Package | Primary interfaces | Unblocked workstreams |
+| Package | Primary interfaces & value types | Unblocked workstreams |
 | --- | --- | --- |
 | `Contracts/Config` | `ConfigRepository` | `CORE-002`, `DB-001`, `CACHE-001`, `LOG-001` |
-| `Contracts/Http` | `Request`, `Response`, `Middleware`, `Router`, `UrlGenerator`, `OutboundHttpClient` | `CORE-003`, `CORE-005`, `CORE-006`, `SEO-002`, `API-*` |
+| `Contracts/Container` | `Container`, `ContainerBuilder`, `ServiceDefinition` | `CORE-004`, `PERF-002` |
+| `Contracts/Http` | `Request`, `Response`, `Middleware`, `RouteMatch`, `Router`, `UrlGenerator`, `OutboundHttpClient` | `CORE-003`, `CORE-005`, `CORE-006`, `SEO-002`, `API-*` |
+| `Contracts/Events` | `DomainEvent`, `EventDispatcher` | `CORE-010`, `QA-*`, `EXT-*` |
+| `Contracts/Logging` | `Logger`, `Redactor` | `LOG-001`–`LOG-005`, `SEC-D-01` |
+| `Contracts/Validation` | `Validator`, `ValidationResult`, `Rule` | `CORE-007`, `QA-*`, `API-*` |
 | `Contracts/Auth` | `Actor`, `Authorizer`, `Policy`, `SessionStore` | `SEC-001`–`SEC-004`, `QA-001`, `CACHE-006`, `API-*`, `MCP-*` |
-| `Contracts/Security` | `SecretBox`, `TotpVerifier`, `PasskeyVerifier` *(drafted)*; `CsrfTokenManager`, `RateLimiter`, `AuditLogger` | `SEC-001`–`SEC-009`, `MAIL`, `AI-001`, `API-005` |
-| `Contracts/Mail` | `EmailMessage`, `MailTransport`, `Mailer` *(drafted)* | `SEC-001`, `SEC-007`, `QA-010`, `ADMIN-004` |
+| `Contracts/Security` | `SecretBox`, `TotpVerifier`, `PasskeyVerifier`, `PasswordHasher`, `CsrfTokenManager`, `RateLimiter`, `AuditLogger` | `SEC-001`–`SEC-011`, `MAIL-*`, `AI-001`, `API-005` |
+| `Contracts/Mail` | `EmailMessage`, `MailTransport`, `Mailer` | `MAIL-001`–`MAIL-004`, `SEC-001`, `SEC-007`, `QA-010`, `ADMIN-004` |
 | `Contracts/Database` | `Connection`, `TransactionManager`, `Migration`, `QueryProfiler` | `DB-001`–`DB-005`, `PERF-007` |
-| `Contracts/Cache` | `CacheStore`, `TaggedCache`, `StampedeLock`, `InvalidationBus` | `CACHE-001`–`CACHE-007`, `PERF-004`, `PERF-005` |
+| `Contracts/Cache` | `CacheStore`, `TaggedCache`, `StampedeLock`, `ResourceChange`, `InvalidationBus` | `CACHE-001`–`CACHE-007`, `PERF-004`, `PERF-005` |
 | `Contracts/Rendering` | `TemplateEngine`, `Escaper`, `SafeHtml` | `CORE-008`, `UI-*`, `EXT-004` |
-| `Contracts/Content` | `DocumentModel`, `ContentBlock`, `ReadProjection`, `ContentService` | `QA-001`, `SEO-003`–`SEO-007`, `I18N-004`, `PERF-004` |
-| `Contracts/Jobs` | `Job`, `JobDispatcher`, `JobHandler` | `CORE-013`, `SEO-005`, `SEO-008`, `UPD-*` |
-| `Contracts/Extension` | `ModuleInterface`, `ExtensionManifest`, `ArtifactContributor` | `CORE-011`, `EXT-001`–`EXT-007`, `PERF-008` |
-| `Contracts/Localization` | `CatalogueLoader`, `LocaleResolver`, `Translator` *(drafted)* | `CORE-012`, `I18N-*` |
-| `Contracts/Seo` | `MarkdownRepresentation`, `SitemapSource`, `StructuredData` *(drafted)* | `SEO-*` |
+| `Contracts/Content` | `Visibility`, `ContentBlock`, `DocumentModel`, `ReadProjection`, `ContentService` | `QA-001`, `SEO-003`–`SEO-007`, `I18N-004`, `PERF-004` |
+| `Contracts/Jobs` | `Job`, `JobDispatcher`, `JobHandler` | `CORE-013`, `MAIL-001`, `SEO-005`, `SEO-008`, `UPD-*` |
+| `Contracts/Extension` | `ExtensionManifest`, `ArtifactContributor`, `ModuleInterface` | `CORE-011`, `EXT-001`–`EXT-007`, `PERF-008` |
+| `Contracts/Localization` | `CatalogueLoader`, `LocaleResolver`, `Translator` | `CORE-012`, `I18N-*` |
+| `Contracts/Seo` | `MarkdownRepresentation`, `SitemapSource`, `StructuredData` | `SEO-*` |
 
 ## Testing and architectural gates
 

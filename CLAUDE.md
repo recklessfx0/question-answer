@@ -12,4 +12,5 @@ Follow [AGENTS.md](AGENTS.md) as the authoritative local instruction set for thi
   - `composer validate --strict`
   - `python3 tools/validate_backlog.py`
   - `python3 tools/validate_specs.py`
+  - `python3 tools/validate_architecture.py`
 - **Security:** Read [docs/SECURITY_REQUIREMENTS.md](docs/SECURITY_REQUIREMENTS.md) and [docs/THREAT_MODEL.md](docs/THREAT_MODEL.md) before touching security-sensitive surfaces; add fail-closed negative tests (`SEC-J-01`) and update the threat model in the same commit. Never self-merge or weaken `.github/` checks.
